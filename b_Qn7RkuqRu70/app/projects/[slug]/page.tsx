@@ -349,6 +349,12 @@ const projectsData: Record<string, any> = {
   },
 }
 
+export function generateStaticParams() {
+  return Object.keys(projectsData).map((slug) => ({
+    slug,
+  }))
+}
+
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const projectData = projectsData[params.slug] || projectsData["ra-labs"]
 
