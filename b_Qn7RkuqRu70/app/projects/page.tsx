@@ -146,31 +146,31 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Project 4 */}
+            {/* Project 4 - Eisenberg Toolkit */}
             <div className="group relative overflow-hidden rounded-lg border">
-              <Link href="/projects/e-commerce" className="absolute inset-0 z-10">
+              <a href="/projects/e-commerce.html" className="absolute inset-0 z-10">
                 <span className="sr-only">View Project</span>
-              </Link>
+              </a>
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src="/placeholder.svg?height=450&width=720"
-                  alt="E-commerce Redesign"
+                  alt="Eisenberg Family Depression Center Toolkit"
                   width={720}
                   height={450}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">E-commerce Redesign</h3>
+                <h3 className="text-xl font-bold">Eisenberg Toolkit UX Research</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Revamping an online shopping experience with a focus on conversion and user satisfaction.
+                  Improving access to mental health resources through mixed-method UX research for the Eisenberg Family Depression Center.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">
-                    Conversion Optimization
+                    UX Research
                   </div>
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">UI Design</div>
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">A/B Testing</div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Usability Testing</div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Heuristic Evaluation</div>
                 </div>
               </div>
             </div>
