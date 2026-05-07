@@ -148,9 +148,9 @@ export default function ProjectsPage() {
 
             {/* Project 4 - Eisenberg Toolkit */}
             <div className="group relative overflow-hidden rounded-lg border">
-              <a href="/projects/e-commerce.html" className="absolute inset-0 z-10">
+              <Link href="/projects/e-commerce" className="absolute inset-0 z-10">
                 <span className="sr-only">View Project</span>
-              </a>
+              </Link>
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src="/placeholder.svg?height=450&width=720"

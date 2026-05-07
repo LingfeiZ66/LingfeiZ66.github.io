@@ -347,6 +347,131 @@ const projectsData: Record<string, any> = {
     ],
     reflectionConclusion: "The most important UX problems are not about interfaces — they are about trust between people.",
   },
+  "e-commerce": {
+    title: "Eisenberg Family Depression Center Toolkit",
+    description: "Improving Access to Mental Health Resources Through Mixed-Method UX Research",
+    client: "Eisenberg Family Depression Center, University of Michigan",
+    duration: "3 weeks",
+    role: "UX Researcher",
+    team: "4 researchers",
+    tools: "Usability Testing, Heuristic Evaluation, Survey, Card Sorting, Diary Study",
+    tags: ["UX Research", "Usability Testing", "Heuristic Evaluation", "Mental Health"],
+    heroImage: "/placeholder.svg?height=600&width=1200",
+    heroImageBg: "bg-blue-50",
+    overview: "The Eisenberg Family Depression Center at the University of Michigan provides free mental health resources through an online Toolkit. My team conducted a mixed-method UX research study to evaluate and improve the Toolkit's usability, navigation, and overall user experience.\n\nThis project combined heuristic evaluation, card sorting, diary studies, surveys, and usability testing to deliver research-backed, actionable recommendations.",
+    thesis: "We analyzed the current design, tested it with real users, and delivered clear recommendations to improve findability, reduce cognitive load, and better support users seeking mental health help.",
+    challenge: "The Toolkit is a valuable resource for anyone seeking mental health support. But in practice, many users struggled to find what they were looking for.\n\nOur research was guided by one central question:\n\nHow might we improve the Toolkit's usability so that people can more easily find and use resources when they need them most?",
+    researchGoals: [
+      "Evaluate the overall usability of the Toolkit",
+      "Identify navigation and information architecture issues",
+      "Understand how users search for and discover mental health content",
+      "Provide specific, actionable design recommendations"
+    ],
+    researchProcess: [
+      {
+        title: "Heuristic Evaluation",
+        description: "We conducted expert evaluations based on Nielsen's 10 usability heuristics. This helped us quickly identify issues like inconsistent navigation, poor visual hierarchy, and confusing labels—before testing with users."
+      },
+      {
+        title: "Card Sorting",
+        description: "We used open card sorting to understand how users naturally group mental health topics. This helped us identify mismatches between the current Toolkit structure and user mental models."
+      },
+      {
+        title: "Diary Study",
+        description: "Participants logged their experiences over several days while using the Toolkit. This revealed real-world behaviors, frustrations, and moments of confusion—context we couldn't capture in a lab."
+      },
+      {
+        title: "Survey",
+        description: "We distributed a structured survey to gather broader quantitative insights on usability, satisfaction, and expectations from a larger pool of respondents."
+      },
+      {
+        title: "Usability Testing",
+        description: "We conducted moderated usability tests with participants completing realistic tasks. This allowed us to directly observe where users struggled and why."
+      }
+    ],
+    keyInsight: "Key Insight\n\nUsers often knew what they were looking for, but could not find it.\n\nThe Toolkit had useful content—but users struggled to locate it. Navigation labels were unclear, the structure didn't match how users thought about topics, and it was hard to tell where to start.",
+    findings: [
+      {
+        title: "Finding 1: Confusing Navigation Labels",
+        problem: "Many users didn't understand what labels like \"Peer-to-Peer\" or \"Toolkit Resources\" meant. As a result, they clicked around randomly or gave up.",
+        mattered: "Unclear labels create friction. When users don't understand where to go, they lose trust and leave.",
+        recommendation: "Rename navigation labels using plain, familiar language. For example, \"Peer-to-Peer\" could become \"Talk to Someone.\""
+      },
+      {
+        title: "Finding 2: Misaligned Information Architecture",
+        problem: "Card sorting revealed that users group topics differently than the Toolkit does. Many expected topics like \"Anxiety\" and \"Depression\" to be grouped together under \"Common Struggles\"—but the Toolkit separates them.",
+        mattered: "If the structure doesn't match user expectations, people can't find what they need—even if it exists.",
+        recommendation: "Reorganize the Toolkit to reflect how users naturally group topics. Use their language, not internal terminology."
+      },
+      {
+        title: "Finding 3: Lack of Visual Hierarchy",
+        problem: "Pages often looked like walls of text. There was little distinction between headings, links, and body content.",
+        mattered: "Users scan, not read. Without clear visual cues, they miss important content or feel overwhelmed.",
+        recommendation: "Apply consistent typography, whitespace, and section breaks. Highlight calls-to-action and entry points clearly."
+      },
+      {
+        title: "Finding 4: No Clear Starting Point",
+        problem: "New users didn't know where to begin. The homepage offered many options, but no guidance.",
+        mattered: "When users are struggling emotionally, they don't want to make decisions. They want clarity.",
+        recommendation: "Add a \"Start Here\" or \"Not sure where to begin?\" entry point that guides first-time users through the site."
+      },
+      {
+        title: "Finding 5: Inconsistent Mobile Experience",
+        problem: "Some pages worked well on mobile, others didn't. Layout issues and small tap targets made it hard to navigate.",
+        mattered: "Many users access the Toolkit on their phones. A frustrating mobile experience means lost users.",
+        recommendation: "Audit the entire Toolkit for responsive design. Prioritize mobile-friendly navigation and tap targets."
+      }
+    ],
+    finalRecommendations: [
+      {
+        number: "1",
+        title: "Simplify Navigation Labels",
+        description: "Replace jargon with plain language. Use terms users already understand."
+      },
+      {
+        number: "2",
+        title: "Restructure Information Architecture",
+        description: "Align the site structure with user mental models from card sorting."
+      },
+      {
+        number: "3",
+        title: "Improve Visual Hierarchy",
+        description: "Use typography, spacing, and layout to guide the eye and reduce cognitive load."
+      },
+      {
+        number: "4",
+        title: "Add a Guided Entry Point",
+        description: "Help new users start with a clear, low-pressure pathway into the content."
+      },
+      {
+        number: "5",
+        title: "Fix Mobile Usability Issues",
+        description: "Ensure a consistent, usable experience across devices."
+      }
+    ],
+    outcomeImpact: [
+      {
+        title: "For Users",
+        description: "Clearer navigation and better structure will help users find resources faster—especially when they're struggling."
+      },
+      {
+        title: "For the Client",
+        description: "Our findings give the Eisenberg Center a prioritized roadmap for improving the Toolkit, grounded in user data."
+      },
+      {
+        title: "For Me",
+        description: "This project deepened my skills in planning and executing mixed-method UX research. I learned how to triangulate findings, communicate with stakeholders, and deliver actionable recommendations."
+      }
+    ],
+    reflectionIntro: "This project taught me that:",
+    reflectionList: [
+      "Good content is not enough—structure and findability matter just as much",
+      "Users in crisis need simplicity, not options",
+      "Multiple methods reveal different truths—triangulation builds confidence",
+      "Designing for mental health requires empathy, clarity, and restraint"
+    ],
+    reflectionConclusion: "Mental health UX is not about adding features. It's about removing friction when people are already overwhelmed."
+  },
 }
 
 export function generateStaticParams() {
@@ -531,6 +656,107 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Overview</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.overview}</p>
+              </div>
+            )}
+
+            {projectData.thesis && (
+              <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
+                <p className="text-muted-foreground italic">{projectData.thesis}</p>
+              </div>
+            )}
+
+            {projectData.researchGoals && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Goals</h2>
+                <ul className="mt-4 space-y-2">
+                  {projectData.researchGoals.map((goal: string, index: number) => (
+                    <li key={index} className="flex items-start text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                      {goal}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {projectData.researchProcess && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Process</h2>
+                <p className="mt-4 text-muted-foreground">We used five complementary research methods:</p>
+                <div className="mt-6 grid gap-6">
+                  {projectData.researchProcess.map((method: any, index: number) => (
+                    <div key={index} className="flex gap-4">
+                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-bold">{method.title}</h3>
+                        <p className="mt-2 text-muted-foreground">{method.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.keyInsight && (
+              <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                <p className="text-foreground whitespace-pre-line font-medium">{projectData.keyInsight}</p>
+              </div>
+            )}
+
+            {projectData.findings && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Findings</h2>
+                <div className="mt-6 space-y-8">
+                  {projectData.findings.map((finding: any, index: number) => (
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{finding.title}</h3>
+                      <p className="mt-3 text-muted-foreground">{finding.problem}</p>
+                      <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                        <p className="text-sm font-medium text-primary">Why it mattered</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.mattered}</p>
+                      </div>
+                      <div className="mt-4 p-4 bg-primary/5 rounded-md border-l-2 border-primary">
+                        <p className="text-sm font-medium text-primary">Recommendation</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.recommendation}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.finalRecommendations && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Final Recommendations</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {projectData.finalRecommendations.map((rec: any, index: number) => (
+                    <div key={index} className="p-4 rounded-lg border bg-card">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                          {rec.number}
+                        </div>
+                        <h3 className="font-semibold">{rec.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground">{rec.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.outcomeImpact && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Outcome & Impact</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                  {projectData.outcomeImpact.map((impact: any, index: number) => (
+                    <div key={index} className="p-4 rounded-lg border bg-card">
+                      <h3 className="font-semibold text-primary">{impact.title}</h3>
+                      <p className="mt-2 text-sm text-muted-foreground">{impact.description}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
 
