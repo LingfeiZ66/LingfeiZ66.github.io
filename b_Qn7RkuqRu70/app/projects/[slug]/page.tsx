@@ -349,128 +349,149 @@ const projectsData: Record<string, any> = {
   },
   "e-commerce": {
     title: "Eisenberg Family Depression Center Toolkit",
-    description: "Improving Access to Mental Health Resources Through Mixed-Method UX Research",
+    description: "Improving Access to Mental Health Resources Through UX Research",
+    subtitle: "UX Research Case Study | Jan–Apr 2025",
     client: "Eisenberg Family Depression Center, University of Michigan",
-    duration: "3 weeks",
+    duration: "Jan–Apr 2025",
     role: "UX Researcher",
-    team: "4 researchers",
-    tools: "Usability Testing, Heuristic Evaluation, Survey, Card Sorting, Diary Study",
-    tags: ["UX Research", "Usability Testing", "Heuristic Evaluation", "Mental Health"],
+    team: "5 UX researchers",
+    tools: "Interviews, survey, comparative analysis, heuristic evaluation, usability testing",
+    tags: ["UX Research", "Interviews", "Usability Testing", "Heuristic Evaluation", "Mental Health"],
     heroImage: "/placeholder.svg?height=600&width=1200",
     heroImageBg: "bg-blue-50",
-    overview: "The Eisenberg Family Depression Center at the University of Michigan provides free mental health resources through an online Toolkit. My team conducted a mixed-method UX research study to evaluate and improve the Toolkit's usability, navigation, and overall user experience.\n\nThis project combined heuristic evaluation, card sorting, diary studies, surveys, and usability testing to deliver research-backed, actionable recommendations.",
-    thesis: "We analyzed the current design, tested it with real users, and delivered clear recommendations to improve findability, reduce cognitive load, and better support users seeking mental health help.",
-    challenge: "The Toolkit is a valuable resource for anyone seeking mental health support. But in practice, many users struggled to find what they were looking for.\n\nOur research was guided by one central question:\n\nHow might we improve the Toolkit's usability so that people can more easily find and use resources when they need them most?",
+    heroImageCaption: "Hero image showing the Toolkit website on laptop/mobile screens, with a soft background and a few research artifacts like sticky notes or report pages.",
+    impact: "In April 2026, the client shared that our research had been applied to website updates, and the new version of the Toolkit website had launched.",
+    overview: "The Depression Center Toolkit is an online mental health resource created by the Eisenberg Family Depression Center. It helps users understand symptoms, explore treatment options, use self-assessments, and find supportive resources.\n\nThe Toolkit had valuable, evidence-based content, but the user experience created barriers. Users could not always find what they needed quickly. Some pages felt text-heavy, clinical, and hard to scan. This mattered because people often visit mental health resources when they are already stressed, uncertain, or looking for help in a vulnerable moment.\n\nOur team conducted mixed-method UX research to understand these barriers and provide actionable recommendations for improving the Toolkit's usability, accessibility, personalization, and content flow.",
+    thesis: "We helped a trusted mental health resource move from an information-heavy website toward a clearer, more supportive, and more actionable experience.",
+    challenge: "Mental health resources are only helpful when people can find, understand, and act on them. The Toolkit offered strong content, including self-assessments, educational materials, coping strategies, and treatment guidance. However, our early research showed that users faced information overload, lack of personalization, and difficulty knowing what to do after using an assessment tool.\n\nThe key challenge was not whether the Toolkit had useful information. It did. The challenge was whether users could access that information easily during moments when they might already feel overwhelmed.",
+    challengeImageCaption: "Screenshot of the original Toolkit page, ideally showing the side navigation and dense text layout. Add annotation labels such as \"Deep navigation,\" \"Dense content,\" and \"Unclear next step.\"",
     researchGoals: [
-      "Evaluate the overall usability of the Toolkit",
-      "Identify navigation and information architecture issues",
-      "Understand how users search for and discover mental health content",
-      "Provide specific, actionable design recommendations"
+      "How do users search for and evaluate mental health information online?",
+      "What makes users trust or distrust an online mental health resource?",
+      "Can users find important Toolkit resources without confusion?",
+      "How can the Toolkit improve usability, accessibility, personalization, and privacy?"
     ],
+    researchGoalsNote: "These questions helped us look beyond surface-level website problems. We wanted to understand how users think, what they need emotionally, and what kind of guidance would help them take the next step.",
+    researchProcessIntro: "Research timeline from January to April 2025: Interviews → Survey → Comparative Analysis → Heuristic Evaluation → Usability Testing → Recommendations.",
     researchProcess: [
       {
-        title: "Heuristic Evaluation",
-        description: "We conducted expert evaluations based on Nielsen's 10 usability heuristics. This helped us quickly identify issues like inconsistent navigation, poor visual hierarchy, and confusing labels—before testing with users."
+        title: "1. Interviews: Understanding user needs",
+        description: "We conducted 5 interviews to understand how people search for, evaluate, and use online mental health resources. Participants discussed trust, accessibility, content preferences, and barriers such as information overload and conflicting advice. After interviews, our team reviewed responses, coded themes, and created an affinity wall to synthesize patterns.",
+        question: "What we wanted to learn: How do users decide whether a mental health resource feels trustworthy, useful, and easy to act on?",
+        imageCaption: "Affinity wall, interview notes, or a simplified \"themes from interviews\" graphic."
       },
       {
-        title: "Card Sorting",
-        description: "We used open card sorting to understand how users naturally group mental health topics. This helped us identify mismatches between the current Toolkit structure and user mental models."
+        title: "2. Survey: Validating early patterns",
+        description: "We created a pilot survey to expand on the interview findings. The survey explored how people seek mental health information, what challenges they face with self-assessment tools, and how the Toolkit could improve usability, accessibility, and personalization while maintaining privacy.\n\nBecause mental health is a sensitive topic, we carefully revised the survey language. For example, instead of asking what would make users \"not use\" a website, we reframed the question around what factors are most important when using an online mental health resource. This made the survey feel more constructive and less emotionally triggering.",
+        imageCaption: "Survey question examples or a small card showing \"Before wording\" vs. \"After wording.\""
       },
       {
-        title: "Diary Study",
-        description: "Participants logged their experiences over several days while using the Toolkit. This revealed real-world behaviors, frustrations, and moments of confusion—context we couldn't capture in a lab."
+        title: "3. Comparative Analysis: Learning from other platforms",
+        description: "We compared the Toolkit with other mental health and educational platforms, including Beyond Blue, DBSA, Here to Help, CDC Mental Health Page, and Khan Academy. We evaluated content quality, navigation, accessibility, engagement, and privacy.\n\nThis helped us understand what users might expect from similar platforms. We found that platforms with stronger personalization, clearer navigation, and more interactive tools created a more engaging experience. The Toolkit performed well in content organization, but it had opportunities to improve readability, interactivity, visual hierarchy, and navigation clarity.",
+        imageCaption: "Comparative matrix table. You can simplify the table into 5 columns: Personalization, Interactive Tools, Navigation, Content Organization, Readability."
       },
       {
-        title: "Survey",
-        description: "We distributed a structured survey to gather broader quantitative insights on usability, satisfaction, and expectations from a larger pool of respondents."
+        title: "4. Heuristic Evaluation: Inspecting usability and accessibility issues",
+        description: "We evaluated the Toolkit using Nielsen's 10 usability heuristics, focusing on navigation, accessibility, consistency, readability, and visual hierarchy. The site supported keyboard navigation, but lacked visual icons, clear call-to-action buttons, visual contrast, and consistent alt text. These issues made it harder for users to scan content and know what action to take next.",
+        imageCaption: "Annotated screenshot showing missing CTA buttons, weak visual hierarchy, or dense text blocks."
       },
       {
-        title: "Usability Testing",
-        description: "We conducted moderated usability tests with participants completing realistic tasks. This allowed us to directly observe where users struggled and why."
+        title: "5. Usability Testing: Observing real task behavior",
+        description: "We conducted 5 remote usability tests with participants aged 18–55. Participants completed realistic tasks, such as finding depression symptom information, preparing for a doctor's visit, and completing a self-assessment.\n\nUsers appreciated the depth and seriousness of the content, but they struggled with confusing navigation, unclear content categories, and a formal tone that felt uninviting. These problems caused hesitation, frustration, and sometimes task failure.",
+        imageCaption: "Usability testing setup screenshot, task flow diagram, or a quote card from a participant."
       }
     ],
-    keyInsight: "Key Insight\n\nUsers often knew what they were looking for, but could not find it.\n\nThe Toolkit had useful content—but users struggled to locate it. Navigation labels were unclear, the structure didn't match how users thought about topics, and it was hard to tell where to start.",
+    keyInsight: "The Toolkit should not only provide information. It should guide users toward the right resource, explain what to do next, and feel supportive during a sensitive moment.",
+    keyInsightDirection: "This became the main direction for our recommendations:\n\nMove from a static resource library to a guided support experience.",
+    keyInsightImageCaption: "Simple before/after concept diagram: \"Resource Library\" → \"Guided Support Experience.\"",
     findings: [
       {
-        title: "Finding 1: Confusing Navigation Labels",
-        problem: "Many users didn't understand what labels like \"Peer-to-Peer\" or \"Toolkit Resources\" meant. As a result, they clicked around randomly or gave up.",
-        mattered: "Unclear labels create friction. When users don't understand where to go, they lose trust and leave.",
-        recommendation: "Rename navigation labels using plain, familiar language. For example, \"Peer-to-Peer\" could become \"Talk to Someone.\""
+        title: "Finding 1: Users needed to find support quickly, but navigation felt too deep.",
+        problem: "The most noticeable usability issue was the Toolkit's complex navigation and deep hierarchy. During usability testing, users described the site as having too many layers. One participant said it felt like \"a hamburger with 10 layers deep.\" Users often paused, rerouted, or became disoriented when trying to find self-assessment tools or appointment preparation information.",
+        mattered: "For a mental health resource, slow or confusing navigation can prevent users from reaching support when they need it most.",
+        recommendation: "Simplify the information hierarchy, add breadcrumbs, make key resources more visible, and reorganize sections around user intent, such as Learn, Get Help, and Prepare.",
+        imageCaption: "Annotated navigation screenshot + simplified proposed navigation structure."
       },
       {
-        title: "Finding 2: Misaligned Information Architecture",
-        problem: "Card sorting revealed that users group topics differently than the Toolkit does. Many expected topics like \"Anxiety\" and \"Depression\" to be grouped together under \"Common Struggles\"—but the Toolkit separates them.",
-        mattered: "If the structure doesn't match user expectations, people can't find what they need—even if it exists.",
-        recommendation: "Reorganize the Toolkit to reflect how users naturally group topics. Use their language, not internal terminology."
+        title: "Finding 2: Users trusted the content, but the tone and format felt overwhelming.",
+        problem: "Users saw the Toolkit as serious and credible, but the tone often felt too clinical. Dense text blocks and bullet-heavy sections made pages harder to read, especially on emotionally sensitive pages like \"I'm not feeling well.\"",
+        mattered: "A mental health website should not only be accurate. It should also feel approachable, calm, and supportive.",
+        recommendation: "Use warmer language, shorter paragraphs, supportive headings, visual cues, and plain language. Break long content into smaller sections so users can scan the page more easily.",
+        imageCaption: "Before/after content layout. Left: dense text. Right: shorter sections with supportive headers and icons."
       },
       {
-        title: "Finding 3: Lack of Visual Hierarchy",
-        problem: "Pages often looked like walls of text. There was little distinction between headings, links, and body content.",
-        mattered: "Users scan, not read. Without clear visual cues, they miss important content or feel overwhelmed.",
-        recommendation: "Apply consistent typography, whitespace, and section breaks. Highlight calls-to-action and entry points clearly."
+        title: "Finding 3: Self-assessments needed clearer next steps.",
+        problem: "Interview participants wanted online assessments to provide more than a score. They wanted clear, personalized guidance, such as self-help exercises, goal-setting tools, recommendations, treatment links, or direct next steps. The current assessment experience was not easy to discover and did not provide enough actionable follow-up.",
+        mattered: "For many users, a self-assessment may be the first step toward seeking help. If the result does not explain what to do next, users may feel stuck.",
+        recommendation: "Make the assessment easier to find and redesign the results page to include tailored next steps, relevant resources, and clear explanations of what the score means.",
+        imageCaption: "Assessment results page concept. Include cards like \"Understand your score,\" \"Try a guided exercise,\" \"Prepare for a provider visit,\" \"Find support.\""
       },
       {
-        title: "Finding 4: No Clear Starting Point",
-        problem: "New users didn't know where to begin. The homepage offered many options, but no guidance.",
-        mattered: "When users are struggling emotionally, they don't want to make decisions. They want clarity.",
-        recommendation: "Add a \"Start Here\" or \"Not sure where to begin?\" entry point that guides first-time users through the site."
+        title: "Finding 4: Accessibility and visual hierarchy affected users' ability to scan and act.",
+        problem: "The heuristic evaluation found that the Toolkit supported keyboard navigation, but it lacked visual icons, clear call-to-action buttons, strong contrast, and meaningful alt text for some images. The mostly uniform visual style made it difficult for users to identify key content quickly.",
+        mattered: "Accessibility is not only about technical compliance. It also affects whether users can understand where they are, what matters, and what they should do next.",
+        recommendation: "Add consistent icons, stronger visual hierarchy, clearer CTA buttons, improved contrast, and meaningful alt text.",
+        imageCaption: "Accessibility improvement checklist or annotated UI showing CTA, icon, heading hierarchy, and contrast."
       },
       {
-        title: "Finding 5: Inconsistent Mobile Experience",
-        problem: "Some pages worked well on mobile, others didn't. Layout issues and small tap targets made it hard to navigate.",
-        mattered: "Many users access the Toolkit on their phones. A frustrating mobile experience means lost users.",
-        recommendation: "Audit the entire Toolkit for responsive design. Prioritize mobile-friendly navigation and tap targets."
+        title: "Finding 5: Users wanted personalization while maintaining privacy.",
+        problem: "Interview and survey findings showed that users wanted resources that felt relevant to their personal situation. However, because mental health is sensitive, users also cared about privacy and did not want to give unnecessary personal information. Survey responses showed interest in personalized recommendations, interactive tools, and downloadable content.",
+        mattered: "A one-size-fits-all experience can feel generic, but over-personalization may create privacy concerns.",
+        recommendation: "Use privacy-conscious personalization, such as optional filters, saved resources, downloadable tools, and non-login-based pathways.",
+        imageCaption: "Personalization concept showing optional filters like \"I want to learn,\" \"I want support now,\" \"I am preparing for an appointment,\" \"I am supporting someone else.\""
       }
     ],
     finalRecommendations: [
       {
         number: "1",
-        title: "Simplify Navigation Labels",
-        description: "Replace jargon with plain language. Use terms users already understand."
+        title: "Simplify navigation",
+        description: "Reduce the number of layers in the side navigation. Add breadcrumbs and make high-priority resources easier to access."
       },
       {
         number: "2",
-        title: "Restructure Information Architecture",
-        description: "Align the site structure with user mental models from card sorting."
+        title: "Use user-centered labels",
+        description: "Rename confusing categories using everyday language. Group content around what users are trying to do, not around internal content categories."
       },
       {
         number: "3",
-        title: "Improve Visual Hierarchy",
-        description: "Use typography, spacing, and layout to guide the eye and reduce cognitive load."
+        title: "Make content easier to scan",
+        description: "Break long pages into shorter sections. Use supportive headings, plain language, icons, and visual summaries."
       },
       {
         number: "4",
-        title: "Add a Guided Entry Point",
-        description: "Help new users start with a clear, low-pressure pathway into the content."
+        title: "Improve assessment follow-up",
+        description: "Make the self-assessment tool easier to find and provide clearer next steps after users receive a result."
       },
       {
         number: "5",
-        title: "Fix Mobile Usability Issues",
-        description: "Ensure a consistent, usable experience across devices."
+        title: "Strengthen accessibility",
+        description: "Improve contrast, add alt text, create clearer heading structures, and use stronger CTAs to guide users."
+      },
+      {
+        number: "6",
+        title: "Build trust through transparency",
+        description: "Show authorship, review dates, professional validation, and source information clearly so users can evaluate credibility."
       }
     ],
+    outcomeIntro: "In April 2026, the client shared that they had applied our research findings to website changes, and the new version of the Toolkit website had already launched.\n\nThis made the project especially meaningful because our research moved beyond a class deliverable. It contributed to a real website update for a public mental health resource.",
     outcomeImpact: [
       {
-        title: "For Users",
-        description: "Clearer navigation and better structure will help users find resources faster—especially when they're struggling."
+        title: "User impact",
+        description: "Our recommendations aimed to help users find mental health support faster, understand information more easily, and feel more comfortable using the Toolkit during vulnerable moments."
       },
       {
-        title: "For the Client",
-        description: "Our findings give the Eisenberg Center a prioritized roadmap for improving the Toolkit, grounded in user data."
+        title: "Client impact",
+        description: "The research gave the Eisenberg Family Depression Center a clear, evidence-based direction for improving navigation, readability, accessibility, personalization, and user flow."
       },
       {
-        title: "For Me",
-        description: "This project deepened my skills in planning and executing mixed-method UX research. I learned how to triangulate findings, communicate with stakeholders, and deliver actionable recommendations."
+        title: "Personal impact",
+        description: "This project helped me learn how to conduct research on a sensitive topic, communicate findings to a real client, and turn mixed-method research into actionable product recommendations."
       }
     ],
-    reflectionIntro: "This project taught me that:",
-    reflectionList: [
-      "Good content is not enough—structure and findability matter just as much",
-      "Users in crisis need simplicity, not options",
-      "Multiple methods reveal different truths—triangulation builds confidence",
-      "Designing for mental health requires empathy, clarity, and restraint"
-    ],
-    reflectionConclusion: "Mental health UX is not about adding features. It's about removing friction when people are already overwhelmed."
+    outcomeImageCaption: "\"Research → Website Update\" impact graphic, or screenshot of client email with private information blurred.",
+    reflectionIntro: "This project taught me that good UX research is not only about finding usability problems. It is also about understanding the emotional context behind those problems.\n\nFor a mental health resource, confusing navigation or dense text is not just inconvenient. It can make users feel more overwhelmed at a moment when they need clarity and support. Through this project, I learned how to combine interviews, surveys, competitive research, heuristic evaluation, and usability testing to tell a stronger story about user needs.\n\nI also learned the importance of client communication. Since our recommendations needed to support both user needs and stakeholder goals, we had to make our findings clear, practical, and actionable. Seeing the client later apply our research to the launched website showed me how UX research can create real impact.",
+    reflectionList: [],
+    reflectionConclusion: ""
   },
 }
 
@@ -661,38 +682,56 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {projectData.thesis && (
               <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
-                <p className="text-muted-foreground italic">{projectData.thesis}</p>
+                <p className="text-sm font-medium text-primary mb-2">Case study thesis:</p>
+                <p className="text-foreground italic">{projectData.thesis}</p>
+              </div>
+            )}
+
+            {projectData.impact && (
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <p className="text-sm font-medium text-green-700 dark:text-green-400">Impact: {projectData.impact}</p>
               </div>
             )}
 
             {projectData.researchGoals && (
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Research Goals</h2>
-                <ul className="mt-4 space-y-2">
+                <p className="mt-4 text-muted-foreground">We focused on four main questions:</p>
+                <ol className="mt-4 space-y-3">
                   {projectData.researchGoals.map((goal: string, index: number) => (
                     <li key={index} className="flex items-start text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium mr-3">
+                        {index + 1}
+                      </span>
                       {goal}
                     </li>
                   ))}
-                </ul>
+                </ol>
+                {projectData.researchGoalsNote && (
+                  <p className="mt-4 text-muted-foreground">{projectData.researchGoalsNote}</p>
+                )}
               </div>
             )}
 
             {projectData.researchProcess && (
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Research Process</h2>
-                <p className="mt-4 text-muted-foreground">We used five complementary research methods:</p>
-                <div className="mt-6 grid gap-6">
+                {projectData.researchProcessIntro && (
+                  <p className="mt-4 text-muted-foreground italic text-sm">{projectData.researchProcessIntro}</p>
+                )}
+                <div className="mt-6 space-y-8">
                   {projectData.researchProcess.map((method: any, index: number) => (
-                    <div key={index} className="flex gap-4">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                        {index + 1}
-                      </div>
-                      <div>
-                        <h3 className="font-bold">{method.title}</h3>
-                        <p className="mt-2 text-muted-foreground">{method.description}</p>
-                      </div>
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{method.title}</h3>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{method.description}</p>
+                      {method.question && (
+                        <p className="mt-4 text-sm text-primary font-medium">{method.question}</p>
+                      )}
+                      {method.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {method.imageCaption}]</p>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -700,8 +739,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             )}
 
             {projectData.keyInsight && (
-              <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
-                <p className="text-foreground whitespace-pre-line font-medium">{projectData.keyInsight}</p>
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Insight</h2>
+                <div className="mt-4 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <p className="text-foreground whitespace-pre-line">{projectData.keyInsight}</p>
+                  {projectData.keyInsightDirection && (
+                    <p className="mt-4 text-foreground font-semibold whitespace-pre-line">{projectData.keyInsightDirection}</p>
+                  )}
+                </div>
+                {projectData.keyInsightImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.keyInsightImageCaption}]</p>
+                  </div>
+                )}
               </div>
             )}
 
@@ -712,15 +762,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   {projectData.findings.map((finding: any, index: number) => (
                     <div key={index} className="p-6 rounded-lg border bg-card">
                       <h3 className="text-lg font-bold">{finding.title}</h3>
-                      <p className="mt-3 text-muted-foreground">{finding.problem}</p>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{finding.problem}</p>
                       <div className="mt-4 p-4 bg-muted/50 rounded-md">
-                        <p className="text-sm font-medium text-primary">Why it mattered</p>
+                        <p className="text-sm font-medium text-primary">Why it mattered:</p>
                         <p className="mt-1 text-sm text-muted-foreground">{finding.mattered}</p>
                       </div>
                       <div className="mt-4 p-4 bg-primary/5 rounded-md border-l-2 border-primary">
-                        <p className="text-sm font-medium text-primary">Recommendation</p>
+                        <p className="text-sm font-medium text-primary">Recommendation:</p>
                         <p className="mt-1 text-sm text-muted-foreground">{finding.recommendation}</p>
                       </div>
+                      {finding.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {finding.imageCaption}]</p>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -729,17 +784,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {projectData.finalRecommendations && (
               <div className="mt-12">
-                <h2 className="text-2xl font-bold">Final Recommendations</h2>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <h2 className="text-2xl font-bold">Recommendations</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {projectData.finalRecommendations.map((rec: any, index: number) => (
-                    <div key={index} className="p-4 rounded-lg border bg-card">
-                      <div className="flex items-center gap-3 mb-2">
+                    <div key={index} className="p-5 rounded-lg border bg-card">
+                      <div className="flex items-start gap-3 mb-2">
                         <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
                           {rec.number}
                         </div>
-                        <h3 className="font-semibold">{rec.title}</h3>
+                        <div>
+                          <h3 className="font-semibold">{rec.title}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{rec.description}</p>
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">{rec.description}</p>
                     </div>
                   ))}
                 </div>
@@ -748,15 +805,23 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {projectData.outcomeImpact && (
               <div className="mt-12">
-                <h2 className="text-2xl font-bold">Outcome & Impact</h2>
-                <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                <h2 className="text-2xl font-bold">Outcome and Impact</h2>
+                {projectData.outcomeIntro && (
+                  <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.outcomeIntro}</p>
+                )}
+                <div className="mt-6 space-y-4">
                   {projectData.outcomeImpact.map((impact: any, index: number) => (
-                    <div key={index} className="p-4 rounded-lg border bg-card">
+                    <div key={index} className="p-5 rounded-lg border bg-card">
                       <h3 className="font-semibold text-primary">{impact.title}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground">{impact.description}</p>
+                      <p className="mt-2 text-muted-foreground">{impact.description}</p>
                     </div>
                   ))}
                 </div>
+                {projectData.outcomeImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.outcomeImageCaption}]</p>
+                  </div>
+                )}
               </div>
             )}
 

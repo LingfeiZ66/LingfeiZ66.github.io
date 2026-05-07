@@ -161,16 +161,16 @@ export default function ProjectsPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Eisenberg Toolkit UX Research</h3>
+                <h3 className="text-xl font-bold">Eisenberg Family Depression Center Toolkit</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Improving access to mental health resources through mixed-method UX research for the Eisenberg Family Depression Center.
+                  Improving Access to Mental Health Resources Through UX Research
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">
                     UX Research
                   </div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Interviews</div>
                   <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Usability Testing</div>
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Heuristic Evaluation</div>
                 </div>
               </div>
             </div>
