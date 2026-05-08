@@ -507,13 +507,7 @@ const projectsData: Record<string, any> = {
     heroImage: "/placeholder.svg?height=600&width=1200",
     heroImageBg: "bg-blue-900",
     heroImageCaption: "Hero mockup placeholder — final app screens displayed on phone mockups in a clean stadium-inspired background",
-    projectOverview: {
-      role: "UX Designer",
-      timeline: "Jan-Apr 2026",
-      context: "Designing with AI Course Project",
-      type: "Product Design + UX Strategy"
-    },
-    context: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
+    overview: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
     definingProblem: "VIP users often interact with the app in high-pressure situations:\n\n• entering crowded stadium gates\n• finding parking quickly\n• accessing VIP areas before time-sensitive events\n\nIn these moments, even small usability problems can create frustration and stress.",
     definingProblemThemes: [
       "Users need instant and reliable access to their VIP credentials.",
@@ -728,23 +722,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </p>
                 <p className="mt-4 text-muted-foreground">{projectData.subtitle}</p>
 
-                <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm">
-                  <div className="flex gap-2">
-                    <span className="font-medium">Role:</span>
-                    <span className="text-muted-foreground">{projectData.role}</span>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                  <div>
+                    <h3 className="font-medium">Timeline</h3>
+                    <p className="text-muted-foreground">{projectData.duration}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Timeline:</span>
-                    <span className="text-muted-foreground">{projectData.duration}</span>
+                  <div>
+                    <h3 className="font-medium">Role</h3>
+                    <p className="text-muted-foreground">{projectData.role}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Team:</span>
-                    <span className="text-muted-foreground">{projectData.team}</span>
+                  <div>
+                    <h3 className="font-medium">Team</h3>
+                    <p className="text-muted-foreground">{projectData.team}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Client:</span>
-                    <span className="text-muted-foreground">{projectData.client}</span>
+                  <div>
+                    <h3 className="font-medium">Tools</h3>
+                    <p className="text-muted-foreground">{projectData.tools}</p>
                   </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {projectData.tags.map((tag: string, index: number) => (
+                    <div key={index} className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">
+                      {tag}
+                    </div>
+                  ))}
                 </div>
 
                 {projectData.hasSystemDiagram && (
