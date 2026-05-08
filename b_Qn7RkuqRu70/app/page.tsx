@@ -126,7 +126,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm">
-              <a href="/resume.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -156,7 +156,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm" className="w-full">
-              <a href="/resume.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -518,7 +518,7 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button asChild size="lg">
-                  <a href="/resume.pdf" download>
+                  <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                     <Download className="mr-2 h-5 w-5" />
                     Download Full Resume
                   </a>
