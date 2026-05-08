@@ -153,7 +153,7 @@ export default function ProjectsPage() {
               </Link>
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=450&width=720"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eisenberg%20Toolkit%20cover-uAksGepkChuLYLXPEJGu368UlDNdKa.png"
                   alt="Eisenberg Family Depression Center Toolkit"
                   width={720}
                   height={450}
