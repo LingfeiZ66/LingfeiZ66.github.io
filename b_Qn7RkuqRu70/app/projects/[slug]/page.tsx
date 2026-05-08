@@ -825,14 +825,46 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <p className="mt-4 text-sm text-muted-foreground italic">Context: {projectData.context}</p>
             )}
 
+            {/* Overview section for Eisenberg style */}
+            {projectData.overview && projectData.hook && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Overview</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.overview}</p>
+                {projectData.thesis && (
+                  <div className="mt-6 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
+                    <p className="text-sm font-medium text-primary mb-2">Case study thesis:</p>
+                    <p className="text-foreground italic">{projectData.thesis}</p>
+                  </div>
+                )}
+                {projectData.impact && (
+                  <div className="mt-6 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                    <p className="text-sm font-medium text-green-700 dark:text-green-400">Impact: {projectData.impact}</p>
+                  </div>
+                )}
+                {projectData.heroImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.heroImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Context section for Michigan Football style */}
             {projectData.context && projectData.hook && (
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Context</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.context}</p>
-                {projectData.heroImageCaption && (
+              </div>
+            )}
+
+            {/* The Challenge section for Eisenberg style */}
+            {projectData.challenge && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">The Challenge</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.challenge}</p>
+                {projectData.challengeImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
-                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.heroImageCaption}]</p>
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.challengeImageCaption}]</p>
                   </div>
                 )}
               </div>
@@ -866,6 +898,27 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
+            {/* Research Goals section for Eisenberg style */}
+            {projectData.researchGoals && !projectData.researchGoalsIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Goals</h2>
+                <p className="mt-4 text-muted-foreground">We focused on four main questions:</p>
+                <ol className="mt-4 space-y-3">
+                  {projectData.researchGoals.map((goal: string, index: number) => (
+                    <li key={index} className="flex items-start text-muted-foreground">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium mr-3">
+                        {index + 1}
+                      </span>
+                      {goal}
+                    </li>
+                  ))}
+                </ol>
+                {projectData.researchGoalsNote && (
+                  <p className="mt-4 text-muted-foreground">{projectData.researchGoalsNote}</p>
+                )}
+              </div>
+            )}
+
             {/* Research Goals & User Perspective section */}
             {projectData.researchGoalsIntro && (
               <div className="mt-12">
@@ -892,6 +945,129 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.researchImageCaption}]</p>
                   </div>
                 )}
+              </div>
+            )}
+
+            {/* Research Process section for Eisenberg style */}
+            {projectData.researchProcess && projectData.researchProcessIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Process</h2>
+                <p className="mt-4 text-muted-foreground italic text-sm">{projectData.researchProcessIntro}</p>
+                <div className="mt-6 space-y-8">
+                  {projectData.researchProcess.map((method: any, index: number) => (
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{method.title}</h3>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{method.description}</p>
+                      {method.question && (
+                        <p className="mt-4 text-sm text-primary font-medium">{method.question}</p>
+                      )}
+                      {method.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {method.imageCaption}]</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Key Insight section for Eisenberg style */}
+            {projectData.keyInsight && !projectData.keyInsightComparison && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Insight</h2>
+                <div className="mt-4 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <p className="text-foreground whitespace-pre-line">{projectData.keyInsight}</p>
+                  {projectData.keyInsightDirection && (
+                    <p className="mt-4 text-foreground font-semibold whitespace-pre-line">{projectData.keyInsightDirection}</p>
+                  )}
+                </div>
+                {projectData.keyInsightImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.keyInsightImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Key Findings section for Eisenberg style */}
+            {projectData.findings && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Findings</h2>
+                <div className="mt-6 space-y-8">
+                  {projectData.findings.map((finding: any, index: number) => (
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{finding.title}</h3>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{finding.problem}</p>
+                      <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                        <p className="text-sm font-medium text-primary">Why it mattered:</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.mattered}</p>
+                      </div>
+                      <div className="mt-4 p-4 bg-primary/5 rounded-md border-l-2 border-primary">
+                        <p className="text-sm font-medium text-primary">Recommendation:</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.recommendation}</p>
+                      </div>
+                      {finding.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {finding.imageCaption}]</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Recommendations section for Eisenberg style */}
+            {projectData.finalRecommendations && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Recommendations</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {projectData.finalRecommendations.map((rec: any, index: number) => (
+                    <div key={index} className="p-5 rounded-lg border bg-card">
+                      <div className="flex items-start gap-3 mb-2">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                          {rec.number}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold">{rec.title}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{rec.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Outcome and Impact section for Eisenberg style */}
+            {projectData.outcomeImpact && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Outcome and Impact</h2>
+                {projectData.outcomeIntro && (
+                  <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.outcomeIntro}</p>
+                )}
+                <div className="mt-6 space-y-4">
+                  {projectData.outcomeImpact.map((impact: any, index: number) => (
+                    <div key={index} className="p-5 rounded-lg border bg-card">
+                      <h3 className="font-semibold text-primary">{impact.title}</h3>
+                      <p className="mt-2 text-muted-foreground">{impact.description}</p>
+                    </div>
+                  ))}
+                </div>
+                {projectData.outcomeImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.outcomeImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Reflection section for Eisenberg style */}
+            {projectData.reflectionIntro && !projectData.reflectionKeyInsight && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
               </div>
             )}
 
