@@ -5,6 +5,8 @@ import { ArrowLeft, ExternalLink, Download } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ImagePlaceholder } from "@/components/image-placeholder"
 
+// Force cache invalidation
+
 const projectsData: Record<string, any> = {
   "ra-labs": {
     title: "Ra Labs AI Data-Cleaning Platform",
