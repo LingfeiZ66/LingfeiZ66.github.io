@@ -302,43 +302,43 @@ export default function Home() {
                   </div>
                 </Link>
 
-                {/* Project 4 */}
+                {/* Project 4 - Eisenberg Family Depression Center Toolkit */}
                 <Link href="/projects/e-commerce" className="group">
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src="/placeholder.svg?height=450&width=720"
-                        alt="E-commerce Redesign"
+                        alt="Eisenberg Family Depression Center Toolkit"
                         width={720}
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">E-commerce Redesign</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Eisenberg Family Depression Center Toolkit</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Revamping an online shopping experience with a focus on conversion and user satisfaction.
+                        Improving Access to Mental Health Resources Through UX Research
                       </p>
                     </div>
                   </div>
                 </Link>
 
-                {/* Project 5 */}
+                {/* Project 5 - Michigan Football VIP Experience */}
                 <Link href="/projects/education-platform" className="group">
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src="/placeholder.svg?height=450&width=720"
-                        alt="Education Platform"
+                        alt="Michigan Football VIP Experience"
                         width={720}
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Education Platform</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing with AI: Michigan Football VIP Experience</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        An online learning platform designed to enhance student engagement and knowledge retention.
+                        What happens when AI helps you design a product—but you can&apos;t fully trust it?
                       </p>
                     </div>
                   </div>
