@@ -653,8 +653,9 @@ export function generateStaticParams() {
   }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const projectData = projectsData[params.slug] || projectsData["ra-labs"]
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const projectData = projectsData[slug] || projectsData["ra-labs"]
 
   return (
     <div className="flex min-h-screen flex-col">
