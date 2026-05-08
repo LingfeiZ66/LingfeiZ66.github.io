@@ -175,7 +175,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Project 5 */}
+            {/* Project 5 - Michigan Football VIP Experience */}
             <div className="group relative overflow-hidden rounded-lg border">
               <Link href="/projects/education-platform" className="absolute inset-0 z-10">
                 <span className="sr-only">View Project</span>
@@ -183,21 +183,21 @@ export default function ProjectsPage() {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src="/placeholder.svg?height=450&width=720"
-                  alt="Education Platform"
+                  alt="Michigan Football VIP Experience"
                   width={720}
                   height={450}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Education Platform</h3>
+                <h3 className="text-xl font-bold">Designing with AI: Michigan Football VIP Experience</h3>
                 <p className="mt-2 text-muted-foreground">
-                  An online learning platform designed to enhance student engagement and knowledge retention.
+                  What happens when AI helps you design a product—but you can&apos;t fully trust it?
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Educational UX</div>
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Accessibility</div>
-                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">UI Design</div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Product Design</div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">UX Strategy</div>
+                  <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">AI-Assisted Design</div>
                 </div>
               </div>
             </div>

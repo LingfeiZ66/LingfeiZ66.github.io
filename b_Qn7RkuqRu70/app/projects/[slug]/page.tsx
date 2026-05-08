@@ -493,6 +493,158 @@ const projectsData: Record<string, any> = {
     reflectionList: [],
     reflectionConclusion: ""
   },
+  "education-platform": {
+    title: "Designing with AI: Michigan Football VIP Experience",
+    hook: "What happens when AI helps you design a product—but you can't fully trust it?",
+    subtitle: "Designing a mobile app for Michigan Football VIP season ticket holders while critically evaluating how AI can support—and mislead—UX decision-making.",
+    description: "Product Design + UX Strategy",
+    client: "Designing with AI Course Project",
+    duration: "Jan-Apr 2026",
+    role: "UX Designer",
+    team: "Individual",
+    tools: "Figma, AI Tools, Prototyping",
+    tags: ["Product Design", "UX Strategy", "AI-Assisted Design", "Usability Testing"],
+    heroImage: "/placeholder.svg?height=600&width=1200",
+    heroImageBg: "bg-blue-900",
+    heroImageCaption: "Hero mockup placeholder — final app screens displayed on phone mockups in a clean stadium-inspired background",
+    projectOverview: {
+      role: "UX Designer",
+      timeline: "Jan-Apr 2026",
+      context: "Designing with AI Course Project",
+      type: "Product Design + UX Strategy"
+    },
+    context: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
+    definingProblem: "VIP users often interact with the app in high-pressure situations:\n\n• entering crowded stadium gates\n• finding parking quickly\n• accessing VIP areas before time-sensitive events\n\nIn these moments, even small usability problems can create frustration and stress.",
+    definingProblemThemes: [
+      "Users need instant and reliable access to their VIP credentials.",
+      "The app must reduce uncertainty during fast-moving game-day situations.",
+      "VIP benefits need to feel actionable and valuable, not hidden or confusing."
+    ],
+    definingProblemImageCaption: "Placeholder image — \"Defining the Problem\" slide showing design goals, target users, and constraints",
+    researchGoalsIntro: "To better understand the experience, I explored how users currently access tickets and VIP information during game day. I focused on identifying moments where users feel slowed down, confused, or uncertain.",
+    researchQuestions: [
+      "How do users currently access tickets and VIP entry?",
+      "What creates friction during game-day situations?",
+      "What makes a mobile VIP ID feel trustworthy and reliable?",
+      "Which benefits do users actually use, and what prevents usage?"
+    ],
+    researchEmotional: "The project also explored emotional factors behind the experience. For example, users described embarrassment when IDs failed to load while people were waiting behind them in line. Others described frustration when weak signals prevented them from accessing important information quickly.\n\nThese insights helped frame the app not simply as a utility tool, but as a product that must support confidence and reduce stress under pressure.",
+    researchImageCaption: "Placeholder image — persona cards and research questions layout",
+    designingWithAIIntro: "One of the central goals of this project was to explore how AI could assist UX workflows while also understanding its limitations.\n\nRather than treating AI as a replacement for design thinking, I approached it as a collaborator that could accelerate structure, brainstorming, and early synthesis.",
+    designingWithAIUsed: [
+      "generate early PRD drafts",
+      "organize usability observations",
+      "explore prototype directions",
+      "create measurable success metrics",
+      "accelerate brainstorming and iteration"
+    ],
+    designingWithAICritical: "At the same time, I critically evaluated where AI outputs became misleading, shallow, or incomplete.",
+    designingWithAIImageCaption: "Placeholder image — side-by-side comparison of AI outputs and human annotations",
+    usabilityTestingIntro: "To better understand the strengths and weaknesses of AI-generated UX analysis, I compared AI-generated usability insights with my own human-led interpretation of the same usability testing session.\n\nThis became one of the most important parts of the project.",
+    humanAnalysis: [
+      {
+        title: "1. Scroll Expectation Problem",
+        description: "The participant immediately attempted to scroll on the home screen, expecting additional content below. Although the screen technically contained the necessary information, the layout visually suggested that content was incomplete.\n\nThis revealed a mismatch between the interface structure and the user's mental model."
+      },
+      {
+        title: "2. Parking Guidance Copy",
+        description: "The participant reacted negatively to the phrase:\n\n\"We recommend parking closer to the stadium.\"\n\nShe felt the statement was obvious and not genuinely helpful. Instead of offering actionable guidance, the wording repeated information users already knew.\n\nThis suggested that the app needed more meaningful decision support, such as availability, distance, and timing context."
+      },
+      {
+        title: "3. Missing Profile Structure",
+        description: "The participant could see their name within the interface but could not identify where account details or profile management existed.\n\nThis created a feeling that part of the system was missing."
+      }
+    ],
+    aiAnalysisIntro: "The AI-generated analysis correctly identified several surface-level successes:",
+    aiAnalysisSuccesses: [
+      "the VIP ID flow was easy to access",
+      "the brightness feature was appreciated",
+      "parking guidance was discoverable",
+      "benefits with clearer instructions stood out most"
+    ],
+    aiAnalysisWeakness: "However, the AI framed the home screen experience much more positively than my own interpretation.\n\nFor example, the AI concluded that:\n\n\"The home screen helped the participant quickly understand the app's purpose.\"\n\nWhile technically true, this interpretation underweighted the participant's early confusion and failed to recognize the significance of the scrolling behavior.",
+    keyInsightComparison: "The comparison revealed an important distinction:\n\nAI was effective at identifying explicit statements, but weaker at interpreting implicit expectations and deeper UX meaning.\n\nThis became a critical lesson throughout the project.",
+    keyInsightComparisonImageCaption: "Placeholder image — comparison diagram labeled \"AI Analysis vs Human Analysis\"",
+    insightsToDecisionsIntro: "The usability findings directly shaped the evolution of the product.\n\nRather than treating testing as validation, I used it to identify where the product structure failed to match user expectations.",
+    problemDecisions: [
+      {
+        problem: "Users felt the home screen looked incomplete.",
+        decision: "Added a \"Game Day Essentials\" section to create a more complete and scannable structure."
+      },
+      {
+        problem: "Parking guidance felt generic and unhelpful.",
+        decision: "Replaced generic recommendations with arrival-based logic, lot availability, and distance information."
+      },
+      {
+        problem: "Users could not locate profile/account information.",
+        decision: "Added a dedicated profile screen with clear navigation access."
+      },
+      {
+        problem: "Users were unsure how to use certain VIP benefits.",
+        decision: "Added \"where to go,\" \"what to show,\" and \"when to use\" instructions for each benefit."
+      }
+    ],
+    problemDecisionsImageCaption: "Placeholder image — annotated PRD evolution and design decision mapping",
+    prototypingWithAIIntro: "AI was also used to explore multiple prototype directions.\n\nRather than generating a single design immediately, I used AI outputs to compare different assumptions about user behavior and interaction patterns.",
+    prototypeDirections: [
+      {
+        title: "1. Dashboard-Oriented Experience",
+        description: "Focused on freedom and visibility by showing all tools upfront."
+      },
+      {
+        title: "2. Guided Assistant Experience (Selected Direction)",
+        description: "Focused on reducing stress by surfacing the \"next best action.\""
+      },
+      {
+        title: "3. Timeline-Based Journey",
+        description: "Organized the experience chronologically across game-day stages."
+      }
+    ],
+    prototypeSelectionReason: "After evaluation, I selected the guided assistant direction because it best aligned with the product goals:\n\n• reduced cognitive load\n• clearer prioritization\n• stronger support during high-pressure moments",
+    prototypeDirectionsImageCaption: "Placeholder image — three prototype directions shown side-by-side",
+    finalSolutionIntro: "The final product focused on creating a fast, reliable, and confidence-building game-day experience.",
+    coreFeatures: [
+      {
+        title: "Fast VIP ID Access",
+        description: "The VIP ID is accessible within one tap from the home screen and includes automatic brightness support to improve scan reliability at stadium gates."
+      },
+      {
+        title: "Clear VIP Benefit Guidance",
+        description: "Each benefit includes actionable instructions explaining:\n• where to go\n• what to show\n• when to use the benefit"
+      },
+      {
+        title: "Smart Parking Guidance",
+        description: "Parking recommendations include availability, distance, and arrival-time context to support better decisions."
+      },
+      {
+        title: "Game Day Essentials Hub",
+        description: "A centralized section organizes important actions into a single, scannable area."
+      },
+      {
+        title: "Profile & Account Access",
+        description: "A dedicated account section improves clarity and system completeness."
+      }
+    ],
+    finalSolutionImageCaption: "Placeholder image — final high-fidelity app screens displayed on phone mockups",
+    evaluationIntro: "The prototype was evaluated through moderated usability testing using a think-aloud protocol.\n\nParticipants were asked to:\n\n• access their VIP ID\n• locate parking information\n• understand VIP benefits\n• navigate account-related features",
+    evaluationStrengths: [
+      "the VIP ID flow felt fast and intuitive",
+      "visual hierarchy was clear",
+      "users appreciated the brightness feature"
+    ],
+    evaluationIssues: [
+      "expectations around scrolling",
+      "unclear benefit instructions",
+      "missing account navigation"
+    ],
+    evaluationConclusion: "These findings directly informed the next design iteration.",
+    evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
+    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n• understand benefits more clearly\n• navigate the system with greater confidence",
+    impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
+    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.\n\nI learned that AI is extremely effective at:\n\n• accelerating structure\n• summarizing obvious patterns\n• speeding up early ideation\n\nHowever, AI consistently struggled with:\n\n• nuance\n• implicit user behavior\n• prioritization\n• deeper interpretation of UX problems\n\nThe most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
+    reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
+    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most."
+  },
 }
 
 export function generateStaticParams() {
@@ -663,6 +815,318 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
             {projectData.context && !projectData.hook && (
               <p className="mt-4 text-sm text-muted-foreground italic">Context: {projectData.context}</p>
+            )}
+
+            {/* Context section for Michigan Football style */}
+            {projectData.context && projectData.hook && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Context</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.context}</p>
+                {projectData.heroImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.heroImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Defining the Problem section */}
+            {projectData.definingProblem && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Defining the Problem</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.definingProblem}</p>
+                {projectData.definingProblemThemes && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">Through early framing and research, I identified three major themes:</p>
+                    <ol className="space-y-3">
+                      {projectData.definingProblemThemes.map((theme: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium mr-3">
+                            {index + 1}
+                          </span>
+                          {theme}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                {projectData.definingProblemImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.definingProblemImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Research Goals & User Perspective section */}
+            {projectData.researchGoalsIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Goals & User Perspective</h2>
+                <p className="mt-4 text-muted-foreground">{projectData.researchGoalsIntro}</p>
+                {projectData.researchQuestions && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">The research questions included:</p>
+                    <ul className="space-y-2">
+                      {projectData.researchQuestions.map((question: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                          {question}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.researchEmotional && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.researchEmotional}</p>
+                )}
+                {projectData.researchImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.researchImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Designing with AI section */}
+            {projectData.designingWithAIIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Designing with AI</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.designingWithAIIntro}</p>
+                {projectData.designingWithAIUsed && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">I used AI to:</p>
+                    <ul className="space-y-2">
+                      {projectData.designingWithAIUsed.map((use: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                          {use}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.designingWithAICritical && (
+                  <p className="mt-6 text-muted-foreground">{projectData.designingWithAICritical}</p>
+                )}
+                {projectData.designingWithAIImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.designingWithAIImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Usability Testing: AI vs Human Analysis section */}
+            {projectData.usabilityTestingIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Usability Testing: AI vs Human Analysis</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.usabilityTestingIntro}</p>
+                
+                {projectData.humanAnalysis && (
+                  <div className="mt-8">
+                    <h3 className="text-xl font-bold">Human-Led Analysis</h3>
+                    <p className="mt-4 text-muted-foreground">During the usability test, I identified several issues that reflected deeper usability and expectation problems.</p>
+                    <div className="mt-6 space-y-6">
+                      {projectData.humanAnalysis.map((item: any, index: number) => (
+                        <div key={index} className="p-5 rounded-lg border bg-card">
+                          <h4 className="font-bold">{item.title}</h4>
+                          <p className="mt-2 text-muted-foreground whitespace-pre-line">{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {projectData.aiAnalysisIntro && (
+                  <div className="mt-8">
+                    <h3 className="text-xl font-bold">AI-Generated Analysis</h3>
+                    <p className="mt-4 text-muted-foreground">{projectData.aiAnalysisIntro}</p>
+                    {projectData.aiAnalysisSuccesses && (
+                      <ul className="mt-4 space-y-2">
+                        {projectData.aiAnalysisSuccesses.map((success: string, index: number) => (
+                          <li key={index} className="flex items-start text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 mr-3 flex-shrink-0"></span>
+                            {success}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {projectData.aiAnalysisWeakness && (
+                      <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.aiAnalysisWeakness}</p>
+                    )}
+                  </div>
+                )}
+
+                {projectData.keyInsightComparison && (
+                  <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                    <h3 className="text-lg font-bold mb-3">Key Insight</h3>
+                    <p className="text-foreground whitespace-pre-line">{projectData.keyInsightComparison}</p>
+                  </div>
+                )}
+                {projectData.keyInsightComparisonImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.keyInsightComparisonImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* From Insights to Product Decisions section */}
+            {projectData.insightsToDecisionsIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">From Insights to Product Decisions</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.insightsToDecisionsIntro}</p>
+                {projectData.problemDecisions && (
+                  <div className="mt-6 space-y-4">
+                    <h3 className="text-lg font-bold">Problem → Decision Examples</h3>
+                    {projectData.problemDecisions.map((item: any, index: number) => (
+                      <div key={index} className="p-5 rounded-lg border bg-card">
+                        <p className="text-sm font-medium text-primary">Problem:</p>
+                        <p className="mt-1 text-muted-foreground">{item.problem}</p>
+                        <p className="mt-4 text-sm font-medium text-green-600 dark:text-green-400">Design Decision:</p>
+                        <p className="mt-1 text-muted-foreground">{item.decision}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {projectData.problemDecisionsImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.problemDecisionsImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Prototyping with AI section */}
+            {projectData.prototypingWithAIIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Prototyping with AI</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.prototypingWithAIIntro}</p>
+                {projectData.prototypeDirections && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-4">Three main directions emerged:</p>
+                    <div className="space-y-4">
+                      {projectData.prototypeDirections.map((direction: any, index: number) => (
+                        <div key={index} className={`p-5 rounded-lg border bg-card ${direction.title.includes('Selected') ? 'border-primary border-2' : ''}`}>
+                          <h4 className="font-bold">{direction.title}</h4>
+                          <p className="mt-2 text-muted-foreground">{direction.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {projectData.prototypeSelectionReason && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.prototypeSelectionReason}</p>
+                )}
+                {projectData.prototypeDirectionsImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.prototypeDirectionsImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Final Solution section */}
+            {projectData.finalSolutionIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Final Solution</h2>
+                <p className="mt-4 text-muted-foreground">{projectData.finalSolutionIntro}</p>
+                {projectData.coreFeatures && (
+                  <div className="mt-6">
+                    <h3 className="text-lg font-bold mb-4">Core Features</h3>
+                    <div className="space-y-4">
+                      {projectData.coreFeatures.map((feature: any, index: number) => (
+                        <div key={index} className="p-5 rounded-lg border bg-card">
+                          <h4 className="font-bold">{feature.title}</h4>
+                          <p className="mt-2 text-muted-foreground whitespace-pre-line">{feature.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {projectData.finalSolutionImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.finalSolutionImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Evaluation & Iteration section */}
+            {projectData.evaluationIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Evaluation & Iteration</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.evaluationIntro}</p>
+                {projectData.evaluationStrengths && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">The testing confirmed several strengths:</p>
+                    <ul className="space-y-2">
+                      {projectData.evaluationStrengths.map((strength: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 mr-3 flex-shrink-0"></span>
+                          {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.evaluationIssues && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">However, testing also uncovered important issues:</p>
+                    <ul className="space-y-2">
+                      {projectData.evaluationIssues.map((issue: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 mr-3 flex-shrink-0"></span>
+                          {issue}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.evaluationConclusion && (
+                  <p className="mt-6 text-muted-foreground">{projectData.evaluationConclusion}</p>
+                )}
+                {projectData.evaluationImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.evaluationImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Impact section */}
+            {(projectData.impactUX || projectData.impactProduct) && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Impact</h2>
+                {projectData.impactUX && (
+                  <div className="mt-6 p-5 rounded-lg border bg-card">
+                    <h3 className="font-bold text-primary">UX Impact</h3>
+                    <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                  </div>
+                )}
+                {projectData.impactProduct && (
+                  <div className="mt-4 p-5 rounded-lg border bg-card">
+                    <h3 className="font-bold text-primary">Product Impact</h3>
+                    <p className="mt-2 text-muted-foreground">{projectData.impactProduct}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Reflection section for Michigan Football style */}
+            {projectData.reflectionIntro && projectData.hook && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                {projectData.reflectionKeyInsight && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                    <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
+                  </div>
+                )}
+                {projectData.reflectionConclusion && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionConclusion}</p>
+                )}
+              </div>
             )}
 
             {projectData.contextAndProblemIntro ? (
