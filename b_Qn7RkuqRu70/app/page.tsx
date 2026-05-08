@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { Download, Send, Linkedin, ExternalLink, Mail, Phone, MapPin, Menu, X } from "lucide-react"
+import { Download, Send, ExternalLink, Mail, Phone, MapPin, Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
@@ -458,52 +458,6 @@ export default function Home() {
                       <MapPin className="h-5 w-5 mr-3 text-primary" />
                       <span className="text-muted-foreground">Ann Arbor, MI</span>
                     </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold mt-8 mb-6">Connect With Me</h3>
-                  <div className="flex space-x-4">
-                    <Button asChild variant="outline" size="icon">
-                      <a
-                        href="https://www.linkedin.com/in/shuaib-karim-551841232/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn Profile"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" size="icon">
-                      <a
-                        href="https://www.behance.net/shuaibkarim"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Behance Profile"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M3 9h6v3H3z" />
-                          <path d="M14 9h7" />
-                          <path d="M14 15h7" />
-                          <path d="M3 15h6v3H3z" />
-                          <path d="M3 6h6" />
-                          <path d="M14 12h7" />
-                        </svg>
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" size="icon">
-                      <a href="mailto:shuaibkarim302@gmail.com" aria-label="Email">
-                        <Mail className="h-5 w-5" />
-                      </a>
-                    </Button>
                   </div>
                 </div>
 
