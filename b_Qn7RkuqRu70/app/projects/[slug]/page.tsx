@@ -8,7 +8,9 @@ import { ImagePlaceholder } from "@/components/image-placeholder"
 const projectsData: Record<string, any> = {
   "ra-labs": {
     title: "Ra Labs AI Data-Cleaning Platform",
+    hook: "How do you design a complex AI platform from scratch while learning to communicate like a professional?",
     description: "Confidential Internship Project",
+    subtitle: "Designing a product prototype from scratch to high fidelity while developing cross-functional collaboration skills in a real startup environment.",
     client: "Ra Labs (Confidential)",
     duration: "Summer 2025",
     role: "UI/UX Design Intern",
@@ -59,7 +61,9 @@ const projectsData: Record<string, any> = {
   },
   "umsi-case-study": {
     title: "Turning a Fragmented Ecosystem into a Connected System",
+    hook: "What if the problem isn't a lack of resources—but the inability to find them?",
     description: "Designing a centralized platform to support entrepreneurship in Michigan",
+    subtitle: "Developing a product concept that earned 3rd place in a 10-day case study competition by reframing talent loss as a system navigation problem.",
     client: "UMSI Case Study Competition",
     duration: "10 days",
     role: "Team Lead",
@@ -349,8 +353,9 @@ const projectsData: Record<string, any> = {
   },
   "e-commerce": {
     title: "Eisenberg Family Depression Center Toolkit",
+    hook: "How might we help people find mental health support when they need it most?",
     description: "Improving Access to Mental Health Resources Through UX Research",
-    subtitle: "UX Research Case Study | Jan–Apr 2025",
+    subtitle: "Conducting mixed-method UX research to evaluate and improve the Toolkit's usability, navigation, and overall user experience for a trusted mental health resource.",
     client: "Eisenberg Family Depression Center, University of Michigan",
     duration: "Jan–Apr 2025",
     role: "UX Researcher",
