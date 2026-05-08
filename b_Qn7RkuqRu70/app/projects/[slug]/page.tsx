@@ -5,6 +5,7 @@ import { ArrowLeft, ExternalLink, Download } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ImagePlaceholder } from "@/components/image-placeholder"
 
+// Project data for dynamic routing
 const projectsData: Record<string, any> = {
   "ra-labs": {
     title: "Ra Labs AI Data-Cleaning Platform",
