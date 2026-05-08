@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { Download, Send, Linkedin, ExternalLink, Mail, Phone, MapPin, Menu, X } from "lucide-react"
+import { Download, Send, ExternalLink, Mail, Phone, MapPin, Menu, X } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
@@ -302,43 +302,43 @@ export default function Home() {
                   </div>
                 </Link>
 
-                {/* Project 4 */}
+                {/* Project 4 - Eisenberg Family Depression Center Toolkit */}
                 <Link href="/projects/e-commerce" className="group">
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src="/placeholder.svg?height=450&width=720"
-                        alt="E-commerce Redesign"
+                        alt="Eisenberg Family Depression Center Toolkit"
                         width={720}
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">E-commerce Redesign</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Eisenberg Family Depression Center Toolkit</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Revamping an online shopping experience with a focus on conversion and user satisfaction.
+                        Improving Access to Mental Health Resources Through UX Research
                       </p>
                     </div>
                   </div>
                 </Link>
 
-                {/* Project 5 */}
+                {/* Project 5 - Michigan Football VIP Experience */}
                 <Link href="/projects/education-platform" className="group">
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
                         src="/placeholder.svg?height=450&width=720"
-                        alt="Education Platform"
+                        alt="Michigan Football VIP Experience"
                         width={720}
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Education Platform</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing with AI: Michigan Football VIP Experience</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        An online learning platform designed to enhance student engagement and knowledge retention.
+                        What happens when AI helps you design a product—but you can&apos;t fully trust it?
                       </p>
                     </div>
                   </div>
@@ -353,74 +353,158 @@ export default function Home() {
         <section id="experience" className="py-20 bg-secondary/20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Experience</h2>
-                <p className="text-lg text-muted-foreground">
-                  My professional journey in UI/UX design and digital product development.
-                </p>
+              
+              {/* Education */}
+              <div className="mb-16">
+                <h2 className="text-3xl font-bold mb-8">Education</h2>
+                <div className="space-y-6">
+                  <div className="gradient-border p-6 bg-card">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-semibold">University of Michigan</h3>
+                        <p className="text-primary font-medium">Master of Science in Informatics, UX track</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm text-muted-foreground">Ann Arbor, MI</span>
+                        <p className="text-sm text-muted-foreground">Aug 2024 - present</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="gradient-border p-6 bg-card">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-semibold">University of California - San Diego</h3>
+                        <p className="text-primary font-medium">Bachelor degree of Communication major</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm text-muted-foreground">San Diego, CA</span>
+                        <p className="text-sm text-muted-foreground">Mar 2023</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <div className="space-y-6">
-                {/* Experience 1 */}
+              {/* Award */}
+              <div className="mb-16">
+                <h2 className="text-3xl font-bold mb-8">Award</h2>
                 <div className="gradient-border p-6 bg-card">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="text-xl font-semibold">UI/UX Designer</h3>
-                      <p className="text-primary font-medium">Dot Austere</p>
+                      <h3 className="text-xl font-semibold">University of Michigan School of Information Case Study Competition</h3>
+                      <p className="text-primary font-medium">Honorable mention</p>
                     </div>
-                    <span className="text-sm text-muted-foreground">04/2020 - 12/2024</span>
+                    <span className="text-sm text-muted-foreground">Nov 2024</span>
                   </div>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Designed user-centric interfaces for 10+ mobile and web applications, improving user engagement by 40%
+                      Led team meetings to ensure the team stayed on track, focused, and aligned with the objectives.
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Conducted comprehensive UX research and usability testing to validate design decisions
+                      Collaborated to analyze and propose solutions for the complex problem of Talent Retention & Entrepreneurship for Economic Growth in Michigan.
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Built and maintained scalable design systems ensuring consistency across products
+                      Conducted interviews, surveys, literature reviews, and data analysis to inform the development of six alternative solutions.
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Collaborated with cross-functional teams including developers, product managers, and stakeholders
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Experience 2 */}
-                <div className="gradient-border p-6 bg-card">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-                    <div>
-                      <h3 className="text-xl font-semibold">Freelance UI/UX Designer</h3>
-                      <p className="text-primary font-medium">Upwork / Fiverr</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground">12/2017 - Present</span>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Completed over 100+ projects with a 100% Job Success Score on Upwork
+                      Recommended a final solution, which included creating a digital app prototype.
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Delivered customized UI/UX designs tailored to diverse client needs and industries
+                      Contributed to the development of a comprehensive written report and presentation slides for the final round.
                     </li>
                     <li className="flex items-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Managed end-to-end design process from research and wireframing to final delivery
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      Built long-term relationships with clients through quality work and clear communication
+                      Demonstrated strong leadership, teamwork, analytical thinking, and problem-solving skills while meeting tight deadlines.
                     </li>
                   </ul>
                 </div>
               </div>
 
-              <div className="mt-12 flex justify-center">
+              {/* Experiences */}
+              <div className="mb-12">
+                <h2 className="text-3xl font-bold mb-8">Experiences</h2>
+                <div className="space-y-6">
+                  {/* Ra Labs */}
+                  <div className="gradient-border p-6 bg-card">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                      <div>
+                        <h3 className="text-xl font-semibold">UX Design Intern</h3>
+                        <p className="text-primary font-medium">Ra Labs</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm text-muted-foreground">New York, NY (Remote)</span>
+                        <p className="text-sm text-muted-foreground">Jul 2025 - Oct 2025</p>
+                      </div>
+                    </div>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Designed a 0 to 1 AI-powered data cleaning product (30+ screens), turning complex workflows into a clear, user-centered experience.
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Owned end-to-end UX design from concept to high-fidelity within a 4-month internship
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Created structured workflows for reviewing and correcting AI outputs, improving usability and user trust
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Simplified ambiguous AI system behavior into actionable UI patterns
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Partnered with cross-functional stakeholders under confidentiality constraints
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* Mom Kitchen */}
+                  <div className="gradient-border p-6 bg-card">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                      <div>
+                        <h3 className="text-xl font-semibold">Marketing Manager</h3>
+                        <p className="text-primary font-medium">Mom Kitchen</p>
+                      </div>
+                      <div className="text-right">
+                        <span className="text-sm text-muted-foreground">San Diego, CA</span>
+                        <p className="text-sm text-muted-foreground">Jul 2023 - Aug 2024</p>
+                      </div>
+                    </div>
+                    <ul className="space-y-2 text-muted-foreground">
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Developed and launched the restaurant&apos;s website, improving user experience and increasing customer engagement.
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Collaborated with stakeholders, including restaurant owners and staff, to gather requirements and align the website and social media strategies with business goals.
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Led social media management, including creating content and curating posts to enhance user engagement and drive traffic.
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Conducted user research through customer feedback and data analysis to refine content and improve user interaction.
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        Grew the restaurant&apos;s Instagram account by 300+ followers within two weeks, with a single post achieving over 10k views, optimizing content for better user reach and engagement.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
                 <Button asChild size="lg">
                   <a href="/resume.pdf" download>
                     <Download className="mr-2 h-5 w-5" />
@@ -458,52 +542,6 @@ export default function Home() {
                       <MapPin className="h-5 w-5 mr-3 text-primary" />
                       <span className="text-muted-foreground">Ann Arbor, MI</span>
                     </div>
-                  </div>
-
-                  <h3 className="text-xl font-semibold mt-8 mb-6">Connect With Me</h3>
-                  <div className="flex space-x-4">
-                    <Button asChild variant="outline" size="icon">
-                      <a
-                        href="https://www.linkedin.com/in/shuaib-karim-551841232/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn Profile"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" size="icon">
-                      <a
-                        href="https://www.behance.net/shuaibkarim"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Behance Profile"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M3 9h6v3H3z" />
-                          <path d="M14 9h7" />
-                          <path d="M14 15h7" />
-                          <path d="M3 15h6v3H3z" />
-                          <path d="M3 6h6" />
-                          <path d="M14 12h7" />
-                        </svg>
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" size="icon">
-                      <a href="mailto:shuaibkarim302@gmail.com" aria-label="Email">
-                        <Mail className="h-5 w-5" />
-                      </a>
-                    </Button>
                   </div>
                 </div>
 

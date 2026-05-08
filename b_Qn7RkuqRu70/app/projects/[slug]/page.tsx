@@ -8,7 +8,9 @@ import { ImagePlaceholder } from "@/components/image-placeholder"
 const projectsData: Record<string, any> = {
   "ra-labs": {
     title: "Ra Labs AI Data-Cleaning Platform",
+    hook: "How do you design a complex AI platform from scratch while learning to communicate like a professional?",
     description: "Confidential Internship Project",
+    subtitle: "Designing a product prototype from scratch to high fidelity while developing cross-functional collaboration skills in a real startup environment.",
     client: "Ra Labs (Confidential)",
     duration: "Summer 2025",
     role: "UI/UX Design Intern",
@@ -59,7 +61,9 @@ const projectsData: Record<string, any> = {
   },
   "umsi-case-study": {
     title: "Turning a Fragmented Ecosystem into a Connected System",
+    hook: "What if the problem isn't a lack of resources—but the inability to find them?",
     description: "Designing a centralized platform to support entrepreneurship in Michigan",
+    subtitle: "Developing a product concept that earned 3rd place in a 10-day case study competition by reframing talent loss as a system navigation problem.",
     client: "UMSI Case Study Competition",
     duration: "10 days",
     role: "Team Lead",
@@ -347,6 +351,299 @@ const projectsData: Record<string, any> = {
     ],
     reflectionConclusion: "The most important UX problems are not about interfaces — they are about trust between people.",
   },
+  "e-commerce": {
+    title: "Eisenberg Family Depression Center Toolkit",
+    hook: "How might we help people find mental health support when they need it most?",
+    description: "Improving Access to Mental Health Resources Through UX Research",
+    subtitle: "Conducting mixed-method UX research to evaluate and improve the Toolkit's usability, navigation, and overall user experience for a trusted mental health resource.",
+    client: "Eisenberg Family Depression Center, University of Michigan",
+    duration: "Jan–Apr 2025",
+    role: "UX Researcher",
+    team: "5 UX researchers",
+    tools: "Interviews, survey, comparative analysis, heuristic evaluation, usability testing",
+    tags: ["UX Research", "Interviews", "Usability Testing", "Heuristic Evaluation", "Mental Health"],
+    heroImage: "/placeholder.svg?height=600&width=1200",
+    heroImageBg: "bg-blue-50",
+    heroImageCaption: "Hero image showing the Toolkit website on laptop/mobile screens, with a soft background and a few research artifacts like sticky notes or report pages.",
+    impact: "In April 2026, the client shared that our research had been applied to website updates, and the new version of the Toolkit website had launched.",
+    overview: "The Depression Center Toolkit is an online mental health resource created by the Eisenberg Family Depression Center. It helps users understand symptoms, explore treatment options, use self-assessments, and find supportive resources.\n\nThe Toolkit had valuable, evidence-based content, but the user experience created barriers. Users could not always find what they needed quickly. Some pages felt text-heavy, clinical, and hard to scan. This mattered because people often visit mental health resources when they are already stressed, uncertain, or looking for help in a vulnerable moment.\n\nOur team conducted mixed-method UX research to understand these barriers and provide actionable recommendations for improving the Toolkit's usability, accessibility, personalization, and content flow.",
+    thesis: "We helped a trusted mental health resource move from an information-heavy website toward a clearer, more supportive, and more actionable experience.",
+    challenge: "Mental health resources are only helpful when people can find, understand, and act on them. The Toolkit offered strong content, including self-assessments, educational materials, coping strategies, and treatment guidance. However, our early research showed that users faced information overload, lack of personalization, and difficulty knowing what to do after using an assessment tool.\n\nThe key challenge was not whether the Toolkit had useful information. It did. The challenge was whether users could access that information easily during moments when they might already feel overwhelmed.",
+    challengeImageCaption: "Screenshot of the original Toolkit page, ideally showing the side navigation and dense text layout. Add annotation labels such as \"Deep navigation,\" \"Dense content,\" and \"Unclear next step.\"",
+    researchGoals: [
+      "How do users search for and evaluate mental health information online?",
+      "What makes users trust or distrust an online mental health resource?",
+      "Can users find important Toolkit resources without confusion?",
+      "How can the Toolkit improve usability, accessibility, personalization, and privacy?"
+    ],
+    researchGoalsNote: "These questions helped us look beyond surface-level website problems. We wanted to understand how users think, what they need emotionally, and what kind of guidance would help them take the next step.",
+    researchProcessIntro: "Research timeline from January to April 2025: Interviews → Survey → Comparative Analysis → Heuristic Evaluation → Usability Testing → Recommendations.",
+    researchProcess: [
+      {
+        title: "1. Interviews: Understanding user needs",
+        description: "We conducted 5 interviews to understand how people search for, evaluate, and use online mental health resources. Participants discussed trust, accessibility, content preferences, and barriers such as information overload and conflicting advice. After interviews, our team reviewed responses, coded themes, and created an affinity wall to synthesize patterns.",
+        question: "What we wanted to learn: How do users decide whether a mental health resource feels trustworthy, useful, and easy to act on?",
+        imageCaption: "Affinity wall, interview notes, or a simplified \"themes from interviews\" graphic."
+      },
+      {
+        title: "2. Survey: Validating early patterns",
+        description: "We created a pilot survey to expand on the interview findings. The survey explored how people seek mental health information, what challenges they face with self-assessment tools, and how the Toolkit could improve usability, accessibility, and personalization while maintaining privacy.\n\nBecause mental health is a sensitive topic, we carefully revised the survey language. For example, instead of asking what would make users \"not use\" a website, we reframed the question around what factors are most important when using an online mental health resource. This made the survey feel more constructive and less emotionally triggering.",
+        imageCaption: "Survey question examples or a small card showing \"Before wording\" vs. \"After wording.\""
+      },
+      {
+        title: "3. Comparative Analysis: Learning from other platforms",
+        description: "We compared the Toolkit with other mental health and educational platforms, including Beyond Blue, DBSA, Here to Help, CDC Mental Health Page, and Khan Academy. We evaluated content quality, navigation, accessibility, engagement, and privacy.\n\nThis helped us understand what users might expect from similar platforms. We found that platforms with stronger personalization, clearer navigation, and more interactive tools created a more engaging experience. The Toolkit performed well in content organization, but it had opportunities to improve readability, interactivity, visual hierarchy, and navigation clarity.",
+        imageCaption: "Comparative matrix table. You can simplify the table into 5 columns: Personalization, Interactive Tools, Navigation, Content Organization, Readability."
+      },
+      {
+        title: "4. Heuristic Evaluation: Inspecting usability and accessibility issues",
+        description: "We evaluated the Toolkit using Nielsen's 10 usability heuristics, focusing on navigation, accessibility, consistency, readability, and visual hierarchy. The site supported keyboard navigation, but lacked visual icons, clear call-to-action buttons, visual contrast, and consistent alt text. These issues made it harder for users to scan content and know what action to take next.",
+        imageCaption: "Annotated screenshot showing missing CTA buttons, weak visual hierarchy, or dense text blocks."
+      },
+      {
+        title: "5. Usability Testing: Observing real task behavior",
+        description: "We conducted 5 remote usability tests with participants aged 18–55. Participants completed realistic tasks, such as finding depression symptom information, preparing for a doctor's visit, and completing a self-assessment.\n\nUsers appreciated the depth and seriousness of the content, but they struggled with confusing navigation, unclear content categories, and a formal tone that felt uninviting. These problems caused hesitation, frustration, and sometimes task failure.",
+        imageCaption: "Usability testing setup screenshot, task flow diagram, or a quote card from a participant."
+      }
+    ],
+    keyInsight: "The Toolkit should not only provide information. It should guide users toward the right resource, explain what to do next, and feel supportive during a sensitive moment.",
+    keyInsightDirection: "This became the main direction for our recommendations:\n\nMove from a static resource library to a guided support experience.",
+    keyInsightImageCaption: "Simple before/after concept diagram: \"Resource Library\" → \"Guided Support Experience.\"",
+    findings: [
+      {
+        title: "Finding 1: Users needed to find support quickly, but navigation felt too deep.",
+        problem: "The most noticeable usability issue was the Toolkit's complex navigation and deep hierarchy. During usability testing, users described the site as having too many layers. One participant said it felt like \"a hamburger with 10 layers deep.\" Users often paused, rerouted, or became disoriented when trying to find self-assessment tools or appointment preparation information.",
+        mattered: "For a mental health resource, slow or confusing navigation can prevent users from reaching support when they need it most.",
+        recommendation: "Simplify the information hierarchy, add breadcrumbs, make key resources more visible, and reorganize sections around user intent, such as Learn, Get Help, and Prepare.",
+        imageCaption: "Annotated navigation screenshot + simplified proposed navigation structure."
+      },
+      {
+        title: "Finding 2: Users trusted the content, but the tone and format felt overwhelming.",
+        problem: "Users saw the Toolkit as serious and credible, but the tone often felt too clinical. Dense text blocks and bullet-heavy sections made pages harder to read, especially on emotionally sensitive pages like \"I'm not feeling well.\"",
+        mattered: "A mental health website should not only be accurate. It should also feel approachable, calm, and supportive.",
+        recommendation: "Use warmer language, shorter paragraphs, supportive headings, visual cues, and plain language. Break long content into smaller sections so users can scan the page more easily.",
+        imageCaption: "Before/after content layout. Left: dense text. Right: shorter sections with supportive headers and icons."
+      },
+      {
+        title: "Finding 3: Self-assessments needed clearer next steps.",
+        problem: "Interview participants wanted online assessments to provide more than a score. They wanted clear, personalized guidance, such as self-help exercises, goal-setting tools, recommendations, treatment links, or direct next steps. The current assessment experience was not easy to discover and did not provide enough actionable follow-up.",
+        mattered: "For many users, a self-assessment may be the first step toward seeking help. If the result does not explain what to do next, users may feel stuck.",
+        recommendation: "Make the assessment easier to find and redesign the results page to include tailored next steps, relevant resources, and clear explanations of what the score means.",
+        imageCaption: "Assessment results page concept. Include cards like \"Understand your score,\" \"Try a guided exercise,\" \"Prepare for a provider visit,\" \"Find support.\""
+      },
+      {
+        title: "Finding 4: Accessibility and visual hierarchy affected users' ability to scan and act.",
+        problem: "The heuristic evaluation found that the Toolkit supported keyboard navigation, but it lacked visual icons, clear call-to-action buttons, strong contrast, and meaningful alt text for some images. The mostly uniform visual style made it difficult for users to identify key content quickly.",
+        mattered: "Accessibility is not only about technical compliance. It also affects whether users can understand where they are, what matters, and what they should do next.",
+        recommendation: "Add consistent icons, stronger visual hierarchy, clearer CTA buttons, improved contrast, and meaningful alt text.",
+        imageCaption: "Accessibility improvement checklist or annotated UI showing CTA, icon, heading hierarchy, and contrast."
+      },
+      {
+        title: "Finding 5: Users wanted personalization while maintaining privacy.",
+        problem: "Interview and survey findings showed that users wanted resources that felt relevant to their personal situation. However, because mental health is sensitive, users also cared about privacy and did not want to give unnecessary personal information. Survey responses showed interest in personalized recommendations, interactive tools, and downloadable content.",
+        mattered: "A one-size-fits-all experience can feel generic, but over-personalization may create privacy concerns.",
+        recommendation: "Use privacy-conscious personalization, such as optional filters, saved resources, downloadable tools, and non-login-based pathways.",
+        imageCaption: "Personalization concept showing optional filters like \"I want to learn,\" \"I want support now,\" \"I am preparing for an appointment,\" \"I am supporting someone else.\""
+      }
+    ],
+    finalRecommendations: [
+      {
+        number: "1",
+        title: "Simplify navigation",
+        description: "Reduce the number of layers in the side navigation. Add breadcrumbs and make high-priority resources easier to access."
+      },
+      {
+        number: "2",
+        title: "Use user-centered labels",
+        description: "Rename confusing categories using everyday language. Group content around what users are trying to do, not around internal content categories."
+      },
+      {
+        number: "3",
+        title: "Make content easier to scan",
+        description: "Break long pages into shorter sections. Use supportive headings, plain language, icons, and visual summaries."
+      },
+      {
+        number: "4",
+        title: "Improve assessment follow-up",
+        description: "Make the self-assessment tool easier to find and provide clearer next steps after users receive a result."
+      },
+      {
+        number: "5",
+        title: "Strengthen accessibility",
+        description: "Improve contrast, add alt text, create clearer heading structures, and use stronger CTAs to guide users."
+      },
+      {
+        number: "6",
+        title: "Build trust through transparency",
+        description: "Show authorship, review dates, professional validation, and source information clearly so users can evaluate credibility."
+      }
+    ],
+    outcomeIntro: "In April 2026, the client shared that they had applied our research findings to website changes, and the new version of the Toolkit website had already launched.\n\nThis made the project especially meaningful because our research moved beyond a class deliverable. It contributed to a real website update for a public mental health resource.",
+    outcomeImpact: [
+      {
+        title: "User impact",
+        description: "Our recommendations aimed to help users find mental health support faster, understand information more easily, and feel more comfortable using the Toolkit during vulnerable moments."
+      },
+      {
+        title: "Client impact",
+        description: "The research gave the Eisenberg Family Depression Center a clear, evidence-based direction for improving navigation, readability, accessibility, personalization, and user flow."
+      },
+      {
+        title: "Personal impact",
+        description: "This project helped me learn how to conduct research on a sensitive topic, communicate findings to a real client, and turn mixed-method research into actionable product recommendations."
+      }
+    ],
+    outcomeImageCaption: "\"Research → Website Update\" impact graphic, or screenshot of client email with private information blurred.",
+    reflectionIntro: "This project taught me that good UX research is not only about finding usability problems. It is also about understanding the emotional context behind those problems.\n\nFor a mental health resource, confusing navigation or dense text is not just inconvenient. It can make users feel more overwhelmed at a moment when they need clarity and support. Through this project, I learned how to combine interviews, surveys, competitive research, heuristic evaluation, and usability testing to tell a stronger story about user needs.\n\nI also learned the importance of client communication. Since our recommendations needed to support both user needs and stakeholder goals, we had to make our findings clear, practical, and actionable. Seeing the client later apply our research to the launched website showed me how UX research can create real impact.",
+    reflectionList: [],
+    reflectionConclusion: ""
+  },
+  "education-platform": {
+    title: "Designing with AI: Michigan Football VIP Experience",
+    hook: "What happens when AI helps you design a product—but you can't fully trust it?",
+    subtitle: "Designing a mobile app for Michigan Football VIP season ticket holders while critically evaluating how AI can support—and mislead—UX decision-making.",
+    description: "Product Design + UX Strategy",
+    client: "Designing with AI Course Project",
+    duration: "Jan-Apr 2026",
+    role: "UX Designer",
+    team: "Individual",
+    tools: "Figma, AI Tools, Prototyping",
+    tags: ["Product Design", "UX Strategy", "AI-Assisted Design", "Usability Testing"],
+    heroImage: "/placeholder.svg?height=600&width=1200",
+    heroImageBg: "bg-blue-900",
+    heroImageCaption: "Hero mockup placeholder — final app screens displayed on phone mockups in a clean stadium-inspired background",
+    overview: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
+    definingProblem: "VIP users often interact with the app in high-pressure situations:\n\n• entering crowded stadium gates\n• finding parking quickly\n• accessing VIP areas before time-sensitive events\n\nIn these moments, even small usability problems can create frustration and stress.",
+    definingProblemThemes: [
+      "Users need instant and reliable access to their VIP credentials.",
+      "The app must reduce uncertainty during fast-moving game-day situations.",
+      "VIP benefits need to feel actionable and valuable, not hidden or confusing."
+    ],
+    definingProblemImageCaption: "Placeholder image — \"Defining the Problem\" slide showing design goals, target users, and constraints",
+    researchGoalsIntro: "To better understand the experience, I explored how users currently access tickets and VIP information during game day. I focused on identifying moments where users feel slowed down, confused, or uncertain.",
+    researchQuestions: [
+      "How do users currently access tickets and VIP entry?",
+      "What creates friction during game-day situations?",
+      "What makes a mobile VIP ID feel trustworthy and reliable?",
+      "Which benefits do users actually use, and what prevents usage?"
+    ],
+    researchEmotional: "The project also explored emotional factors behind the experience. For example, users described embarrassment when IDs failed to load while people were waiting behind them in line. Others described frustration when weak signals prevented them from accessing important information quickly.\n\nThese insights helped frame the app not simply as a utility tool, but as a product that must support confidence and reduce stress under pressure.",
+    researchImageCaption: "Placeholder image — persona cards and research questions layout",
+    designingWithAIIntro: "One of the central goals of this project was to explore how AI could assist UX workflows while also understanding its limitations.\n\nRather than treating AI as a replacement for design thinking, I approached it as a collaborator that could accelerate structure, brainstorming, and early synthesis.",
+    designingWithAIUsed: [
+      "generate early PRD drafts",
+      "organize usability observations",
+      "explore prototype directions",
+      "create measurable success metrics",
+      "accelerate brainstorming and iteration"
+    ],
+    designingWithAICritical: "At the same time, I critically evaluated where AI outputs became misleading, shallow, or incomplete.",
+    designingWithAIImageCaption: "Placeholder image — side-by-side comparison of AI outputs and human annotations",
+    usabilityTestingIntro: "To better understand the strengths and weaknesses of AI-generated UX analysis, I compared AI-generated usability insights with my own human-led interpretation of the same usability testing session.\n\nThis became one of the most important parts of the project.",
+    humanAnalysis: [
+      {
+        title: "1. Scroll Expectation Problem",
+        description: "The participant immediately attempted to scroll on the home screen, expecting additional content below. Although the screen technically contained the necessary information, the layout visually suggested that content was incomplete.\n\nThis revealed a mismatch between the interface structure and the user's mental model."
+      },
+      {
+        title: "2. Parking Guidance Copy",
+        description: "The participant reacted negatively to the phrase:\n\n\"We recommend parking closer to the stadium.\"\n\nShe felt the statement was obvious and not genuinely helpful. Instead of offering actionable guidance, the wording repeated information users already knew.\n\nThis suggested that the app needed more meaningful decision support, such as availability, distance, and timing context."
+      },
+      {
+        title: "3. Missing Profile Structure",
+        description: "The participant could see their name within the interface but could not identify where account details or profile management existed.\n\nThis created a feeling that part of the system was missing."
+      }
+    ],
+    aiAnalysisIntro: "The AI-generated analysis correctly identified several surface-level successes:",
+    aiAnalysisSuccesses: [
+      "the VIP ID flow was easy to access",
+      "the brightness feature was appreciated",
+      "parking guidance was discoverable",
+      "benefits with clearer instructions stood out most"
+    ],
+    aiAnalysisWeakness: "However, the AI framed the home screen experience much more positively than my own interpretation.\n\nFor example, the AI concluded that:\n\n\"The home screen helped the participant quickly understand the app's purpose.\"\n\nWhile technically true, this interpretation underweighted the participant's early confusion and failed to recognize the significance of the scrolling behavior.",
+    keyInsightComparison: "The comparison revealed an important distinction:\n\nAI was effective at identifying explicit statements, but weaker at interpreting implicit expectations and deeper UX meaning.\n\nThis became a critical lesson throughout the project.",
+    keyInsightComparisonImageCaption: "Placeholder image — comparison diagram labeled \"AI Analysis vs Human Analysis\"",
+    insightsToDecisionsIntro: "The usability findings directly shaped the evolution of the product.\n\nRather than treating testing as validation, I used it to identify where the product structure failed to match user expectations.",
+    problemDecisions: [
+      {
+        problem: "Users felt the home screen looked incomplete.",
+        decision: "Added a \"Game Day Essentials\" section to create a more complete and scannable structure."
+      },
+      {
+        problem: "Parking guidance felt generic and unhelpful.",
+        decision: "Replaced generic recommendations with arrival-based logic, lot availability, and distance information."
+      },
+      {
+        problem: "Users could not locate profile/account information.",
+        decision: "Added a dedicated profile screen with clear navigation access."
+      },
+      {
+        problem: "Users were unsure how to use certain VIP benefits.",
+        decision: "Added \"where to go,\" \"what to show,\" and \"when to use\" instructions for each benefit."
+      }
+    ],
+    problemDecisionsImageCaption: "Placeholder image — annotated PRD evolution and design decision mapping",
+    prototypingWithAIIntro: "AI was also used to explore multiple prototype directions.\n\nRather than generating a single design immediately, I used AI outputs to compare different assumptions about user behavior and interaction patterns.",
+    prototypeDirections: [
+      {
+        title: "1. Dashboard-Oriented Experience",
+        description: "Focused on freedom and visibility by showing all tools upfront."
+      },
+      {
+        title: "2. Guided Assistant Experience (Selected Direction)",
+        description: "Focused on reducing stress by surfacing the \"next best action.\""
+      },
+      {
+        title: "3. Timeline-Based Journey",
+        description: "Organized the experience chronologically across game-day stages."
+      }
+    ],
+    prototypeSelectionReason: "After evaluation, I selected the guided assistant direction because it best aligned with the product goals:\n\n• reduced cognitive load\n• clearer prioritization\n• stronger support during high-pressure moments",
+    prototypeDirectionsImageCaption: "Placeholder image — three prototype directions shown side-by-side",
+    finalSolutionIntro: "The final product focused on creating a fast, reliable, and confidence-building game-day experience.",
+    coreFeatures: [
+      {
+        title: "Fast VIP ID Access",
+        description: "The VIP ID is accessible within one tap from the home screen and includes automatic brightness support to improve scan reliability at stadium gates."
+      },
+      {
+        title: "Clear VIP Benefit Guidance",
+        description: "Each benefit includes actionable instructions explaining:\n• where to go\n• what to show\n• when to use the benefit"
+      },
+      {
+        title: "Smart Parking Guidance",
+        description: "Parking recommendations include availability, distance, and arrival-time context to support better decisions."
+      },
+      {
+        title: "Game Day Essentials Hub",
+        description: "A centralized section organizes important actions into a single, scannable area."
+      },
+      {
+        title: "Profile & Account Access",
+        description: "A dedicated account section improves clarity and system completeness."
+      }
+    ],
+    finalSolutionImageCaption: "Placeholder image — final high-fidelity app screens displayed on phone mockups",
+    evaluationIntro: "The prototype was evaluated through moderated usability testing using a think-aloud protocol.\n\nParticipants were asked to:\n\n• access their VIP ID\n• locate parking information\n• understand VIP benefits\n• navigate account-related features",
+    evaluationStrengths: [
+      "the VIP ID flow felt fast and intuitive",
+      "visual hierarchy was clear",
+      "users appreciated the brightness feature"
+    ],
+    evaluationIssues: [
+      "expectations around scrolling",
+      "unclear benefit instructions",
+      "missing account navigation"
+    ],
+    evaluationConclusion: "These findings directly informed the next design iteration.",
+    evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
+    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n• understand benefits more clearly\n• navigate the system with greater confidence",
+    impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
+    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.\n\nI learned that AI is extremely effective at:\n\n• accelerating structure\n• summarizing obvious patterns\n• speeding up early ideation\n\nHowever, AI consistently struggled with:\n\n• nuance\n• implicit user behavior\n• prioritization\n• deeper interpretation of UX problems\n\nThe most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
+    reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
+    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most."
+  },
 }
 
 export function generateStaticParams() {
@@ -355,8 +652,9 @@ export function generateStaticParams() {
   }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const projectData = projectsData[params.slug] || projectsData["ra-labs"]
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const projectData = projectsData[slug] || projectsData["ra-labs"]
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -429,23 +727,31 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                 </p>
                 <p className="mt-4 text-muted-foreground">{projectData.subtitle}</p>
 
-                <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm">
-                  <div className="flex gap-2">
-                    <span className="font-medium">Role:</span>
-                    <span className="text-muted-foreground">{projectData.role}</span>
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+                  <div>
+                    <h3 className="font-medium">Timeline</h3>
+                    <p className="text-muted-foreground">{projectData.duration}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Timeline:</span>
-                    <span className="text-muted-foreground">{projectData.duration}</span>
+                  <div>
+                    <h3 className="font-medium">Role</h3>
+                    <p className="text-muted-foreground">{projectData.role}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Team:</span>
-                    <span className="text-muted-foreground">{projectData.team}</span>
+                  <div>
+                    <h3 className="font-medium">Team</h3>
+                    <p className="text-muted-foreground">{projectData.team}</p>
                   </div>
-                  <div className="flex gap-2">
-                    <span className="font-medium">Client:</span>
-                    <span className="text-muted-foreground">{projectData.client}</span>
+                  <div>
+                    <h3 className="font-medium">Tools</h3>
+                    <p className="text-muted-foreground">{projectData.tools}</p>
                   </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {projectData.tags.map((tag: string, index: number) => (
+                    <div key={index} className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">
+                      {tag}
+                    </div>
+                  ))}
                 </div>
 
                 {projectData.hasSystemDiagram && (
@@ -519,6 +825,318 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <p className="mt-4 text-sm text-muted-foreground italic">Context: {projectData.context}</p>
             )}
 
+            {/* Context section for Michigan Football style */}
+            {projectData.context && projectData.hook && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Context</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.context}</p>
+                {projectData.heroImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.heroImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Defining the Problem section */}
+            {projectData.definingProblem && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Defining the Problem</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.definingProblem}</p>
+                {projectData.definingProblemThemes && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">Through early framing and research, I identified three major themes:</p>
+                    <ol className="space-y-3">
+                      {projectData.definingProblemThemes.map((theme: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium mr-3">
+                            {index + 1}
+                          </span>
+                          {theme}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                )}
+                {projectData.definingProblemImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.definingProblemImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Research Goals & User Perspective section */}
+            {projectData.researchGoalsIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Goals & User Perspective</h2>
+                <p className="mt-4 text-muted-foreground">{projectData.researchGoalsIntro}</p>
+                {projectData.researchQuestions && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">The research questions included:</p>
+                    <ul className="space-y-2">
+                      {projectData.researchQuestions.map((question: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                          {question}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.researchEmotional && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.researchEmotional}</p>
+                )}
+                {projectData.researchImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.researchImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Designing with AI section */}
+            {projectData.designingWithAIIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Designing with AI</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.designingWithAIIntro}</p>
+                {projectData.designingWithAIUsed && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">I used AI to:</p>
+                    <ul className="space-y-2">
+                      {projectData.designingWithAIUsed.map((use: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                          {use}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.designingWithAICritical && (
+                  <p className="mt-6 text-muted-foreground">{projectData.designingWithAICritical}</p>
+                )}
+                {projectData.designingWithAIImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.designingWithAIImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Usability Testing: AI vs Human Analysis section */}
+            {projectData.usabilityTestingIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Usability Testing: AI vs Human Analysis</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.usabilityTestingIntro}</p>
+                
+                {projectData.humanAnalysis && (
+                  <div className="mt-8">
+                    <h3 className="text-xl font-bold">Human-Led Analysis</h3>
+                    <p className="mt-4 text-muted-foreground">During the usability test, I identified several issues that reflected deeper usability and expectation problems.</p>
+                    <div className="mt-6 space-y-6">
+                      {projectData.humanAnalysis.map((item: any, index: number) => (
+                        <div key={index} className="p-5 rounded-lg border bg-card">
+                          <h4 className="font-bold">{item.title}</h4>
+                          <p className="mt-2 text-muted-foreground whitespace-pre-line">{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {projectData.aiAnalysisIntro && (
+                  <div className="mt-8">
+                    <h3 className="text-xl font-bold">AI-Generated Analysis</h3>
+                    <p className="mt-4 text-muted-foreground">{projectData.aiAnalysisIntro}</p>
+                    {projectData.aiAnalysisSuccesses && (
+                      <ul className="mt-4 space-y-2">
+                        {projectData.aiAnalysisSuccesses.map((success: string, index: number) => (
+                          <li key={index} className="flex items-start text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 mr-3 flex-shrink-0"></span>
+                            {success}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {projectData.aiAnalysisWeakness && (
+                      <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.aiAnalysisWeakness}</p>
+                    )}
+                  </div>
+                )}
+
+                {projectData.keyInsightComparison && (
+                  <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                    <h3 className="text-lg font-bold mb-3">Key Insight</h3>
+                    <p className="text-foreground whitespace-pre-line">{projectData.keyInsightComparison}</p>
+                  </div>
+                )}
+                {projectData.keyInsightComparisonImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.keyInsightComparisonImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* From Insights to Product Decisions section */}
+            {projectData.insightsToDecisionsIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">From Insights to Product Decisions</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.insightsToDecisionsIntro}</p>
+                {projectData.problemDecisions && (
+                  <div className="mt-6 space-y-4">
+                    <h3 className="text-lg font-bold">Problem → Decision Examples</h3>
+                    {projectData.problemDecisions.map((item: any, index: number) => (
+                      <div key={index} className="p-5 rounded-lg border bg-card">
+                        <p className="text-sm font-medium text-primary">Problem:</p>
+                        <p className="mt-1 text-muted-foreground">{item.problem}</p>
+                        <p className="mt-4 text-sm font-medium text-green-600 dark:text-green-400">Design Decision:</p>
+                        <p className="mt-1 text-muted-foreground">{item.decision}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {projectData.problemDecisionsImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.problemDecisionsImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Prototyping with AI section */}
+            {projectData.prototypingWithAIIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Prototyping with AI</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.prototypingWithAIIntro}</p>
+                {projectData.prototypeDirections && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-4">Three main directions emerged:</p>
+                    <div className="space-y-4">
+                      {projectData.prototypeDirections.map((direction: any, index: number) => (
+                        <div key={index} className={`p-5 rounded-lg border bg-card ${direction.title.includes('Selected') ? 'border-primary border-2' : ''}`}>
+                          <h4 className="font-bold">{direction.title}</h4>
+                          <p className="mt-2 text-muted-foreground">{direction.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {projectData.prototypeSelectionReason && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.prototypeSelectionReason}</p>
+                )}
+                {projectData.prototypeDirectionsImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.prototypeDirectionsImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Final Solution section */}
+            {projectData.finalSolutionIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Final Solution</h2>
+                <p className="mt-4 text-muted-foreground">{projectData.finalSolutionIntro}</p>
+                {projectData.coreFeatures && (
+                  <div className="mt-6">
+                    <h3 className="text-lg font-bold mb-4">Core Features</h3>
+                    <div className="space-y-4">
+                      {projectData.coreFeatures.map((feature: any, index: number) => (
+                        <div key={index} className="p-5 rounded-lg border bg-card">
+                          <h4 className="font-bold">{feature.title}</h4>
+                          <p className="mt-2 text-muted-foreground whitespace-pre-line">{feature.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {projectData.finalSolutionImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.finalSolutionImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Evaluation & Iteration section */}
+            {projectData.evaluationIntro && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Evaluation & Iteration</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.evaluationIntro}</p>
+                {projectData.evaluationStrengths && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">The testing confirmed several strengths:</p>
+                    <ul className="space-y-2">
+                      {projectData.evaluationStrengths.map((strength: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 mr-3 flex-shrink-0"></span>
+                          {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.evaluationIssues && (
+                  <div className="mt-6">
+                    <p className="text-muted-foreground mb-3">However, testing also uncovered important issues:</p>
+                    <ul className="space-y-2">
+                      {projectData.evaluationIssues.map((issue: string, index: number) => (
+                        <li key={index} className="flex items-start text-muted-foreground">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 mr-3 flex-shrink-0"></span>
+                          {issue}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {projectData.evaluationConclusion && (
+                  <p className="mt-6 text-muted-foreground">{projectData.evaluationConclusion}</p>
+                )}
+                {projectData.evaluationImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.evaluationImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Impact section */}
+            {(projectData.impactUX || projectData.impactProduct) && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Impact</h2>
+                {projectData.impactUX && (
+                  <div className="mt-6 p-5 rounded-lg border bg-card">
+                    <h3 className="font-bold text-primary">UX Impact</h3>
+                    <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                  </div>
+                )}
+                {projectData.impactProduct && (
+                  <div className="mt-4 p-5 rounded-lg border bg-card">
+                    <h3 className="font-bold text-primary">Product Impact</h3>
+                    <p className="mt-2 text-muted-foreground">{projectData.impactProduct}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Reflection section for Michigan Football style */}
+            {projectData.reflectionIntro && projectData.hook && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                {projectData.reflectionKeyInsight && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                    <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
+                  </div>
+                )}
+                {projectData.reflectionConclusion && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionConclusion}</p>
+                )}
+              </div>
+            )}
+
             {projectData.contextAndProblemIntro ? (
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Context & Problem</h2>
@@ -531,6 +1149,151 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <div className="mt-12">
                 <h2 className="text-2xl font-bold">Overview</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.overview}</p>
+              </div>
+            )}
+
+            {projectData.thesis && (
+              <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
+                <p className="text-sm font-medium text-primary mb-2">Case study thesis:</p>
+                <p className="text-foreground italic">{projectData.thesis}</p>
+              </div>
+            )}
+
+            {projectData.impact && (
+              <div className="mt-6 p-4 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <p className="text-sm font-medium text-green-700 dark:text-green-400">Impact: {projectData.impact}</p>
+              </div>
+            )}
+
+            {projectData.researchGoals && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Goals</h2>
+                <p className="mt-4 text-muted-foreground">We focused on four main questions:</p>
+                <ol className="mt-4 space-y-3">
+                  {projectData.researchGoals.map((goal: string, index: number) => (
+                    <li key={index} className="flex items-start text-muted-foreground">
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-medium mr-3">
+                        {index + 1}
+                      </span>
+                      {goal}
+                    </li>
+                  ))}
+                </ol>
+                {projectData.researchGoalsNote && (
+                  <p className="mt-4 text-muted-foreground">{projectData.researchGoalsNote}</p>
+                )}
+              </div>
+            )}
+
+            {projectData.researchProcess && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Research Process</h2>
+                {projectData.researchProcessIntro && (
+                  <p className="mt-4 text-muted-foreground italic text-sm">{projectData.researchProcessIntro}</p>
+                )}
+                <div className="mt-6 space-y-8">
+                  {projectData.researchProcess.map((method: any, index: number) => (
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{method.title}</h3>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{method.description}</p>
+                      {method.question && (
+                        <p className="mt-4 text-sm text-primary font-medium">{method.question}</p>
+                      )}
+                      {method.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {method.imageCaption}]</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.keyInsight && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Insight</h2>
+                <div className="mt-4 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <p className="text-foreground whitespace-pre-line">{projectData.keyInsight}</p>
+                  {projectData.keyInsightDirection && (
+                    <p className="mt-4 text-foreground font-semibold whitespace-pre-line">{projectData.keyInsightDirection}</p>
+                  )}
+                </div>
+                {projectData.keyInsightImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.keyInsightImageCaption}]</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {projectData.findings && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Key Findings</h2>
+                <div className="mt-6 space-y-8">
+                  {projectData.findings.map((finding: any, index: number) => (
+                    <div key={index} className="p-6 rounded-lg border bg-card">
+                      <h3 className="text-lg font-bold">{finding.title}</h3>
+                      <p className="mt-3 text-muted-foreground whitespace-pre-line">{finding.problem}</p>
+                      <div className="mt-4 p-4 bg-muted/50 rounded-md">
+                        <p className="text-sm font-medium text-primary">Why it mattered:</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.mattered}</p>
+                      </div>
+                      <div className="mt-4 p-4 bg-primary/5 rounded-md border-l-2 border-primary">
+                        <p className="text-sm font-medium text-primary">Recommendation:</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{finding.recommendation}</p>
+                      </div>
+                      {finding.imageCaption && (
+                        <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                          <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {finding.imageCaption}]</p>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.finalRecommendations && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Recommendations</h2>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  {projectData.finalRecommendations.map((rec: any, index: number) => (
+                    <div key={index} className="p-5 rounded-lg border bg-card">
+                      <div className="flex items-start gap-3 mb-2">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-bold">
+                          {rec.number}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold">{rec.title}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{rec.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {projectData.outcomeImpact && (
+              <div className="mt-12">
+                <h2 className="text-2xl font-bold">Outcome and Impact</h2>
+                {projectData.outcomeIntro && (
+                  <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.outcomeIntro}</p>
+                )}
+                <div className="mt-6 space-y-4">
+                  {projectData.outcomeImpact.map((impact: any, index: number) => (
+                    <div key={index} className="p-5 rounded-lg border bg-card">
+                      <h3 className="font-semibold text-primary">{impact.title}</h3>
+                      <p className="mt-2 text-muted-foreground">{impact.description}</p>
+                    </div>
+                  ))}
+                </div>
+                {projectData.outcomeImageCaption && (
+                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
+                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.outcomeImageCaption}]</p>
+                  </div>
+                )}
               </div>
             )}
 
