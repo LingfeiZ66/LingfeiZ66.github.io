@@ -307,7 +307,7 @@ export default function Home() {
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
-                        src="/placeholder.svg?height=450&width=720"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eisenberg%20Toolkit%20cover-uAksGepkChuLYLXPEJGu368UlDNdKa.png"
                         alt="Eisenberg Family Depression Center Toolkit"
                         width={720}
                         height={450}
@@ -328,7 +328,7 @@ export default function Home() {
                   <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <Image
-                        src="/placeholder.svg?height=450&width=720"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Michigan%20Football%20cover-MYty0hbsZevkL5Vr10j50bRsv4FZ9U.png"
                         alt="Michigan Football VIP Experience"
                         width={720}
                         height={450}
