@@ -648,56 +648,105 @@ const projectsData: Record<string, any> = {
 }
 
 function getNavSections(projectData: Record<string, any>): NavSection[] {
+  // Sections must be in the exact same order they are rendered in the JSX below.
   const sections: NavSection[] = []
 
-  // Michigan Football / Designing with AI style (hook-based)
   if (projectData.hook) {
+    // --- Hook-based layout (Michigan Football, Designing with AI, etc.) ---
+    // 1. hero / hook block (no id — skip)
+    // 2. Defining the Problem
     if (projectData.definingProblem) sections.push({ id: "defining-problem", label: "Defining the Problem" })
+    // 3. Research Goals
     if (projectData.researchGoalsIntro) sections.push({ id: "research-goals", label: "Research Goals" })
+    // 4. Designing with AI
     if (projectData.designingWithAIIntro) sections.push({ id: "designing-with-ai", label: "Designing with AI" })
+    // 5. Usability Testing
     if (projectData.usabilityTestingIntro) sections.push({ id: "usability-testing", label: "Usability Testing" })
+    // 6. Insights to Decisions
     if (projectData.insightsToDecisionsIntro) sections.push({ id: "insights-to-decisions", label: "Insights to Decisions" })
+    // 7. Prototyping with AI
     if (projectData.prototypingWithAIIntro) sections.push({ id: "prototyping-with-ai", label: "Prototyping with AI" })
+    // 8. Final Solution
     if (projectData.finalSolutionIntro) sections.push({ id: "final-solution", label: "Final Solution" })
+    // 9. Evaluation & Iteration (evaluationIntro)
     if (projectData.evaluationIntro) sections.push({ id: "evaluation", label: "Evaluation" })
+    // 10. Impact (impactUX / impactProduct block)
     if (projectData.impactUX || projectData.impactProduct) sections.push({ id: "impact", label: "Impact" })
-    if (projectData.reflectionIntro) sections.push({ id: "reflection", label: "Reflection" })
-    if (projectData.contextAndProblemIntro) sections.push({ id: "context-problem", label: "Context & Problem" })
-    else if (projectData.overview) sections.push({ id: "overview", label: "Overview" })
+    // 12. Context & Problem OR Overview
+    if (projectData.contextAndProblemIntro) {
+      sections.push({ id: "context-problem", label: "Context & Problem" })
+    } else if (projectData.overview) {
+      sections.push({ id: "overview", label: "Overview" })
+    }
+    // 13. Project Scope
     if (projectData.projectScopeIntro) sections.push({ id: "project-scope", label: "Project Scope" })
+    // 14. Why Different
     if (projectData.whyDifferentTitle) sections.push({ id: "why-different", label: projectData.whyDifferentTitle })
+    // 15. My Role (always rendered)
     sections.push({ id: "my-role", label: "My Role" })
+    // 16. The Challenge
     if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
+    // 17. Process Overview
     if (projectData.processOverview) sections.push({ id: "process-overview", label: "Process Overview" })
+    // 18. Key Insights
     if (projectData.keyInsights) sections.push({ id: "key-insights", label: "Key Insights" })
+    // 19. Design Direction
     if (projectData.designDirectionTitle) sections.push({ id: "design-direction", label: "Design Direction" })
+    // 20. Solution Overview
     if (projectData.solutionOverviewTitle) sections.push({ id: "solution-overview", label: "Solution Overview" })
+    // 21. Interaction Decisions
     if (projectData.keyInteractionDecisionsTitle) sections.push({ id: "interaction-decisions", label: "Interaction Decisions" })
+    // 22. Evaluation Title block
     if (projectData.evaluationTitle) sections.push({ id: "evaluation-iteration", label: "Evaluation & Iteration" })
+    // 23. Invisible Problem
     if (projectData.invisibleProblem) sections.push({ id: "invisible-problem", label: "The Invisible Problem" })
+    // 24. Research & Insights
     if (projectData.researchInsights) sections.push({ id: "research-insights", label: "Research & Insights" })
+    // 25. Design Principle
     if (projectData.designPrinciple) sections.push({ id: "design-principle", label: "Design Principle" })
-    if (projectData.systemReframe) sections.push({ id: "system-reframe", label: "From Ecosystem → System" })
+    // 26. System Reframe
+    if (projectData.systemReframe) sections.push({ id: "system-reframe", label: "Ecosystem → System" })
+    // 27. Solution
     if (projectData.solution || projectData.solutionTitle) sections.push({ id: "solution", label: "Solution" })
+    // 28. Approach / Design Process
     if (projectData.process) sections.push({ id: "approach", label: projectData.invisibleProblem ? "Design Process" : "Approach" })
+    // 29. Key Contributions
     if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
+    // 30. Impact (always rendered)
     sections.push({ id: "impact-section", label: "Impact" })
+    // 31. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
+    // 32. Bottom Reflection (always rendered at end)
+    sections.push({ id: "reflection", label: "Reflection" })
   } else {
-    // Standard style
+    // --- Standard layout ---
+    // 1. Overview (always)
     sections.push({ id: "overview", label: "Overview" })
+    // 2. Research Goals
     if (projectData.researchGoals) sections.push({ id: "research-goals", label: "Research Goals" })
+    // 3. Research Process
     if (projectData.researchProcess) sections.push({ id: "research-process", label: "Research Process" })
+    // 4. Key Insight
     if (projectData.keyInsight) sections.push({ id: "key-insight", label: "Key Insight" })
+    // 5. Key Findings
     if (projectData.findings) sections.push({ id: "key-findings", label: "Key Findings" })
+    // 6. Recommendations
     if (projectData.finalRecommendations) sections.push({ id: "recommendations", label: "Recommendations" })
+    // 7. Outcome & Impact
     if (projectData.outcomeImpact) sections.push({ id: "outcome-impact", label: "Outcome & Impact" })
+    // 8. My Role (always)
     sections.push({ id: "my-role", label: "My Role" })
+    // 9. The Challenge
     if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
+    // 10. Approach
     if (projectData.process) sections.push({ id: "approach", label: "Approach" })
+    // 11. Key Contributions
     if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
+    // 12. Impact (always)
     sections.push({ id: "impact-section", label: "Impact" })
+    // 13. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
+    // 14. Reflection (always)
     sections.push({ id: "reflection", label: "Reflection" })
   }
 

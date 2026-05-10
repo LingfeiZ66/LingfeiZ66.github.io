@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 
 export interface NavSection {
@@ -13,80 +13,52 @@ interface CaseStudyNavProps {
 }
 
 export function CaseStudyNav({ sections }: CaseStudyNavProps) {
-  const [activeId, setActiveId] = useState<string>("")
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const [activeId, setActiveId] = useState<string>(sections[0]?.id ?? "")
 
   useEffect(() => {
     if (sections.length === 0) return
 
-    // Track which sections are currently intersecting
-    const intersecting = new Map<string, number>()
+    const OFFSET = 120 // px from top of viewport to consider a section "active"
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            intersecting.set(entry.target.id, entry.intersectionRatio)
-          } else {
-            intersecting.delete(entry.target.id)
-          }
-        })
-
-        if (intersecting.size > 0) {
-          // Pick the section with the top-most position on screen
-          let topMostId = ""
-          let topMostY = Infinity
-          intersecting.forEach((_, id) => {
-            const el = document.getElementById(id)
-            if (el) {
-              const rect = el.getBoundingClientRect()
-              if (rect.top < topMostY) {
-                topMostY = rect.top
-                topMostId = id
-              }
-            }
-          })
-          if (topMostId) setActiveId(topMostId)
+    const handleScroll = () => {
+      // Find the last section whose top edge is above the offset threshold
+      let currentId = sections[0].id
+      for (const { id } of sections) {
+        const el = document.getElementById(id)
+        if (!el) continue
+        const top = el.getBoundingClientRect().top
+        if (top <= OFFSET) {
+          currentId = id
         }
-      },
-      {
-        rootMargin: "-10% 0px -60% 0px",
-        threshold: [0, 0.1, 0.5, 1],
       }
-    )
-
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      if (el) observerRef.current?.observe(el)
-    })
-
-    // Set initial active section
-    if (sections[0]) setActiveId(sections[0].id)
-
-    return () => {
-      observerRef.current?.disconnect()
+      setActiveId(currentId)
     }
+
+    // Set initial state
+    handleScroll()
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [sections])
 
   const handleClick = (id: string) => {
     const el = document.getElementById(id)
-    if (el) {
-      const offset = 80 // account for sticky header
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: "smooth" })
-      setActiveId(id)
-    }
+    if (!el) return
+    const HEADER_HEIGHT = 80
+    const top = el.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT
+    window.scrollTo({ top, behavior: "smooth" })
+    setActiveId(id)
   }
 
   if (sections.length === 0) return null
 
   return (
-    <aside className="hidden lg:block w-48 shrink-0">
-      <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-4">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+    <aside className="hidden lg:block w-52 shrink-0">
+      <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto">
+        <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground/70 px-1">
           On this page
         </p>
-        <ul className="space-y-2">
+        <ul className="flex flex-col">
           {sections.map(({ id, label }) => {
             const isActive = activeId === id
             return (
@@ -94,28 +66,28 @@ export function CaseStudyNav({ sections }: CaseStudyNavProps) {
                 <button
                   onClick={() => handleClick(id)}
                   className={cn(
-                    "group flex w-full items-start gap-2.5 rounded-md px-3 py-2 text-left text-sm transition-colors duration-150",
+                    "group relative flex w-full items-center gap-3 py-1.5 pr-3 text-left text-sm transition-all duration-200",
                     isActive
-                      ? "text-foreground font-medium bg-muted/50"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
+                      ? "text-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground"
                   )}
                 >
-                  {/* Active indicator bar */}
+                  {/* Left indicator line */}
                   <span
                     className={cn(
-                      "mt-1.5 h-3.5 w-0.5 shrink-0 rounded-full transition-all duration-200",
+                      "absolute left-0 top-1/2 -translate-y-1/2 w-[2px] rounded-full transition-all duration-200",
                       isActive
-                        ? "bg-primary"
-                        : "bg-transparent group-hover:bg-muted-foreground/40"
+                        ? "h-5 bg-primary"
+                        : "h-3 bg-transparent group-hover:bg-muted-foreground/30"
                     )}
                   />
-                  <span className="leading-snug">{label}</span>
+                  <span className="pl-4 leading-snug">{label}</span>
                 </button>
               </li>
             )
           })}
         </ul>
-      </nav>
+      </div>
     </aside>
   )
 }
