@@ -776,8 +776,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             </Link>
           </Button>
 
-          <div className="flex gap-12 items-start">
-            {/* Left side nav - only visible on xl+ */}
+          <div className="flex gap-8 items-start">
+            {/* Left side nav - visible on lg and up */}
             <CaseStudyNav sections={navSections} />
 
             {/* Main content */}

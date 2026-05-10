@@ -81,12 +81,12 @@ export function CaseStudyNav({ sections }: CaseStudyNavProps) {
   if (sections.length === 0) return null
 
   return (
-    <aside className="hidden xl:block w-56 shrink-0">
-      <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-2">
+    <aside className="hidden lg:block w-48 shrink-0">
+      <nav className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto pr-4">
         <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           On this page
         </p>
-        <ul className="space-y-1">
+        <ul className="space-y-2">
           {sections.map(({ id, label }) => {
             const isActive = activeId === id
             return (
@@ -94,10 +94,10 @@ export function CaseStudyNav({ sections }: CaseStudyNavProps) {
                 <button
                   onClick={() => handleClick(id)}
                   className={cn(
-                    "group flex w-full items-start gap-2.5 rounded-md px-3 py-1.5 text-left text-sm transition-colors duration-150",
+                    "group flex w-full items-start gap-2.5 rounded-md px-3 py-2 text-left text-sm transition-colors duration-150",
                     isActive
-                      ? "text-foreground font-medium"
-                      : "text-muted-foreground hover:text-foreground"
+                      ? "text-foreground font-medium bg-muted/50"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                   )}
                 >
                   {/* Active indicator bar */}
