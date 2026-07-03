@@ -494,6 +494,7 @@ const projectsData: Record<string, any> = {
     ],
     researchEmotional: "The project also explored emotional factors behind the experience. For example, users described embarrassment when IDs failed to load while people were waiting behind them in line. Others described frustration when weak signals prevented them from accessing important information quickly.\n\nThese insights helped frame the app not simply as a utility tool, but as a product that must support confidence and reduce stress under pressure.",
     researchImageCaption: "Placeholder image — persona cards and research questions layout",
+    researchImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIP-personas-lgg7SWZRkmZ0cXDOvhyUiJHIb196eA.png",
     designingWithAIIntro: "One of the central goals of this project was to explore how AI could assist UX workflows while also understanding its limitations.\n\nRather than treating AI as a replacement for design thinking, I approached it as a collaborator that could accelerate structure, brainstorming, and early synthesis.",
     designingWithAIUsed: [
       "generate early PRD drafts",
@@ -995,7 +996,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.researchEmotional && (
                   <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.researchEmotional}</p>
                 )}
-                {projectData.researchImageCaption && (
+                {projectData.researchImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.researchImage || "/placeholder.svg"}
+                      alt={projectData.researchImageCaption || "Research personas"}
+                      width={1680}
+                      height={945}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.researchImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.researchImageCaption}]</p>
                   </div>
