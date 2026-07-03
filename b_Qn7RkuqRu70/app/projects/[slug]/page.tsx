@@ -478,7 +478,6 @@ const projectsData: Record<string, any> = {
     heroImage: "/placeholder.svg?height=600&width=1200",
     heroImageBg: "bg-blue-900",
     heroImageCaption: "Hero mockup placeholder — final app screens displayed on phone mockups in a clean stadium-inspired background",
-    overview: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
     definingProblem: "VIP users often interact with the app in high-pressure situations:\n\n• entering crowded stadium gates\n• finding parking quickly\n• accessing VIP areas before time-sensitive events\n\nIn these moments, even small usability problems can create frustration and stress.",
     definingProblemThemes: [
       "Users need instant and reliable access to their VIP credentials.",
@@ -604,8 +603,6 @@ const projectsData: Record<string, any> = {
     ],
     evaluationConclusion: "These findings directly informed the next design iteration.",
     evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
-    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n�� understand benefits more clearly\n• navigate the system with greater confidence",
-    impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
   },
 }
 
@@ -644,8 +641,8 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.projectScopeIntro) sections.push({ id: "project-scope", label: "Project Scope" })
     // 14. Why Different
     if (projectData.whyDifferentTitle) sections.push({ id: "why-different", label: projectData.whyDifferentTitle })
-    // 15. My Role (always rendered)
-    sections.push({ id: "my-role", label: "My Role" })
+    // 15. My Role
+    if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
     // 16. The Challenge
     if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
     // 17. Process Overview
@@ -698,8 +695,8 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.finalRecommendations) sections.push({ id: "recommendations", label: "Recommendations" })
     // 7. Outcome & Impact
     if (projectData.outcomeImpact) sections.push({ id: "outcome-impact", label: "Outcome & Impact" })
-    // 8. My Role (always)
-    sections.push({ id: "my-role", label: "My Role" })
+    // 8. My Role
+    if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
     // 9. The Challenge
     if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
     // 10. Approach
@@ -1232,12 +1229,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <p className="mt-4 text-muted-foreground font-medium">{projectData.contextAndProblemGoal}</p>
                 )}
               </div>
-            ) : (
+            ) : projectData.overview ? (
               <div id="overview" className="mt-12">
                 <h2 className="text-2xl font-bold">Overview</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.overview}</p>
               </div>
-            )}
+            ) : null}
 
             {projectData.thesis && (
               <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
@@ -1434,21 +1431,23 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            <div id="my-role" className="mt-12">
-              <h2 className="text-2xl font-bold">My Role</h2>
-              {projectData.myRoleList ? (
-                <ul className="mt-4 space-y-2">
-                  {projectData.myRoleList.map((item: string, index: number) => (
-                    <li key={index} className="flex items-start text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-4 text-muted-foreground">{projectData.myRole}</p>
-              )}
-            </div>
+            {(projectData.myRoleList || projectData.myRole) && (
+              <div id="my-role" className="mt-12">
+                <h2 className="text-2xl font-bold">My Role</h2>
+                {projectData.myRoleList ? (
+                  <ul className="mt-4 space-y-2">
+                    {projectData.myRoleList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-4 text-muted-foreground">{projectData.myRole}</p>
+                )}
+              </div>
+            )}
 
             {projectData.challenge && (
               <div id="challenge" className="mt-12">
