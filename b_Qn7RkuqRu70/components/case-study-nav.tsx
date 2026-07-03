@@ -31,7 +31,7 @@ export function CaseStudyNav({ sections }: CaseStudyNavProps) {
       const header = document.querySelector("header")
       const headerHeight = header ? header.getBoundingClientRect().height : 64
       // Extra room so the nav clears the "Back to Home" button below the header
-      setNavTop(headerHeight + 80)
+      setNavTop(headerHeight + 160)
     }
 
     update()
