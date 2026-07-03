@@ -610,6 +610,23 @@ const projectsData: Record<string, any> = {
       "navigate the system with greater confidence",
     ],
     impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
+    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.",
+    reflectionEffectiveLabel: "I learned that AI is extremely effective at:",
+    reflectionEffectiveList: [
+      "accelerating structure",
+      "summarizing obvious patterns",
+      "speeding up early ideation",
+    ],
+    reflectionStruggledLabel: "However, AI consistently struggled with:",
+    reflectionStruggledList: [
+      "nuance",
+      "implicit user behavior",
+      "prioritization",
+      "deeper interpretation of UX problems",
+    ],
+    reflectionLesson: "The most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
+    reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
+    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most.",
   },
 }
 
@@ -1232,6 +1249,35 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <div id="reflection" className="mt-12">
                 <h2 className="text-2xl font-bold">Reflection</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                {projectData.reflectionEffectiveLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionEffectiveLabel}</p>
+                )}
+                {projectData.reflectionEffectiveList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionEffectiveList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionStruggledLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionStruggledLabel}</p>
+                )}
+                {projectData.reflectionStruggledList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionStruggledList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionLesson && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionLesson}</p>
+                )}
                 {projectData.reflectionKeyInsight && (
                   <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
                     <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
