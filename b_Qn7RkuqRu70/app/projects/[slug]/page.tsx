@@ -606,9 +606,6 @@ const projectsData: Record<string, any> = {
     evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
     impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n�� understand benefits more clearly\n• navigate the system with greater confidence",
     impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
-    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.\n\nI learned that AI is extremely effective at:\n\n• accelerating structure\n• summarizing obvious patterns\n• speeding up early ideation\n\nHowever, AI consistently struggled with:\n\n• nuance\n• implicit user behavior\n• prioritization\n• deeper interpretation of UX problems\n\nThe most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
-    reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
-    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most."
   },
 }
 
