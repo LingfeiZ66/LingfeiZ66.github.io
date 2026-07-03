@@ -603,7 +603,6 @@ const projectsData: Record<string, any> = {
       "missing account navigation"
     ],
     evaluationConclusion: "These findings directly informed the next design iteration.",
-    evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
     impactUXIntro: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:",
     impactUXList: [
       "access VIP IDs faster",
@@ -965,7 +964,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <div className="mt-6 overflow-hidden rounded-lg border">
                     <Image
                       src={projectData.definingProblemImage || "/placeholder.svg"}
-                      alt="Defining the Problem — Michigan Football VIP App"
+                      alt="Defining the Problem ��� Michigan Football VIP App"
                       width={1671}
                       height={940}
                       className="w-full h-auto"
