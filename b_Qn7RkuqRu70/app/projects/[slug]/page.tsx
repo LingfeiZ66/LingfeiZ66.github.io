@@ -505,6 +505,7 @@ const projectsData: Record<string, any> = {
     ],
     designingWithAICritical: "At the same time, I critically evaluated where AI outputs became misleading, shallow, or incomplete.",
     designingWithAIImageCaption: "Placeholder image — side-by-side comparison of AI outputs and human annotations",
+    designingWithAIImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/v-3RsJMM1uo9yrbkN5zrTTD2VIlgBxFQ.png",
     usabilityTestingIntro: "To better understand the strengths and weaknesses of AI-generated UX analysis, I compared AI-generated usability insights with my own human-led interpretation of the same usability testing session.\n\nThis became one of the most important parts of the project.",
     humanAnalysis: [
       {
@@ -1035,7 +1036,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.designingWithAICritical && (
                   <p className="mt-6 text-muted-foreground">{projectData.designingWithAICritical}</p>
                 )}
-                {projectData.designingWithAIImageCaption && (
+                {projectData.designingWithAIImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.designingWithAIImage || "/placeholder.svg"}
+                      alt={projectData.designingWithAIImageCaption || "AI outputs and human annotations"}
+                      width={2560}
+                      height={1180}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.designingWithAIImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.designingWithAIImageCaption}]</p>
                   </div>
