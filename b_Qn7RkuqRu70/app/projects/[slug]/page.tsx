@@ -259,6 +259,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Clear understanding of system structure and responsibilities",
         imageLabel: "Mental Model UI",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/w-77Qsmy9lhPi9tpHaXkFshqwkHnzqtL.png",
       },
       {
         number: "3",
