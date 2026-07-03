@@ -246,6 +246,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Users feel safe and in control",
         imageLabel: "Device Setup Pain Points",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/q-HgyMZ1CMn2GUlMtKs8Khh5oplbcYSB.png",
       },
       {
         number: "2",
@@ -1481,12 +1482,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                           <h3 className="text-xl font-semibold">{insight.number}. {insight.title}</h3>
                           <p className="mt-4 text-muted-foreground">{insight.finding}</p>
                         </div>
-                        {/* Right column - Image placeholder */}
+                        {/* Right column - Image */}
                         <div>
-                          <ImagePlaceholder 
-                            label={insight.imageLabel || `Insight ${insight.number} UI`} 
-                            aspectRatio="4/3"
-                          />
+                          {insight.image ? (
+                            <div className="overflow-hidden rounded-lg border">
+                              <Image
+                                src={insight.image || "/placeholder.svg"}
+                                alt={insight.imageLabel || `Insight ${insight.number} UI`}
+                                width={1900}
+                                height={1075}
+                                className="w-full h-auto"
+                              />
+                            </div>
+                          ) : (
+                            <ImagePlaceholder
+                              label={insight.imageLabel || `Insight ${insight.number} UI`}
+                              aspectRatio="4/3"
+                            />
+                          )}
                         </div>
                       </div>
                       {/* Design Response below */}
