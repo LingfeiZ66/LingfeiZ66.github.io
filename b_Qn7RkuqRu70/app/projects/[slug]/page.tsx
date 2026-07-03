@@ -271,6 +271,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Improved confidence and reduced errors",
         imageLabel: "Feedback UI",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e-xkRhODS3llB9jcYAdn2APBR7pQGiyL.png",
       },
     ],
     designDirectionTitle: "Design Direction",
