@@ -337,13 +337,6 @@ const projectsData: Record<string, any> = {
     ],
     impactFutureTitle: "Future Potential (Health & Assistive Tech)",
     impactFutureDescription: "This work suggests potential for assistive interaction systems, such as supporting mobility-related use cases through safe, coordinated stimulation.",
-    reflectionIntro: "This project taught me that:",
-    reflectionList: [
-      "Designing for safety requires more than usability",
-      "Clear mental models are critical in complex systems",
-      "UX design often involves designing relationships between people",
-    ],
-    reflectionConclusion: "The most important UX problems are not about interfaces — they are about trust between people.",
   },
   "e-commerce": {
     title: "Eisenberg Family Depression Center Toolkit",
