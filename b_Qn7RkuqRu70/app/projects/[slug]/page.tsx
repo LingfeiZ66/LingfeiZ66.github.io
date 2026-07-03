@@ -603,6 +603,13 @@ const projectsData: Record<string, any> = {
     ],
     evaluationConclusion: "These findings directly informed the next design iteration.",
     evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
+    impactUXIntro: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:",
+    impactUXList: [
+      "access VIP IDs faster",
+      "understand benefits more clearly",
+      "navigate the system with greater confidence",
+    ],
+    impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
   },
 }
 
@@ -630,7 +637,7 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     // 9. Evaluation & Iteration (evaluationIntro)
     if (projectData.evaluationIntro) sections.push({ id: "evaluation", label: "Evaluation" })
     // 10. Impact (impactUX / impactProduct block)
-    if (projectData.impactUX || projectData.impactProduct) sections.push({ id: "impact", label: "Impact" })
+    if (projectData.impactUX || projectData.impactUXIntro || projectData.impactProduct) sections.push({ id: "impact", label: "Impact" })
     // 12. Context & Problem OR Overview
     if (projectData.contextAndProblemIntro) {
       sections.push({ id: "context-problem", label: "Context & Problem" })
@@ -1187,13 +1194,28 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {/* Impact section */}
-            {(projectData.impactUX || projectData.impactProduct) && (
+            {(projectData.impactUX || projectData.impactUXIntro || projectData.impactProduct) && (
               <div id="impact" className="mt-12">
                 <h2 className="text-2xl font-bold">Impact</h2>
-                {projectData.impactUX && (
+                {(projectData.impactUX || projectData.impactUXIntro) && (
                   <div className="mt-6 p-5 rounded-lg border bg-card">
                     <h3 className="font-bold text-primary">UX Impact</h3>
-                    <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                    {projectData.impactUXIntro && (
+                      <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUXIntro}</p>
+                    )}
+                    {projectData.impactUXList && (
+                      <ul className="mt-3 space-y-2">
+                        {projectData.impactUXList.map((item: string, index: number) => (
+                          <li key={index} className="flex items-start text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {projectData.impactUX && !projectData.impactUXIntro && (
+                      <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                    )}
                   </div>
                 )}
                 {projectData.impactProduct && (
