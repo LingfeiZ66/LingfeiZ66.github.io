@@ -591,6 +591,7 @@ const projectsData: Record<string, any> = {
       }
     ],
     finalSolutionImageCaption: "Placeholder image — final high-fidelity app screens displayed on phone mockups",
+    finalSolutionImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/n-mxaMgYWiDa5qKVoNZ3jX80TuGQGdQk.png",
     evaluationIntro: "The prototype was evaluated through moderated usability testing using a think-aloud protocol.\n\nParticipants were asked to:\n\n• access their VIP ID\n• locate parking information\n• understand VIP benefits\n• navigate account-related features",
     evaluationStrengths: [
       "the VIP ID flow felt fast and intuitive",
@@ -1190,7 +1191,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </div>
                   </div>
                 )}
-                {projectData.finalSolutionImageCaption && (
+                {projectData.finalSolutionImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.finalSolutionImage || "/placeholder.svg"}
+                      alt={projectData.finalSolutionImageCaption || "Final high-fidelity app screens"}
+                      width={2560}
+                      height={1080}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.finalSolutionImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.finalSolutionImageCaption}]</p>
                   </div>
