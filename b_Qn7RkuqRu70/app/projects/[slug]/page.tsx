@@ -189,6 +189,7 @@ const projectsData: Record<string, any> = {
       userFlow: "User Flow Diagram",
       userFlowImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-kIhhOXtF3JBqUu0UViypZeIDiSTvX0.png",
       keyScreens: ["Key Screen 1", "Key Screen 2", "Key Screen 3"],
+      keyScreensImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/r-nXj9c87XD6xvL1h1yPDygod6nlI88P.png",
     },
     contextAndProblemIntro: "This project was part of a capstone collaboration with Backyard Brains, a company developing the Human–Human Interface (HHI), a neuroscience device that allows one user to stimulate another person's muscles through electrical signals.\n\nAt the start of the project, the client only had a physical device designed for in-person demonstrations.\n\nHowever, their goal was to:",
     contextAndProblemGoal: "Enable two users to connect remotely through a mobile app and complete the experiment together.",
@@ -603,7 +604,7 @@ const projectsData: Record<string, any> = {
     ],
     evaluationConclusion: "These findings directly informed the next design iteration.",
     evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
-    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n• understand benefits more clearly\n• navigate the system with greater confidence",
+    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n�� understand benefits more clearly\n• navigate the system with greater confidence",
     impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
     reflectionIntro: "This project fundamentally changed how I think about AI in UX design.\n\nI learned that AI is extremely effective at:\n\n• accelerating structure\n• summarizing obvious patterns\n• speeding up early ideation\n\nHowever, AI consistently struggled with:\n\n• nuance\n• implicit user behavior\n• prioritization\n• deeper interpretation of UX problems\n\nThe most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
     reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
@@ -1585,8 +1586,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   </div>
                 )}
                 
-                {/* Key Screens placeholders */}
-                {projectData.imagePlaceholders?.keyScreens && (
+                {/* Key Screens */}
+                {projectData.imagePlaceholders?.keyScreensImage ? (
+                  <div className="mt-10">
+                    <h3 className="text-lg font-semibold mb-4">Key Screens</h3>
+                    <div className="overflow-hidden rounded-lg border">
+                      <Image
+                        src={projectData.imagePlaceholders.keyScreensImage || "/placeholder.svg"}
+                        alt="Key Screens"
+                        width={2560}
+                        height={1215}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                ) : projectData.imagePlaceholders?.keyScreens && (
                   <div className="mt-10">
                     <h3 className="text-lg font-semibold mb-4">Key Screens</h3>
                     <div className="grid md:grid-cols-3 gap-6">
