@@ -566,6 +566,7 @@ const projectsData: Record<string, any> = {
     ],
     prototypeSelectionReason: "After evaluation, I selected the guided assistant direction because it best aligned with the product goals:\n\n• reduced cognitive load\n• clearer prioritization\n• stronger support during high-pressure moments",
     prototypeDirectionsImageCaption: "Placeholder image — three prototype directions shown side-by-side",
+    prototypeDirectionsImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b-XdgA6LGiVlQZN294gW3qEK7sDryqHe.png",
     finalSolutionIntro: "The final product focused on creating a fast, reliable, and confidence-building game-day experience.",
     coreFeatures: [
       {
@@ -1154,7 +1155,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.prototypeSelectionReason && (
                   <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.prototypeSelectionReason}</p>
                 )}
-                {projectData.prototypeDirectionsImageCaption && (
+                {projectData.prototypeDirectionsImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.prototypeDirectionsImage || "/placeholder.svg"}
+                      alt={projectData.prototypeDirectionsImageCaption || "Three prototype directions"}
+                      width={2560}
+                      height={1230}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.prototypeDirectionsImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.prototypeDirectionsImageCaption}]</p>
                   </div>
