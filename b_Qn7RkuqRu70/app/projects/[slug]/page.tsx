@@ -566,7 +566,7 @@ const projectsData: Record<string, any> = {
     ],
     prototypeSelectionReason: "After evaluation, I selected the guided assistant direction because it best aligned with the product goals:\n\n• reduced cognitive load\n• clearer prioritization\n• stronger support during high-pressure moments",
     prototypeDirectionsImageCaption: "Placeholder image — three prototype directions shown side-by-side",
-    prototypeDirectionsImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b-XdgA6LGiVlQZN294gW3qEK7sDryqHe.png",
+    prototypeDirectionsImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/m-Ph9J1p6aXrZgpiwdi6yBFTfd1JhKFl.png",
     finalSolutionIntro: "The final product focused on creating a fast, reliable, and confidence-building game-day experience.",
     coreFeatures: [
       {
