@@ -530,7 +530,6 @@ const projectsData: Record<string, any> = {
     ],
     aiAnalysisWeakness: "However, the AI framed the home screen experience much more positively than my own interpretation.\n\nFor example, the AI concluded that:\n\n\"The home screen helped the participant quickly understand the app's purpose.\"\n\nWhile technically true, this interpretation underweighted the participant's early confusion and failed to recognize the significance of the scrolling behavior.",
     keyInsightComparison: "The comparison revealed an important distinction:\n\nAI was effective at identifying explicit statements, but weaker at interpreting implicit expectations and deeper UX meaning.\n\nThis became a critical lesson throughout the project.",
-    keyInsightComparisonImageCaption: "Placeholder image — comparison diagram labeled \"AI Analysis vs Human Analysis\"",
     insightsToDecisionsIntro: "The usability findings directly shaped the evolution of the product.\n\nRather than treating testing as validation, I used it to identify where the product structure failed to match user expectations.",
     problemDecisions: [
       {
