@@ -187,6 +187,7 @@ const projectsData: Record<string, any> = {
       feedback: "Feedback UI",
       coordination: "Coordination UI",
       userFlow: "User Flow Diagram",
+      userFlowImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-kIhhOXtF3JBqUu0UViypZeIDiSTvX0.png",
       keyScreens: ["Key Screen 1", "Key Screen 2", "Key Screen 3"],
     },
     contextAndProblemIntro: "This project was part of a capstone collaboration with Backyard Brains, a company developing the Human–Human Interface (HHI), a neuroscience device that allows one user to stimulate another person's muscles through electrical signals.\n\nAt the start of the project, the client only had a physical device designed for in-person demonstrations.\n\nHowever, their goal was to:",
@@ -1564,8 +1565,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.solutionOverviewFlow}</p>
                 )}
                 
-                {/* User Flow Diagram placeholder */}
-                {projectData.imagePlaceholders?.userFlow && (
+                {/* User Flow Diagram */}
+                {projectData.imagePlaceholders?.userFlowImage ? (
+                  <div className="mt-10 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.imagePlaceholders.userFlowImage || "/placeholder.svg"}
+                      alt={projectData.imagePlaceholders.userFlow || "User Flow Diagram"}
+                      width={2456}
+                      height={1533}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.imagePlaceholders?.userFlow && (
                   <div className="mt-10">
                     <ImagePlaceholder 
                       label={projectData.imagePlaceholders.userFlow} 
