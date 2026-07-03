@@ -165,13 +165,6 @@ const projectsData: Record<string, any> = {
       "Recognized for a feasible, scalable solution to a real-world problem",
       "Demonstrated the value of system-level thinking in product design",
     ],
-    reflectionIntro: "This project changed how I think about design.\n\nI learned that:",
-    reflectionList: [
-      "The most important problems are often invisible at first",
-      "Good design is not just about features — it's about systems and relationships",
-      "Clear structure and alignment are critical when working under ambiguity and time pressure",
-    ],
-    reflectionConclusion: "Most importantly, I learned how to turn complexity into clarity—and that's the kind of problem I want to keep solving.",
   },
   "backyard-brains": {
     hook: "What changes when an interface doesn't just control a device — but another person's body?",
@@ -716,8 +709,10 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     sections.push({ id: "impact-section", label: "Impact" })
     // 31. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
-    // 32. Bottom Reflection (always rendered at end)
-    sections.push({ id: "reflection", label: "Reflection" })
+    // 32. Bottom Reflection
+    if (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) {
+      sections.push({ id: "reflection", label: "Reflection" })
+    }
   } else {
     // --- Standard layout ---
     // 1. Overview (always)
@@ -746,8 +741,10 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     sections.push({ id: "impact-section", label: "Impact" })
     // 13. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
-    // 14. Reflection (always)
-    sections.push({ id: "reflection", label: "Reflection" })
+    // 14. Reflection
+    if (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) {
+      sections.push({ id: "reflection", label: "Reflection" })
+    }
   }
 
   return sections
@@ -1905,28 +1902,30 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            <div id="reflection" className="mt-12">
-              <h2 className="text-2xl font-bold">Reflection</h2>
-              {projectData.reflectionIntro && (
-                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
-              )}
-              {projectData.reflectionList && (
-                <ul className="mt-4 space-y-2">
-                  {projectData.reflectionList.map((item: string, index: number) => (
-                    <li key={index} className="flex items-start text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {projectData.reflectionConclusion && (
-                <p className="mt-4 text-muted-foreground">{projectData.reflectionConclusion}</p>
-              )}
-              {projectData.reflection && !projectData.reflectionIntro && (
-                <p className="mt-4 text-muted-foreground">{projectData.reflection}</p>
-              )}
-            </div>
+            {(projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) && (
+              <div id="reflection" className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                {projectData.reflectionIntro && (
+                  <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                )}
+                {projectData.reflectionList && (
+                  <ul className="mt-4 space-y-2">
+                    {projectData.reflectionList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionConclusion && (
+                  <p className="mt-4 text-muted-foreground">{projectData.reflectionConclusion}</p>
+                )}
+                {projectData.reflection && !projectData.reflectionIntro && (
+                  <p className="mt-4 text-muted-foreground">{projectData.reflection}</p>
+                )}
+              </div>
+            )}
 
             <div className="mt-12 flex justify-center gap-4">
               <Button asChild variant="outline">
