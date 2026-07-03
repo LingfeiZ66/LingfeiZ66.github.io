@@ -678,8 +678,8 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.process) sections.push({ id: "approach", label: projectData.invisibleProblem ? "Design Process" : "Approach" })
     // 29. Key Contributions
     if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
-    // 30. Impact (always rendered)
-    sections.push({ id: "impact-section", label: "Impact" })
+    // 30. Impact
+    if (projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) sections.push({ id: "impact-section", label: "Impact" })
     // 31. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
     // 32. Bottom Reflection
@@ -710,8 +710,8 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.process) sections.push({ id: "approach", label: "Approach" })
     // 11. Key Contributions
     if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
-    // 12. Impact (always)
-    sections.push({ id: "impact-section", label: "Impact" })
+    // 12. Impact
+    if (projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) sections.push({ id: "impact-section", label: "Impact" })
     // 13. What I Learned
     if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
     // 14. Reflection
@@ -1881,6 +1881,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
+            {(projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) && (
             <div id="impact-section" className="mt-12">
               <h2 className="text-2xl font-bold">{projectData.impactTitle || "Impact"}</h2>
               {projectData.impactEducationTitle && (
@@ -1918,6 +1919,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <p className="mt-4 text-muted-foreground">{projectData.impact}</p>
               ) : null}
             </div>
+            )}
 
             {projectData.whatILearned && (
               <div id="what-i-learned" className="mt-12">
