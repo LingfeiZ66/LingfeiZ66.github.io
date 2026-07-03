@@ -270,18 +270,6 @@ const projectsData: Record<string, any> = {
         outcome: "Improved confidence and reduced errors",
         imageLabel: "Feedback UI",
       },
-      {
-        number: "4",
-        title: "Remote Interaction Adds Coordination Complexity",
-        finding: "Users relied heavily on verbal communication to coordinate actions.",
-        designResponse: [
-          "Shared visibility of partner status",
-          "Synchronized readiness checkpoints",
-          "Guided role switching",
-        ],
-        outcome: "Smoother coordination between users",
-        imageLabel: "Coordination UI",
-      },
     ],
     designDirectionTitle: "Design Direction",
     designDirectionIntro: "We reframed the problem from device interaction to a human-to-human coordination system.\n\nDesign principles:",
