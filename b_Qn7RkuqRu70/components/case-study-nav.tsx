@@ -30,7 +30,8 @@ export function CaseStudyNav({ sections }: CaseStudyNavProps) {
       // Measure the actual sticky header height
       const header = document.querySelector("header")
       const headerHeight = header ? header.getBoundingClientRect().height : 64
-      setNavTop(headerHeight + 24) // 24px breathing room below the header
+      // Extra room so the nav clears the "Back to Home" button below the header
+      setNavTop(headerHeight + 80)
     }
 
     update()
