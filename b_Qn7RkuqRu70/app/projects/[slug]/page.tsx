@@ -1476,11 +1476,26 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <div className="mt-8 space-y-12">
                   {projectData.keyInsights.map((insight: any, index: number) => (
                     <div key={index}>
-                      <div className="grid md:grid-cols-[40%_60%] gap-8">
-                        {/* Left column - Insight content */}
+                      <div className="grid md:grid-cols-[40%_60%] gap-8 items-start">
+                        {/* Left column - All insight content */}
                         <div>
                           <h3 className="text-xl font-semibold">{insight.number}. {insight.title}</h3>
                           <p className="mt-4 text-muted-foreground">{insight.finding}</p>
+                          <div className="mt-6">
+                            <p className="font-medium text-primary">Design Response</p>
+                            <ul className="mt-3 space-y-2">
+                              {insight.designResponse.map((item: string, i: number) => (
+                                <li key={i} className="flex items-start text-muted-foreground">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="mt-4">
+                              <span className="font-medium text-primary">Outcome: </span>
+                              <span className="text-muted-foreground">{insight.outcome}</span>
+                            </div>
+                          </div>
                         </div>
                         {/* Right column - Image */}
                         <div>
@@ -1500,22 +1515,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                               aspectRatio="4/3"
                             />
                           )}
-                        </div>
-                      </div>
-                      {/* Design Response below */}
-                      <div className="mt-6 pt-6 border-t border-muted-foreground/10">
-                        <p className="font-medium text-primary">Design Response</p>
-                        <ul className="mt-3 space-y-2">
-                          {insight.designResponse.map((item: string, i: number) => (
-                            <li key={i} className="flex items-start text-muted-foreground">
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="mt-4">
-                          <span className="font-medium text-primary">Outcome: </span>
-                          <span className="text-muted-foreground">{insight.outcome}</span>
                         </div>
                       </div>
                       {/* Subtle divider between insights */}
