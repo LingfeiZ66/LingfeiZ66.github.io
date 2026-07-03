@@ -549,7 +549,6 @@ const projectsData: Record<string, any> = {
         decision: "Added \"where to go,\" \"what to show,\" and \"when to use\" instructions for each benefit."
       }
     ],
-    problemDecisionsImageCaption: "Placeholder image — annotated PRD evolution and design decision mapping",
     prototypingWithAIIntro: "AI was also used to explore multiple prototype directions.\n\nRather than generating a single design immediately, I used AI outputs to compare different assumptions about user behavior and interaction patterns.",
     prototypeDirections: [
       {
