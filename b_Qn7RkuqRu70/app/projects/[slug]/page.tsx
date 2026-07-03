@@ -520,7 +520,7 @@ const projectsData: Record<string, any> = {
       "The app must reduce uncertainty during fast-moving game-day situations.",
       "VIP benefits need to feel actionable and valuable, not hidden or confusing."
     ],
-    definingProblemImageCaption: "Placeholder image — \"Defining the Problem\" slide showing design goals, target users, and constraints",
+    definingProblemImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIP-Defining-9KdASJsokBWNomG1T0534bHcbdEFUH.png",
     researchGoalsIntro: "To better understand the experience, I explored how users currently access tickets and VIP information during game day. I focused on identifying moments where users feel slowed down, confused, or uncertain.",
     researchQuestions: [
       "How do users currently access tickets and VIP entry?",
@@ -973,9 +973,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </ol>
                   </div>
                 )}
-                {projectData.definingProblemImageCaption && (
-                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
-                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.definingProblemImageCaption}]</p>
+                {projectData.definingProblemImage && (
+                  <div className="mt-6 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.definingProblemImage || "/placeholder.svg"}
+                      alt="Defining the Problem — Michigan Football VIP App"
+                      width={1671}
+                      height={940}
+                      className="w-full h-auto"
+                    />
                   </div>
                 )}
               </div>
