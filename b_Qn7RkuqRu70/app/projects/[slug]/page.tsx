@@ -1974,7 +1974,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            {(projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) && (
+            {!projectData.hook && (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) && (
               <div id="reflection" className="mt-12">
                 <h2 className="text-2xl font-bold">Reflection</h2>
                 {projectData.reflectionIntro && (
