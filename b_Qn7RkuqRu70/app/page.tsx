@@ -304,6 +304,9 @@ export default function Home() {
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm">
+                        Recommended
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing for Trust: Human-Human Interface</h3>
@@ -346,6 +349,9 @@ export default function Home() {
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-sm">
+                        Recommended
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing with AI: Michigan Football VIP Experience</h3>
