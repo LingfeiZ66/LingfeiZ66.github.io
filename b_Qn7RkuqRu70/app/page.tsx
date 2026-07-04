@@ -262,6 +262,9 @@ export default function Home() {
                         height={450}
                         className="object-contain bg-white transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-red-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-md ring-1 ring-red-700/60">
+                        Confidential
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">RA Labs AI Platform</h3>
