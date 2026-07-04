@@ -262,7 +262,7 @@ export default function Home() {
                         height={450}
                         className="object-contain bg-white transition-transform duration-300 group-hover:scale-105"
                       />
-                      <span className="absolute top-3 right-3 z-10 rounded-full bg-red-600 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-md ring-1 ring-red-700/60">
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
                         Confidential
                       </span>
                     </div>
