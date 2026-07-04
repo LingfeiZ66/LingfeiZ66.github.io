@@ -387,7 +387,7 @@ export default function Home() {
                       </div>
                       <div className="text-right">
                         <span className="text-sm text-muted-foreground">Ann Arbor, MI</span>
-                        <p className="text-sm text-muted-foreground">Aug 2024 - present</p>
+                        <p className="text-sm text-muted-foreground">Aug 2024 - May 2026</p>
                       </div>
                     </div>
                   </div>
