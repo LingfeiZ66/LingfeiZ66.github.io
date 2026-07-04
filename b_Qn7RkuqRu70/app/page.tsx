@@ -46,9 +46,21 @@ export default function Home() {
     setIsSubmitting(true)
 
     try {
-      // In a real implementation, you would send this data to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000))
+      const response = await fetch("https://formspree.io/f/xvzlwaqy", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error("Failed to send message")
+      }
 
       toast({
         title: "Message sent!",
@@ -114,7 +126,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm">
-              <a href="/resume.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -144,7 +156,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm" className="w-full">
-              <a href="/resume.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -250,6 +262,9 @@ export default function Home() {
                         height={450}
                         className="object-contain bg-white transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
+                        Confidential
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">RA Labs AI Platform</h3>
@@ -292,6 +307,9 @@ export default function Home() {
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
+                        Recommended
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing for Trust: Human-Human Interface</h3>
@@ -334,6 +352,9 @@ export default function Home() {
                         height={450}
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
+                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
+                        Recommended
+                      </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing with AI: Michigan Football VIP Experience</h3>
@@ -366,7 +387,7 @@ export default function Home() {
                       </div>
                       <div className="text-right">
                         <span className="text-sm text-muted-foreground">Ann Arbor, MI</span>
-                        <p className="text-sm text-muted-foreground">Aug 2024 - present</p>
+                        <p className="text-sm text-muted-foreground">Aug 2024 - May 2026</p>
                       </div>
                     </div>
                   </div>
@@ -506,7 +527,7 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button asChild size="lg">
-                  <a href="/resume.pdf" download>
+                  <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                     <Download className="mr-2 h-5 w-5" />
                     Download Full Resume
                   </a>

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, ExternalLink, Download } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { ImagePlaceholder } from "@/components/image-placeholder"
+import { CaseStudyNav, type NavSection } from "@/components/case-study-nav"
 
 const projectsData: Record<string, any> = {
   "ra-labs": {
@@ -164,13 +165,6 @@ const projectsData: Record<string, any> = {
       "Recognized for a feasible, scalable solution to a real-world problem",
       "Demonstrated the value of system-level thinking in product design",
     ],
-    reflectionIntro: "This project changed how I think about design.\n\nI learned that:",
-    reflectionList: [
-      "The most important problems are often invisible at first",
-      "Good design is not just about features — it's about systems and relationships",
-      "Clear structure and alignment are critical when working under ambiguity and time pressure",
-    ],
-    reflectionConclusion: "Most importantly, I learned how to turn complexity into clarity—and that's the kind of problem I want to keep solving.",
   },
   "backyard-brains": {
     hook: "What changes when an interface doesn't just control a device — but another person's body?",
@@ -193,9 +187,10 @@ const projectsData: Record<string, any> = {
       feedback: "Feedback UI",
       coordination: "Coordination UI",
       userFlow: "User Flow Diagram",
+      userFlowImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a-kIhhOXtF3JBqUu0UViypZeIDiSTvX0.png",
       keyScreens: ["Key Screen 1", "Key Screen 2", "Key Screen 3"],
+      keyScreensImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/r-nXj9c87XD6xvL1h1yPDygod6nlI88P.png",
     },
-    context: "Capstone Project at University of Michigan School of Information (UMSI)",
     contextAndProblemIntro: "This project was part of a capstone collaboration with Backyard Brains, a company developing the Human–Human Interface (HHI), a neuroscience device that allows one user to stimulate another person's muscles through electrical signals.\n\nAt the start of the project, the client only had a physical device designed for in-person demonstrations.\n\nHowever, their goal was to:",
     contextAndProblemGoal: "Enable two users to connect remotely through a mobile app and complete the experiment together.",
     projectScopeIntro: "Our team focused on designing the core interaction system that makes this possible:",
@@ -253,6 +248,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Users feel safe and in control",
         imageLabel: "Device Setup Pain Points",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/q-HgyMZ1CMn2GUlMtKs8Khh5oplbcYSB.png",
       },
       {
         number: "2",
@@ -265,6 +261,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Clear understanding of system structure and responsibilities",
         imageLabel: "Mental Model UI",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/w-77Qsmy9lhPi9tpHaXkFshqwkHnzqtL.png",
       },
       {
         number: "3",
@@ -276,18 +273,7 @@ const projectsData: Record<string, any> = {
         ],
         outcome: "Improved confidence and reduced errors",
         imageLabel: "Feedback UI",
-      },
-      {
-        number: "4",
-        title: "Remote Interaction Adds Coordination Complexity",
-        finding: "Users relied heavily on verbal communication to coordinate actions.",
-        designResponse: [
-          "Shared visibility of partner status",
-          "Synchronized readiness checkpoints",
-          "Guided role switching",
-        ],
-        outcome: "Smoother coordination between users",
-        imageLabel: "Coordination UI",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e-xkRhODS3llB9jcYAdn2APBR7pQGiyL.png",
       },
     ],
     designDirectionTitle: "Design Direction",
@@ -320,19 +306,6 @@ const projectsData: Record<string, any> = {
         rationale: "ensures safe and synchronized interaction",
       },
     ],
-    evaluationTitle: "Evaluation & Iteration",
-    evaluationIntro: "Tested with 7 new users\n\nEvaluated:",
-    evaluationCriteria: [
-      "task success",
-      "confusion",
-      "user confidence",
-    ],
-    evaluationResultsTitle: "Results",
-    evaluationResults: [
-      "clearer workflows",
-      "improved coordination",
-      "increased trust",
-    ],
     impactTitle: "Impact & Broader Contribution",
     impactEducationTitle: "Education",
     impactEducationIntro: "Transforms the HHI device into a guided, teachable system:",
@@ -343,13 +316,6 @@ const projectsData: Record<string, any> = {
     ],
     impactFutureTitle: "Future Potential (Health & Assistive Tech)",
     impactFutureDescription: "This work suggests potential for assistive interaction systems, such as supporting mobility-related use cases through safe, coordinated stimulation.",
-    reflectionIntro: "This project taught me that:",
-    reflectionList: [
-      "Designing for safety requires more than usability",
-      "Clear mental models are critical in complex systems",
-      "UX design often involves designing relationships between people",
-    ],
-    reflectionConclusion: "The most important UX problems are not about interfaces — they are about trust between people.",
   },
   "e-commerce": {
     title: "Eisenberg Family Depression Center Toolkit",
@@ -512,14 +478,13 @@ const projectsData: Record<string, any> = {
     heroImage: "/placeholder.svg?height=600&width=1200",
     heroImageBg: "bg-blue-900",
     heroImageCaption: "Hero mockup placeholder — final app screens displayed on phone mockups in a clean stadium-inspired background",
-    overview: "This project was created for a course focused on designing products with AI-assisted workflows. The assignment challenged us to explore how AI could support different stages of UX work, including problem definition, usability analysis, PRD writing, ideation, and prototyping.\n\nThe project centered around designing a mobile app for Michigan Football VIP season ticket holders. The app would function as a digital VIP ID while also helping users navigate game-day experiences such as parking, VIP access, and benefit usage.\n\nThe core business goal was to reduce friction during game day while increasing the perceived value of VIP membership. By making the experience feel smoother and more reliable, the app could help strengthen renewal intent among season ticket holders.",
     definingProblem: "VIP users often interact with the app in high-pressure situations:\n\n• entering crowded stadium gates\n• finding parking quickly\n• accessing VIP areas before time-sensitive events\n\nIn these moments, even small usability problems can create frustration and stress.",
     definingProblemThemes: [
       "Users need instant and reliable access to their VIP credentials.",
       "The app must reduce uncertainty during fast-moving game-day situations.",
       "VIP benefits need to feel actionable and valuable, not hidden or confusing."
     ],
-    definingProblemImageCaption: "Placeholder image — \"Defining the Problem\" slide showing design goals, target users, and constraints",
+    definingProblemImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIP-Defining-9KdASJsokBWNomG1T0534bHcbdEFUH.png",
     researchGoalsIntro: "To better understand the experience, I explored how users currently access tickets and VIP information during game day. I focused on identifying moments where users feel slowed down, confused, or uncertain.",
     researchQuestions: [
       "How do users currently access tickets and VIP entry?",
@@ -529,6 +494,7 @@ const projectsData: Record<string, any> = {
     ],
     researchEmotional: "The project also explored emotional factors behind the experience. For example, users described embarrassment when IDs failed to load while people were waiting behind them in line. Others described frustration when weak signals prevented them from accessing important information quickly.\n\nThese insights helped frame the app not simply as a utility tool, but as a product that must support confidence and reduce stress under pressure.",
     researchImageCaption: "Placeholder image — persona cards and research questions layout",
+    researchImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/VIP-personas-lgg7SWZRkmZ0cXDOvhyUiJHIb196eA.png",
     designingWithAIIntro: "One of the central goals of this project was to explore how AI could assist UX workflows while also understanding its limitations.\n\nRather than treating AI as a replacement for design thinking, I approached it as a collaborator that could accelerate structure, brainstorming, and early synthesis.",
     designingWithAIUsed: [
       "generate early PRD drafts",
@@ -539,6 +505,7 @@ const projectsData: Record<string, any> = {
     ],
     designingWithAICritical: "At the same time, I critically evaluated where AI outputs became misleading, shallow, or incomplete.",
     designingWithAIImageCaption: "Placeholder image — side-by-side comparison of AI outputs and human annotations",
+    designingWithAIImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/v-3RsJMM1uo9yrbkN5zrTTD2VIlgBxFQ.png",
     usabilityTestingIntro: "To better understand the strengths and weaknesses of AI-generated UX analysis, I compared AI-generated usability insights with my own human-led interpretation of the same usability testing session.\n\nThis became one of the most important parts of the project.",
     humanAnalysis: [
       {
@@ -563,7 +530,6 @@ const projectsData: Record<string, any> = {
     ],
     aiAnalysisWeakness: "However, the AI framed the home screen experience much more positively than my own interpretation.\n\nFor example, the AI concluded that:\n\n\"The home screen helped the participant quickly understand the app's purpose.\"\n\nWhile technically true, this interpretation underweighted the participant's early confusion and failed to recognize the significance of the scrolling behavior.",
     keyInsightComparison: "The comparison revealed an important distinction:\n\nAI was effective at identifying explicit statements, but weaker at interpreting implicit expectations and deeper UX meaning.\n\nThis became a critical lesson throughout the project.",
-    keyInsightComparisonImageCaption: "Placeholder image — comparison diagram labeled \"AI Analysis vs Human Analysis\"",
     insightsToDecisionsIntro: "The usability findings directly shaped the evolution of the product.\n\nRather than treating testing as validation, I used it to identify where the product structure failed to match user expectations.",
     problemDecisions: [
       {
@@ -583,7 +549,6 @@ const projectsData: Record<string, any> = {
         decision: "Added \"where to go,\" \"what to show,\" and \"when to use\" instructions for each benefit."
       }
     ],
-    problemDecisionsImageCaption: "Placeholder image — annotated PRD evolution and design decision mapping",
     prototypingWithAIIntro: "AI was also used to explore multiple prototype directions.\n\nRather than generating a single design immediately, I used AI outputs to compare different assumptions about user behavior and interaction patterns.",
     prototypeDirections: [
       {
@@ -601,6 +566,7 @@ const projectsData: Record<string, any> = {
     ],
     prototypeSelectionReason: "After evaluation, I selected the guided assistant direction because it best aligned with the product goals:\n\n• reduced cognitive load\n• clearer prioritization\n• stronger support during high-pressure moments",
     prototypeDirectionsImageCaption: "Placeholder image — three prototype directions shown side-by-side",
+    prototypeDirectionsImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/m-Ph9J1p6aXrZgpiwdi6yBFTfd1JhKFl.png",
     finalSolutionIntro: "The final product focused on creating a fast, reliable, and confidence-building game-day experience.",
     coreFeatures: [
       {
@@ -625,6 +591,7 @@ const projectsData: Record<string, any> = {
       }
     ],
     finalSolutionImageCaption: "Placeholder image — final high-fidelity app screens displayed on phone mockups",
+    finalSolutionImage: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/n-mxaMgYWiDa5qKVoNZ3jX80TuGQGdQk.png",
     evaluationIntro: "The prototype was evaluated through moderated usability testing using a think-aloud protocol.\n\nParticipants were asked to:\n\n• access their VIP ID\n• locate parking information\n• understand VIP benefits\n• navigate account-related features",
     evaluationStrengths: [
       "the VIP ID flow felt fast and intuitive",
@@ -637,13 +604,141 @@ const projectsData: Record<string, any> = {
       "missing account navigation"
     ],
     evaluationConclusion: "These findings directly informed the next design iteration.",
-    evaluationImageCaption: "Placeholder image — usability testing observations and iteration outcomes",
-    impactUX: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:\n\n• access VIP IDs faster\n• understand benefits more clearly\n• navigate the system with greater confidence",
+    impactUXIntro: "The final design reduced friction during high-pressure moments and improved clarity across key tasks.\n\nUsers were able to:",
+    impactUXList: [
+      "access VIP IDs faster",
+      "understand benefits more clearly",
+      "navigate the system with greater confidence",
+    ],
     impactProduct: "By making VIP access feel smoother and more reliable, the design helps reinforce the perceived value of VIP membership and supports long-term renewal intent.",
-    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.\n\nI learned that AI is extremely effective at:\n\n• accelerating structure\n• summarizing obvious patterns\n• speeding up early ideation\n\nHowever, AI consistently struggled with:\n\n• nuance\n• implicit user behavior\n• prioritization\n• deeper interpretation of UX problems\n\nThe most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
+    reflectionIntro: "This project fundamentally changed how I think about AI in UX design.",
+    reflectionEffectiveLabel: "I learned that AI is extremely effective at:",
+    reflectionEffectiveList: [
+      "accelerating structure",
+      "summarizing obvious patterns",
+      "speeding up early ideation",
+    ],
+    reflectionStruggledLabel: "However, AI consistently struggled with:",
+    reflectionStruggledList: [
+      "nuance",
+      "implicit user behavior",
+      "prioritization",
+      "deeper interpretation of UX problems",
+    ],
+    reflectionLesson: "The most important lesson was that AI often sounds convincing even when its understanding is incomplete.",
     reflectionKeyInsight: "The biggest risk isn't that AI is wrong—it's that it sounds right while being incomplete.",
-    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most."
+    reflectionConclusion: "Designing with AI is not about replacing designers.\n\nIt is about knowing when to trust AI, when to challenge it, and when human judgment matters most.",
   },
+}
+
+function getNavSections(projectData: Record<string, any>): NavSection[] {
+  // Sections must be in the exact same order they are rendered in the JSX below.
+  const sections: NavSection[] = []
+
+  if (projectData.hook) {
+    // --- Hook-based layout (Michigan Football, Designing with AI, etc.) ---
+    // 1. hero / hook block (no id — skip)
+    // 2. Defining the Problem
+    if (projectData.definingProblem) sections.push({ id: "defining-problem", label: "Defining the Problem" })
+    // 3. Research Goals
+    if (projectData.researchGoalsIntro) sections.push({ id: "research-goals", label: "Research Goals" })
+    // 4. Designing with AI
+    if (projectData.designingWithAIIntro) sections.push({ id: "designing-with-ai", label: "Designing with AI" })
+    // 5. Usability Testing
+    if (projectData.usabilityTestingIntro) sections.push({ id: "usability-testing", label: "Usability Testing" })
+    // 6. Insights to Decisions
+    if (projectData.insightsToDecisionsIntro) sections.push({ id: "insights-to-decisions", label: "Insights to Decisions" })
+    // 7. Prototyping with AI
+    if (projectData.prototypingWithAIIntro) sections.push({ id: "prototyping-with-ai", label: "Prototyping with AI" })
+    // 8. Final Solution
+    if (projectData.finalSolutionIntro) sections.push({ id: "final-solution", label: "Final Solution" })
+    // 9. Evaluation & Iteration (evaluationIntro)
+    if (projectData.evaluationIntro) sections.push({ id: "evaluation", label: "Evaluation" })
+    // 10. Impact (impactUX / impactProduct block)
+    if (projectData.impactUX || projectData.impactUXIntro || projectData.impactProduct) sections.push({ id: "impact", label: "Impact" })
+    // 12. Context & Problem OR Overview
+    if (projectData.contextAndProblemIntro) {
+      sections.push({ id: "context-problem", label: "Context & Problem" })
+    } else if (projectData.overview) {
+      sections.push({ id: "overview", label: "Overview" })
+    }
+    // 13. Project Scope
+    if (projectData.projectScopeIntro) sections.push({ id: "project-scope", label: "Project Scope" })
+    // 14. Why Different
+    if (projectData.whyDifferentTitle) sections.push({ id: "why-different", label: projectData.whyDifferentTitle })
+    // 15. My Role
+    if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
+    // 16. The Challenge
+    if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
+    // 17. Process Overview
+    if (projectData.processOverview) sections.push({ id: "process-overview", label: "Process Overview" })
+    // 18. Key Insights
+    if (projectData.keyInsights) sections.push({ id: "key-insights", label: "Key Insights" })
+    // 19. Design Direction
+    if (projectData.designDirectionTitle) sections.push({ id: "design-direction", label: "Design Direction" })
+    // 20. Solution Overview
+    if (projectData.solutionOverviewTitle) sections.push({ id: "solution-overview", label: "Solution Overview" })
+    // 21. Interaction Decisions
+    if (projectData.keyInteractionDecisionsTitle) sections.push({ id: "interaction-decisions", label: "Interaction Decisions" })
+    // 22. Evaluation Title block
+    if (projectData.evaluationTitle) sections.push({ id: "evaluation-iteration", label: "Evaluation & Iteration" })
+    // 23. Invisible Problem
+    if (projectData.invisibleProblem) sections.push({ id: "invisible-problem", label: "The Invisible Problem" })
+    // 24. Research & Insights
+    if (projectData.researchInsights) sections.push({ id: "research-insights", label: "Research & Insights" })
+    // 25. Design Principle
+    if (projectData.designPrinciple) sections.push({ id: "design-principle", label: "Design Principle" })
+    // 26. System Reframe
+    if (projectData.systemReframe) sections.push({ id: "system-reframe", label: "Ecosystem → System" })
+    // 27. Solution
+    if (projectData.solution || projectData.solutionTitle) sections.push({ id: "solution", label: "Solution" })
+    // 28. Approach / Design Process
+    if (projectData.process) sections.push({ id: "approach", label: projectData.invisibleProblem ? "Design Process" : "Approach" })
+    // 29. Key Contributions
+    if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
+    // 30. Impact
+    if (projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) sections.push({ id: "impact-section", label: "Impact" })
+    // 31. What I Learned
+    if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
+    // 32. Bottom Reflection
+    if (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) {
+      sections.push({ id: "reflection", label: "Reflection" })
+    }
+  } else {
+    // --- Standard layout ---
+    // 1. Overview (always)
+    sections.push({ id: "overview", label: "Overview" })
+    // 2. Research Goals
+    if (projectData.researchGoals) sections.push({ id: "research-goals", label: "Research Goals" })
+    // 3. Research Process
+    if (projectData.researchProcess) sections.push({ id: "research-process", label: "Research Process" })
+    // 4. Key Insight
+    if (projectData.keyInsight) sections.push({ id: "key-insight", label: "Key Insight" })
+    // 5. Key Findings
+    if (projectData.findings) sections.push({ id: "key-findings", label: "Key Findings" })
+    // 6. Recommendations
+    if (projectData.finalRecommendations) sections.push({ id: "recommendations", label: "Recommendations" })
+    // 7. Outcome & Impact
+    if (projectData.outcomeImpact) sections.push({ id: "outcome-impact", label: "Outcome & Impact" })
+    // 8. My Role
+    if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
+    // 9. The Challenge
+    if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
+    // 10. Approach
+    if (projectData.process) sections.push({ id: "approach", label: "Approach" })
+    // 11. Key Contributions
+    if (projectData.keyContributions) sections.push({ id: "key-contributions", label: "Key Contributions" })
+    // 12. Impact
+    if (projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) sections.push({ id: "impact-section", label: "Impact" })
+    // 13. What I Learned
+    if (projectData.whatILearned) sections.push({ id: "what-i-learned", label: "What I Learned" })
+    // 14. Reflection
+    if (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) {
+      sections.push({ id: "reflection", label: "Reflection" })
+    }
+  }
+
+  return sections
 }
 
 export function generateStaticParams() {
@@ -655,6 +750,7 @@ export function generateStaticParams() {
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const projectData = projectsData[slug] || projectsData["ra-labs"]
+  const navSections = getNavSections(projectData)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -679,7 +775,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               Contact
             </Link>
             <Button asChild size="sm">
-              <a href="/resume.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -716,6 +812,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               Back to Home
             </Link>
           </Button>
+
+          <div className="flex gap-8 items-start">
+            {/* Left side nav - visible on lg and up */}
+            <CaseStudyNav sections={navSections} />
+
+            {/* Main content */}
+            <div className="flex-1 min-w-0">
 
           {projectData.hook ? (
             <>
@@ -840,7 +943,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Defining the Problem section */}
             {projectData.definingProblem && (
-              <div className="mt-12">
+              <div id="defining-problem" className="mt-12">
                 <h2 className="text-2xl font-bold">Defining the Problem</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.definingProblem}</p>
                 {projectData.definingProblemThemes && (
@@ -858,9 +961,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </ol>
                   </div>
                 )}
-                {projectData.definingProblemImageCaption && (
-                  <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
-                    <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.definingProblemImageCaption}]</p>
+                {projectData.definingProblemImage && (
+                  <div className="mt-6 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.definingProblemImage || "/placeholder.svg"}
+                      alt="Defining the Problem ��� Michigan Football VIP App"
+                      width={1671}
+                      height={940}
+                      className="w-full h-auto"
+                    />
                   </div>
                 )}
               </div>
@@ -868,7 +977,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Research Goals & User Perspective section */}
             {projectData.researchGoalsIntro && (
-              <div className="mt-12">
+              <div id="research-goals" className="mt-12">
                 <h2 className="text-2xl font-bold">Research Goals & User Perspective</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.researchGoalsIntro}</p>
                 {projectData.researchQuestions && (
@@ -887,7 +996,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.researchEmotional && (
                   <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.researchEmotional}</p>
                 )}
-                {projectData.researchImageCaption && (
+                {projectData.researchImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.researchImage || "/placeholder.svg"}
+                      alt={projectData.researchImageCaption || "Research personas"}
+                      width={1680}
+                      height={945}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.researchImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.researchImageCaption}]</p>
                   </div>
@@ -897,7 +1016,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Designing with AI section */}
             {projectData.designingWithAIIntro && (
-              <div className="mt-12">
+              <div id="designing-with-ai" className="mt-12">
                 <h2 className="text-2xl font-bold">Designing with AI</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.designingWithAIIntro}</p>
                 {projectData.designingWithAIUsed && (
@@ -916,7 +1035,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.designingWithAICritical && (
                   <p className="mt-6 text-muted-foreground">{projectData.designingWithAICritical}</p>
                 )}
-                {projectData.designingWithAIImageCaption && (
+                {projectData.designingWithAIImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.designingWithAIImage || "/placeholder.svg"}
+                      alt={projectData.designingWithAIImageCaption || "AI outputs and human annotations"}
+                      width={2560}
+                      height={1180}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.designingWithAIImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.designingWithAIImageCaption}]</p>
                   </div>
@@ -926,7 +1055,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Usability Testing: AI vs Human Analysis section */}
             {projectData.usabilityTestingIntro && (
-              <div className="mt-12">
+              <div id="usability-testing" className="mt-12">
                 <h2 className="text-2xl font-bold">Usability Testing: AI vs Human Analysis</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.usabilityTestingIntro}</p>
                 
@@ -981,7 +1110,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* From Insights to Product Decisions section */}
             {projectData.insightsToDecisionsIntro && (
-              <div className="mt-12">
+              <div id="insights-to-decisions" className="mt-12">
                 <h2 className="text-2xl font-bold">From Insights to Product Decisions</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.insightsToDecisionsIntro}</p>
                 {projectData.problemDecisions && (
@@ -1007,7 +1136,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Prototyping with AI section */}
             {projectData.prototypingWithAIIntro && (
-              <div className="mt-12">
+              <div id="prototyping-with-ai" className="mt-12">
                 <h2 className="text-2xl font-bold">Prototyping with AI</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.prototypingWithAIIntro}</p>
                 {projectData.prototypeDirections && (
@@ -1026,7 +1155,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 {projectData.prototypeSelectionReason && (
                   <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.prototypeSelectionReason}</p>
                 )}
-                {projectData.prototypeDirectionsImageCaption && (
+                {projectData.prototypeDirectionsImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.prototypeDirectionsImage || "/placeholder.svg"}
+                      alt={projectData.prototypeDirectionsImageCaption || "Three prototype directions"}
+                      width={2560}
+                      height={1230}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.prototypeDirectionsImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.prototypeDirectionsImageCaption}]</p>
                   </div>
@@ -1036,7 +1175,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Final Solution section */}
             {projectData.finalSolutionIntro && (
-              <div className="mt-12">
+              <div id="final-solution" className="mt-12">
                 <h2 className="text-2xl font-bold">Final Solution</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.finalSolutionIntro}</p>
                 {projectData.coreFeatures && (
@@ -1052,7 +1191,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </div>
                   </div>
                 )}
-                {projectData.finalSolutionImageCaption && (
+                {projectData.finalSolutionImage ? (
+                  <div className="mt-4 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.finalSolutionImage || "/placeholder.svg"}
+                      alt={projectData.finalSolutionImageCaption || "Final high-fidelity app screens"}
+                      width={2560}
+                      height={1080}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.finalSolutionImageCaption && (
                   <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                     <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {projectData.finalSolutionImageCaption}]</p>
                   </div>
@@ -1062,7 +1211,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Evaluation & Iteration section */}
             {projectData.evaluationIntro && (
-              <div className="mt-12">
+              <div id="evaluation" className="mt-12">
                 <h2 className="text-2xl font-bold">Evaluation & Iteration</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.evaluationIntro}</p>
                 {projectData.evaluationStrengths && (
@@ -1103,13 +1252,28 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {/* Impact section */}
-            {(projectData.impactUX || projectData.impactProduct) && (
-              <div className="mt-12">
+            {(projectData.impactUX || projectData.impactUXIntro || projectData.impactProduct) && (
+              <div id="impact" className="mt-12">
                 <h2 className="text-2xl font-bold">Impact</h2>
-                {projectData.impactUX && (
+                {(projectData.impactUX || projectData.impactUXIntro) && (
                   <div className="mt-6 p-5 rounded-lg border bg-card">
                     <h3 className="font-bold text-primary">UX Impact</h3>
-                    <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                    {projectData.impactUXIntro && (
+                      <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUXIntro}</p>
+                    )}
+                    {projectData.impactUXList && (
+                      <ul className="mt-3 space-y-2">
+                        {projectData.impactUXList.map((item: string, index: number) => (
+                          <li key={index} className="flex items-start text-muted-foreground">
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                    {projectData.impactUX && !projectData.impactUXIntro && (
+                      <p className="mt-2 text-muted-foreground whitespace-pre-line">{projectData.impactUX}</p>
+                    )}
                   </div>
                 )}
                 {projectData.impactProduct && (
@@ -1123,9 +1287,38 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
             {/* Reflection section for Michigan Football style */}
             {projectData.reflectionIntro && projectData.hook && (
-              <div className="mt-12">
+              <div id="reflection" className="mt-12">
                 <h2 className="text-2xl font-bold">Reflection</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                {projectData.reflectionEffectiveLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionEffectiveLabel}</p>
+                )}
+                {projectData.reflectionEffectiveList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionEffectiveList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionStruggledLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionStruggledLabel}</p>
+                )}
+                {projectData.reflectionStruggledList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionStruggledList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionLesson && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionLesson}</p>
+                )}
                 {projectData.reflectionKeyInsight && (
                   <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
                     <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
@@ -1138,19 +1331,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.contextAndProblemIntro ? (
-              <div className="mt-12">
+              <div id="context-problem" className="mt-12">
                 <h2 className="text-2xl font-bold">Context & Problem</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.contextAndProblemIntro}</p>
                 {projectData.contextAndProblemGoal && (
                   <p className="mt-4 text-muted-foreground font-medium">{projectData.contextAndProblemGoal}</p>
                 )}
               </div>
-            ) : (
-              <div className="mt-12">
+            ) : projectData.overview ? (
+              <div id="overview" className="mt-12">
                 <h2 className="text-2xl font-bold">Overview</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.overview}</p>
               </div>
-            )}
+            ) : null}
 
             {projectData.thesis && (
               <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
@@ -1166,7 +1359,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.researchGoals && (
-              <div className="mt-12">
+              <div id="research-goals" className="mt-12">
                 <h2 className="text-2xl font-bold">Research Goals</h2>
                 <p className="mt-4 text-muted-foreground">We focused on four main questions:</p>
                 <ol className="mt-4 space-y-3">
@@ -1186,7 +1379,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.researchProcess && (
-              <div className="mt-12">
+              <div id="research-process" className="mt-12">
                 <h2 className="text-2xl font-bold">Research Process</h2>
                 {projectData.researchProcessIntro && (
                   <p className="mt-4 text-muted-foreground italic text-sm">{projectData.researchProcessIntro}</p>
@@ -1211,7 +1404,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.keyInsight && (
-              <div className="mt-12">
+              <div id="key-insight" className="mt-12">
                 <h2 className="text-2xl font-bold">Key Insight</h2>
                 <div className="mt-4 p-6 bg-primary/5 rounded-lg border border-primary/20">
                   <p className="text-foreground whitespace-pre-line">{projectData.keyInsight}</p>
@@ -1228,7 +1421,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.findings && (
-              <div className="mt-12">
+              <div id="key-findings" className="mt-12">
                 <h2 className="text-2xl font-bold">Key Findings</h2>
                 <div className="mt-6 space-y-8">
                   {projectData.findings.map((finding: any, index: number) => (
@@ -1255,7 +1448,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.finalRecommendations && (
-              <div className="mt-12">
+              <div id="recommendations" className="mt-12">
                 <h2 className="text-2xl font-bold">Recommendations</h2>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   {projectData.finalRecommendations.map((rec: any, index: number) => (
@@ -1276,7 +1469,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.outcomeImpact && (
-              <div className="mt-12">
+              <div id="outcome-impact" className="mt-12">
                 <h2 className="text-2xl font-bold">Outcome and Impact</h2>
                 {projectData.outcomeIntro && (
                   <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.outcomeIntro}</p>
@@ -1298,7 +1491,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.projectScopeIntro && (
-              <div className="mt-12">
+              <div id="project-scope" className="mt-12">
                 <h2 className="text-2xl font-bold">Project Scope</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.projectScopeIntro}</p>
                 {projectData.projectScopeList && (
@@ -1328,7 +1521,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.whyDifferentTitle && (
-              <div className="mt-12">
+              <div id="why-different" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.whyDifferentTitle}</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.whyDifferentIntro}</p>
                 {projectData.whyDifferentList && (
@@ -1347,31 +1540,33 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            <div className="mt-12">
-              <h2 className="text-2xl font-bold">My Role</h2>
-              {projectData.myRoleList ? (
-                <ul className="mt-4 space-y-2">
-                  {projectData.myRoleList.map((item: string, index: number) => (
-                    <li key={index} className="flex items-start text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="mt-4 text-muted-foreground">{projectData.myRole}</p>
-              )}
-            </div>
+            {(projectData.myRoleList || projectData.myRole) && (
+              <div id="my-role" className="mt-12">
+                <h2 className="text-2xl font-bold">My Role</h2>
+                {projectData.myRoleList ? (
+                  <ul className="mt-4 space-y-2">
+                    {projectData.myRoleList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="mt-4 text-muted-foreground">{projectData.myRole}</p>
+                )}
+              </div>
+            )}
 
             {projectData.challenge && (
-              <div className="mt-12">
+              <div id="challenge" className="mt-12">
                 <h2 className="text-2xl font-bold">The Challenge</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.challenge}</p>
               </div>
             )}
 
             {projectData.processOverview && (
-              <div className="mt-12">
+              <div id="process-overview" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.processOverviewTitle || "Process Overview"}</h2>
                 <div className="mt-6 space-y-4">
                   {projectData.processOverview.map((item: any, index: number) => (
@@ -1385,39 +1580,50 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.keyInsights && (
-              <div className="mt-12">
+              <div id="key-insights" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.keyInsightsTitle || "Key Insights"}</h2>
                 <div className="mt-8 space-y-12">
                   {projectData.keyInsights.map((insight: any, index: number) => (
                     <div key={index}>
-                      <div className="grid md:grid-cols-[40%_60%] gap-8">
-                        {/* Left column - Insight content */}
+                      <div className="grid md:grid-cols-[40%_60%] gap-8 items-start">
+                        {/* Left column - All insight content */}
                         <div>
                           <h3 className="text-xl font-semibold">{insight.number}. {insight.title}</h3>
                           <p className="mt-4 text-muted-foreground">{insight.finding}</p>
+                          <div className="mt-6">
+                            <p className="font-medium text-primary">Design Response</p>
+                            <ul className="mt-3 space-y-2">
+                              {insight.designResponse.map((item: string, i: number) => (
+                                <li key={i} className="flex items-start text-muted-foreground">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                                  {item}
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="mt-4">
+                              <span className="font-medium text-primary">Outcome: </span>
+                              <span className="text-muted-foreground">{insight.outcome}</span>
+                            </div>
+                          </div>
                         </div>
-                        {/* Right column - Image placeholder */}
+                        {/* Right column - Image */}
                         <div>
-                          <ImagePlaceholder 
-                            label={insight.imageLabel || `Insight ${insight.number} UI`} 
-                            aspectRatio="4/3"
-                          />
-                        </div>
-                      </div>
-                      {/* Design Response below */}
-                      <div className="mt-6 pt-6 border-t border-muted-foreground/10">
-                        <p className="font-medium text-primary">Design Response</p>
-                        <ul className="mt-3 space-y-2">
-                          {insight.designResponse.map((item: string, i: number) => (
-                            <li key={i} className="flex items-start text-muted-foreground">
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                        <div className="mt-4">
-                          <span className="font-medium text-primary">Outcome: </span>
-                          <span className="text-muted-foreground">{insight.outcome}</span>
+                          {insight.image ? (
+                            <div className="overflow-hidden rounded-lg border">
+                              <Image
+                                src={insight.image || "/placeholder.svg"}
+                                alt={insight.imageLabel || `Insight ${insight.number} UI`}
+                                width={1900}
+                                height={1075}
+                                className="w-full h-auto"
+                              />
+                            </div>
+                          ) : (
+                            <ImagePlaceholder
+                              label={insight.imageLabel || `Insight ${insight.number} UI`}
+                              aspectRatio="4/3"
+                            />
+                          )}
                         </div>
                       </div>
                       {/* Subtle divider between insights */}
@@ -1431,7 +1637,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.designDirectionTitle && (
-              <div className="mt-12">
+              <div id="design-direction" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.designDirectionTitle}</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.designDirectionIntro}</p>
                 {projectData.designDirectionPrinciples && (
@@ -1448,7 +1654,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.solutionOverviewTitle && (
-              <div className="mt-12">
+              <div id="solution-overview" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.solutionOverviewTitle}</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.solutionOverviewIntro}</p>
                 {projectData.solutionOverviewFeatures && (
@@ -1465,8 +1671,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.solutionOverviewFlow}</p>
                 )}
                 
-                {/* User Flow Diagram placeholder */}
-                {projectData.imagePlaceholders?.userFlow && (
+                {/* User Flow Diagram */}
+                {projectData.imagePlaceholders?.userFlowImage ? (
+                  <div className="mt-10 overflow-hidden rounded-lg border">
+                    <Image
+                      src={projectData.imagePlaceholders.userFlowImage || "/placeholder.svg"}
+                      alt={projectData.imagePlaceholders.userFlow || "User Flow Diagram"}
+                      width={2456}
+                      height={1533}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                ) : projectData.imagePlaceholders?.userFlow && (
                   <div className="mt-10">
                     <ImagePlaceholder 
                       label={projectData.imagePlaceholders.userFlow} 
@@ -1475,8 +1691,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   </div>
                 )}
                 
-                {/* Key Screens placeholders */}
-                {projectData.imagePlaceholders?.keyScreens && (
+                {/* Key Screens */}
+                {projectData.imagePlaceholders?.keyScreensImage ? (
+                  <div className="mt-10">
+                    <h3 className="text-lg font-semibold mb-4">Key Screens</h3>
+                    <div className="overflow-hidden rounded-lg border">
+                      <Image
+                        src={projectData.imagePlaceholders.keyScreensImage || "/placeholder.svg"}
+                        alt="Key Screens"
+                        width={2560}
+                        height={1215}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </div>
+                ) : projectData.imagePlaceholders?.keyScreens && (
                   <div className="mt-10">
                     <h3 className="text-lg font-semibold mb-4">Key Screens</h3>
                     <div className="grid md:grid-cols-3 gap-6">
@@ -1494,7 +1723,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.keyInteractionDecisionsTitle && (
-              <div className="mt-12">
+              <div id="interaction-decisions" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.keyInteractionDecisionsTitle}</h2>
                 <div className="mt-6 space-y-4">
                   {projectData.keyInteractionDecisions.map((item: any, index: number) => (
@@ -1508,7 +1737,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.evaluationTitle && (
-              <div className="mt-12">
+              <div id="evaluation-iteration" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.evaluationTitle}</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.evaluationIntro}</p>
                 {projectData.evaluationCriteria && (
@@ -1538,7 +1767,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.invisibleProblem && (
-              <div className="mt-12">
+              <div id="invisible-problem" className="mt-12">
                 <h2 className="text-2xl font-bold">The Invisible Problem</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.invisibleProblem}</p>
                 {projectData.invisibleProblemList && (
@@ -1558,7 +1787,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.researchInsights && (
-              <div className="mt-12">
+              <div id="research-insights" className="mt-12">
                 <h2 className="text-2xl font-bold">Research & Insights</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.researchInsights}</p>
                 {projectData.researchInsightsList && (
@@ -1578,7 +1807,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.designPrinciple && (
-              <div className="mt-12">
+              <div id="design-principle" className="mt-12">
                 <h2 className="text-2xl font-bold">Design Principle</h2>
                 <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.designPrinciple}</p>
                 {projectData.designPrincipleList && (
@@ -1595,7 +1824,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.systemReframe && (
-              <div className="mt-12">
+              <div id="system-reframe" className="mt-12">
                 <h2 className="text-2xl font-bold">From Ecosystem → System</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.systemReframe}</p>
                 {projectData.systemReframeActors && (
@@ -1621,7 +1850,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {(projectData.solution || projectData.solutionTitle) && (
-              <div className="mt-12">
+              <div id="solution" className="mt-12">
                 <h2 className="text-2xl font-bold">Solution</h2>
                 {projectData.solutionTitle && (
                   <h3 className="mt-4 text-xl font-semibold">{projectData.solutionTitle}</h3>
@@ -1663,7 +1892,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.process && (
-              <div className="mt-12">
+              <div id="approach" className="mt-12">
                 <h2 className="text-2xl font-bold">{projectData.invisibleProblem ? "Design Process" : "Approach"}</h2>
                 <div className="mt-6 grid gap-8">
                   {projectData.process.map((step: any, index: number) => (
@@ -1726,7 +1955,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
 
             {projectData.keyContributions && (
-              <div className="mt-12">
+              <div id="key-contributions" className="mt-12">
                 <h2 className="text-2xl font-bold">Key Contributions</h2>
                 <ul className="mt-4 space-y-2">
                   {projectData.keyContributions.map((item: string, index: number) => (
@@ -1739,7 +1968,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            <div className="mt-12">
+            {(projectData.impactEducationTitle || projectData.impactFutureTitle || projectData.impactList || projectData.impact) && (
+            <div id="impact-section" className="mt-12">
               <h2 className="text-2xl font-bold">{projectData.impactTitle || "Impact"}</h2>
               {projectData.impactEducationTitle && (
                 <>
@@ -1776,36 +2006,39 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <p className="mt-4 text-muted-foreground">{projectData.impact}</p>
               ) : null}
             </div>
+            )}
 
             {projectData.whatILearned && (
-              <div className="mt-12">
+              <div id="what-i-learned" className="mt-12">
                 <h2 className="text-2xl font-bold">What I Learned</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.whatILearned}</p>
               </div>
             )}
 
-            <div className="mt-12">
-              <h2 className="text-2xl font-bold">Reflection</h2>
-              {projectData.reflectionIntro && (
-                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
-              )}
-              {projectData.reflectionList && (
-                <ul className="mt-4 space-y-2">
-                  {projectData.reflectionList.map((item: string, index: number) => (
-                    <li key={index} className="flex items-start text-muted-foreground">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {projectData.reflectionConclusion && (
-                <p className="mt-4 text-muted-foreground">{projectData.reflectionConclusion}</p>
-              )}
-              {projectData.reflection && !projectData.reflectionIntro && (
-                <p className="mt-4 text-muted-foreground">{projectData.reflection}</p>
-              )}
-            </div>
+            {!projectData.hook && (projectData.reflectionIntro || projectData.reflectionList || projectData.reflectionConclusion || projectData.reflection) && (
+              <div id="reflection" className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                {projectData.reflectionIntro && (
+                  <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                )}
+                {projectData.reflectionList && (
+                  <ul className="mt-4 space-y-2">
+                    {projectData.reflectionList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionConclusion && (
+                  <p className="mt-4 text-muted-foreground">{projectData.reflectionConclusion}</p>
+                )}
+                {projectData.reflection && !projectData.reflectionIntro && (
+                  <p className="mt-4 text-muted-foreground">{projectData.reflection}</p>
+                )}
+              </div>
+            )}
 
             <div className="mt-12 flex justify-center gap-4">
               <Button asChild variant="outline">
@@ -1815,7 +2048,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </Link>
               </Button>
             </div>
-          </div>
+          </div>{/* end max-w-3xl */}
+          </div>{/* end flex-1 main content */}
+          </div>{/* end flex gap-12 */}
         </div>
       </main>
       <footer className="border-t py-6 md:py-0">
