@@ -669,6 +669,13 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
     // 16. The Challenge
     if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
+    // 16b. Standard research sections (hook projects that also use the standard content fields)
+    if (projectData.researchGoals) sections.push({ id: "research-goals", label: "Research Goals" })
+    if (projectData.researchProcess) sections.push({ id: "research-process", label: "Research Process" })
+    if (projectData.keyInsight) sections.push({ id: "key-insight", label: "Key Insight" })
+    if (projectData.findings) sections.push({ id: "key-findings", label: "Key Findings" })
+    if (projectData.finalRecommendations) sections.push({ id: "recommendations", label: "Recommendations" })
+    if (projectData.outcomeImpact) sections.push({ id: "outcome-impact", label: "Outcome & Impact" })
     // 17. Process Overview
     if (projectData.processOverview) sections.push({ id: "process-overview", label: "Process Overview" })
     // 18. Key Insights
