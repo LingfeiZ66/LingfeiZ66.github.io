@@ -413,7 +413,8 @@ const projectsData: Record<string, any> = {
         problem: "Interview and survey findings showed that users wanted resources that felt relevant to their personal situation. However, because mental health is sensitive, users also cared about privacy and did not want to give unnecessary personal information. Survey responses showed interest in personalized recommendations, interactive tools, and downloadable content.",
         mattered: "A one-size-fits-all experience can feel generic, but over-personalization may create privacy concerns.",
         recommendation: "Use privacy-conscious personalization, such as optional filters, saved resources, downloadable tools, and non-login-based pathways.",
-        imageCaption: "Personalization concept showing optional filters like \"I want to learn,\" \"I want support now,\" \"I am preparing for an appointment,\" \"I am supporting someone else.\""
+        imageCaption: "Personalization concept showing optional filters like \"I want to learn,\" \"I want support now,\" \"I am preparing for an appointment,\" \"I am supporting someone else.\"",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Personalization-y0b2FAyqX6PaNTLlZnYbWZfsprbYRW.png"
       }
     ],
     finalRecommendations: [
