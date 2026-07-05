@@ -269,7 +269,7 @@ export default function Home() {
                     <div className="p-5 flex-1 flex flex-col">
                       <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">RA Labs AI Platform</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed an AI data-cleaning platform prototype from scratch to high fidelity for a startup.
+                        Designed an AI data-cleaning platform from scratch to high fidelity.
                       </p>
                     </div>
                   </div>
@@ -288,9 +288,9 @@ export default function Home() {
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">UMSI Case Study Competition</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Michigan Entrepreneurship Resource App</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed a centralized mobile app to support entrepreneurship in Michigan, earning 3rd place.
+                        Designed a centralized app to support entrepreneurship in Michigan.
                       </p>
                     </div>
                   </div>
@@ -312,9 +312,9 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing for Trust: Human-Human Interface</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Human-Human Interface Mobile App</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designing a multi-user mobile experience that connects two users to a neuroscience device for safe, remote interaction.
+                        Designed a safer multi-user experience for remote neuroscience interaction.
                       </p>
                     </div>
                   </div>
@@ -333,9 +333,9 @@ export default function Home() {
                       />
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Eisenberg Family Depression Center Toolkit</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Depression Center Toolkit</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Improving Access to Mental Health Resources Through UX Research
+                        Improved mental health resource access through UX research.
                       </p>
                     </div>
                   </div>
@@ -357,9 +357,9 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing with AI: Michigan Football VIP Experience</h3>
+                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Michigan Football VIP App</h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        What happens when AI helps you design a product—but you can&apos;t fully trust it?
+                        Designed a faster and clearer game-day VIP experience.
                       </p>
                     </div>
                   </div>
