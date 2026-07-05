@@ -780,7 +780,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               Contact
             </Link>
             <Button asChild size="sm">
-              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>

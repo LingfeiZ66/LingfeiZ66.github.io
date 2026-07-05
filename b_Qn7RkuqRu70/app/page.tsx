@@ -126,7 +126,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm">
-              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -156,7 +156,7 @@ export default function Home() {
               Contact
             </button>
             <Button asChild size="sm" className="w-full">
-              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </a>
@@ -527,7 +527,7 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button asChild size="lg">
-                  <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
+                  <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
                     <Download className="mr-2 h-5 w-5" />
                     Download Full Resume
                   </a>
@@ -549,8 +549,8 @@ export default function Home() {
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 mr-3 text-primary" />
-                      <a href="mailto:lingfeiz@umich.edu" className="text-muted-foreground hover:text-primary">
-                        lingfeiz@umich.edu
+                    <a href="mailto:lingfeiz66@gmail.com" className="text-muted-foreground hover:text-primary">
+                      lingfeiz66@gmail.com
                       </a>
                     </div>
                     <div className="flex items-center">
@@ -561,7 +561,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center">
                       <MapPin className="h-5 w-5 mr-3 text-primary" />
-                      <span className="text-muted-foreground">Ann Arbor, MI</span>
+                      <span className="text-muted-foreground">San Diego, CA</span>
                     </div>
                   </div>
                 </div>
