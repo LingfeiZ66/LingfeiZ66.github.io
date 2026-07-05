@@ -333,6 +333,7 @@ const projectsData: Record<string, any> = {
     heroImageCaption: "Hero image showing the Toolkit website on laptop/mobile screens, with a soft background and a few research artifacts like sticky notes or report pages.",
     overview: "The Depression Center Toolkit is an online mental health resource created by the Eisenberg Family Depression Center. It helps users understand symptoms, explore treatment options, use self-assessments, and find supportive resources.\n\nThe Toolkit had valuable, evidence-based content, but the user experience created barriers. Users could not always find what they needed quickly. Some pages felt text-heavy, clinical, and hard to scan. This mattered because people often visit mental health resources when they are already stressed, uncertain, or looking for help in a vulnerable moment.\n\nOur team conducted mixed-method UX research to understand these barriers and provide actionable recommendations for improving the Toolkit's usability, accessibility, personalization, and content flow.",
     thesis: "We helped a trusted mental health resource move from an information-heavy website toward a clearer, more supportive, and more actionable experience.",
+    overviewImpactNote: "In April 2026, the client shared that they had applied our research findings to website changes, and the new version of the Toolkit website had already launched.",
     challenge: "Mental health resources are only helpful when people can find, understand, and act on them. The Toolkit offered strong content, including self-assessments, educational materials, coping strategies, and treatment guidance. However, our early research showed that users faced information overload, lack of personalization, and difficulty knowing what to do after using an assessment tool.\n\nThe key challenge was not whether the Toolkit had useful information. It did. The challenge was whether users could access that information easily during moments when they might already feel overwhelmed.",
     challengeImageCaption: "Screenshot of the original Toolkit page, ideally showing the side navigation and dense text layout. Add annotation labels such as \"Deep navigation,\" \"Dense content,\" and \"Unclear next step.\"",
     researchGoals: [
@@ -1311,6 +1312,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <div className="mt-8 p-6 bg-muted/50 rounded-lg border-l-4 border-primary">
                 <p className="text-sm font-medium text-primary mb-2">Case study thesis:</p>
                 <p className="text-foreground italic">{projectData.thesis}</p>
+              </div>
+            )}
+
+            {projectData.overviewImpactNote && (
+              <div className="mt-6 p-6 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
+                <p className="text-green-800 dark:text-green-300">{projectData.overviewImpactNote}</p>
               </div>
             )}
 
