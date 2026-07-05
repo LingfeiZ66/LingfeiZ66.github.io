@@ -397,7 +397,8 @@ const projectsData: Record<string, any> = {
         problem: "Interview participants wanted online assessments to provide more than a score. They wanted clear, personalized guidance, such as self-help exercises, goal-setting tools, recommendations, treatment links, or direct next steps. The current assessment experience was not easy to discover and did not provide enough actionable follow-up.",
         mattered: "For many users, a self-assessment may be the first step toward seeking help. If the result does not explain what to do next, users may feel stuck.",
         recommendation: "Make the assessment easier to find and redesign the results page to include tailored next steps, relevant resources, and clear explanations of what the score means.",
-        imageCaption: "Assessment results page concept. Include cards like \"Understand your score,\" \"Try a guided exercise,\" \"Prepare for a provider visit,\" \"Find support.\""
+        imageCaption: "Assessment results page concept. Include cards like \"Understand your score,\" \"Try a guided exercise,\" \"Prepare for a provider visit,\" \"Find support.\"",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Self%20Assessment-2NYQF9m6JMA3FjEC4uOu138GY23yAC.png"
       },
       {
         title: "Finding 4: Accessibility and visual hierarchy affected users' ability to scan and act.",
