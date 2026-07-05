@@ -348,33 +348,27 @@ const projectsData: Record<string, any> = {
       {
         title: "1. Interviews: Understanding user needs",
         description: "We conducted 5 interviews to understand how people search for, evaluate, and use online mental health resources. Participants discussed trust, accessibility, content preferences, and barriers such as information overload and conflicting advice. After interviews, our team reviewed responses, coded themes, and created an affinity wall to synthesize patterns.",
-        question: "What we wanted to learn: How do users decide whether a mental health resource feels trustworthy, useful, and easy to act on?",
-        imageCaption: "Affinity wall, interview notes, or a simplified \"themes from interviews\" graphic."
+        question: "What we wanted to learn: How do users decide whether a mental health resource feels trustworthy, useful, and easy to act on?"
       },
       {
         title: "2. Survey: Validating early patterns",
-        description: "We created a pilot survey to expand on the interview findings. The survey explored how people seek mental health information, what challenges they face with self-assessment tools, and how the Toolkit could improve usability, accessibility, and personalization while maintaining privacy.\n\nBecause mental health is a sensitive topic, we carefully revised the survey language. For example, instead of asking what would make users \"not use\" a website, we reframed the question around what factors are most important when using an online mental health resource. This made the survey feel more constructive and less emotionally triggering.",
-        imageCaption: "Survey question examples or a small card showing \"Before wording\" vs. \"After wording.\""
+        description: "We created a pilot survey to expand on the interview findings. The survey explored how people seek mental health information, what challenges they face with self-assessment tools, and how the Toolkit could improve usability, accessibility, and personalization while maintaining privacy.\n\nBecause mental health is a sensitive topic, we carefully revised the survey language. For example, instead of asking what would make users \"not use\" a website, we reframed the question around what factors are most important when using an online mental health resource. This made the survey feel more constructive and less emotionally triggering."
       },
       {
         title: "3. Comparative Analysis: Learning from other platforms",
-        description: "We compared the Toolkit with other mental health and educational platforms, including Beyond Blue, DBSA, Here to Help, CDC Mental Health Page, and Khan Academy. We evaluated content quality, navigation, accessibility, engagement, and privacy.\n\nThis helped us understand what users might expect from similar platforms. We found that platforms with stronger personalization, clearer navigation, and more interactive tools created a more engaging experience. The Toolkit performed well in content organization, but it had opportunities to improve readability, interactivity, visual hierarchy, and navigation clarity.",
-        imageCaption: "Comparative matrix table. You can simplify the table into 5 columns: Personalization, Interactive Tools, Navigation, Content Organization, Readability."
+        description: "We compared the Toolkit with other mental health and educational platforms, including Beyond Blue, DBSA, Here to Help, CDC Mental Health Page, and Khan Academy. We evaluated content quality, navigation, accessibility, engagement, and privacy.\n\nThis helped us understand what users might expect from similar platforms. We found that platforms with stronger personalization, clearer navigation, and more interactive tools created a more engaging experience. The Toolkit performed well in content organization, but it had opportunities to improve readability, interactivity, visual hierarchy, and navigation clarity."
       },
       {
         title: "4. Heuristic Evaluation: Inspecting usability and accessibility issues",
-        description: "We evaluated the Toolkit using Nielsen's 10 usability heuristics, focusing on navigation, accessibility, consistency, readability, and visual hierarchy. The site supported keyboard navigation, but lacked visual icons, clear call-to-action buttons, visual contrast, and consistent alt text. These issues made it harder for users to scan content and know what action to take next.",
-        imageCaption: "Annotated screenshot showing missing CTA buttons, weak visual hierarchy, or dense text blocks."
+        description: "We evaluated the Toolkit using Nielsen's 10 usability heuristics, focusing on navigation, accessibility, consistency, readability, and visual hierarchy. The site supported keyboard navigation, but lacked visual icons, clear call-to-action buttons, visual contrast, and consistent alt text. These issues made it harder for users to scan content and know what action to take next."
       },
       {
         title: "5. Usability Testing: Observing real task behavior",
-        description: "We conducted 5 remote usability tests with participants aged 18–55. Participants completed realistic tasks, such as finding depression symptom information, preparing for a doctor's visit, and completing a self-assessment.\n\nUsers appreciated the depth and seriousness of the content, but they struggled with confusing navigation, unclear content categories, and a formal tone that felt uninviting. These problems caused hesitation, frustration, and sometimes task failure.",
-        imageCaption: "Usability testing setup screenshot, task flow diagram, or a quote card from a participant."
+        description: "We conducted 5 remote usability tests with participants aged 18–55. Participants completed realistic tasks, such as finding depression symptom information, preparing for a doctor's visit, and completing a self-assessment.\n\nUsers appreciated the depth and seriousness of the content, but they struggled with confusing navigation, unclear content categories, and a formal tone that felt uninviting. These problems caused hesitation, frustration, and sometimes task failure."
       }
     ],
     keyInsight: "The Toolkit should not only provide information. It should guide users toward the right resource, explain what to do next, and feel supportive during a sensitive moment.",
     keyInsightDirection: "This became the main direction for our recommendations:\n\nMove from a static resource library to a guided support experience.",
-    keyInsightImageCaption: "Simple before/after concept diagram: \"Resource Library\" → \"Guided Support Experience.\"",
     findings: [
       {
         title: "Finding 1: Users needed to find support quickly, but navigation felt too deep.",
@@ -464,7 +458,6 @@ const projectsData: Record<string, any> = {
         description: "This project helped me learn how to conduct research on a sensitive topic, communicate findings to a real client, and turn mixed-method research into actionable product recommendations."
       }
     ],
-    outcomeImageCaption: "\"Research → Website Update\" impact graphic, or screenshot of client email with private information blurred.",
     reflectionIntro: "This project taught me that good UX research is not only about finding usability problems. It is also about understanding the emotional context behind those problems.\n\nFor a mental health resource, confusing navigation or dense text is not just inconvenient. It can make users feel more overwhelmed at a moment when they need clarity and support. Through this project, I learned how to combine interviews, surveys, competitive research, heuristic evaluation, and usability testing to tell a stronger story about user needs.\n\nI also learned the importance of client communication. Since our recommendations needed to support both user needs and stakeholder goals, we had to make our findings clear, practical, and actionable. Seeing the client later apply our research to the launched website showed me how UX research can create real impact.",
     reflectionList: [],
     reflectionConclusion: ""
