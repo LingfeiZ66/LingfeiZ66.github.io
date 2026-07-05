@@ -161,9 +161,9 @@ export default function ProjectsPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Eisenberg Family Depression Center Toolkit</h3>
+                <h3 className="text-xl font-bold">Depression Center Toolkit</h3>
                 <p className="mt-2 text-muted-foreground">
-                  Improving Access to Mental Health Resources Through UX Research
+                  Improved mental health resource access through UX research.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">
@@ -190,9 +190,9 @@ export default function ProjectsPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold">Designing with AI: Michigan Football VIP Experience</h3>
+                <h3 className="text-xl font-bold">Michigan Football VIP App</h3>
                 <p className="mt-2 text-muted-foreground">
-                  What happens when AI helps you design a product—but you can&apos;t fully trust it?
+                  Designed a faster and clearer game-day VIP experience.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <div className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold">Product Design</div>
