@@ -708,6 +708,8 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     // --- Standard layout ---
     // 1. Overview (always)
     sections.push({ id: "overview", label: "Overview" })
+    // 1b. The Challenge
+    if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
     // 2. Research Goals
     if (projectData.researchGoals) sections.push({ id: "research-goals", label: "Research Goals" })
     // 3. Research Process
@@ -722,8 +724,6 @@ function getNavSections(projectData: Record<string, any>): NavSection[] {
     if (projectData.outcomeImpact) sections.push({ id: "outcome-impact", label: "Outcome & Impact" })
     // 8. My Role
     if (projectData.myRoleList || projectData.myRole) sections.push({ id: "my-role", label: "My Role" })
-    // 9. The Challenge
-    if (projectData.challenge) sections.push({ id: "challenge", label: "The Challenge" })
     // 10. Approach
     if (projectData.process) sections.push({ id: "approach", label: "Approach" })
     // 11. Key Contributions
@@ -1358,6 +1358,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
+            {projectData.challenge && (
+              <div id="challenge" className="mt-12">
+                <h2 className="text-2xl font-bold">The Challenge</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.challenge}</p>
+              </div>
+            )}
+
             {projectData.researchGoals && (
               <div id="research-goals" className="mt-12">
                 <h2 className="text-2xl font-bold">Research Goals</h2>
@@ -1555,13 +1562,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 ) : (
                   <p className="mt-4 text-muted-foreground">{projectData.myRole}</p>
                 )}
-              </div>
-            )}
-
-            {projectData.challenge && (
-              <div id="challenge" className="mt-12">
-                <h2 className="text-2xl font-bold">The Challenge</h2>
-                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.challenge}</p>
               </div>
             )}
 
