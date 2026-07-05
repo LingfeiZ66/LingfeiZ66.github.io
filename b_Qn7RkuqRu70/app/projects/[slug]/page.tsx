@@ -1285,50 +1285,6 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               </div>
             )}
 
-            {/* Reflection section for Michigan Football style */}
-            {projectData.reflectionIntro && projectData.hook && (
-              <div id="reflection" className="mt-12">
-                <h2 className="text-2xl font-bold">Reflection</h2>
-                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
-                {projectData.reflectionEffectiveLabel && (
-                  <p className="mt-6 text-muted-foreground">{projectData.reflectionEffectiveLabel}</p>
-                )}
-                {projectData.reflectionEffectiveList && (
-                  <ul className="mt-3 space-y-2">
-                    {projectData.reflectionEffectiveList.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {projectData.reflectionStruggledLabel && (
-                  <p className="mt-6 text-muted-foreground">{projectData.reflectionStruggledLabel}</p>
-                )}
-                {projectData.reflectionStruggledList && (
-                  <ul className="mt-3 space-y-2">
-                    {projectData.reflectionStruggledList.map((item: string, index: number) => (
-                      <li key={index} className="flex items-start text-muted-foreground">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {projectData.reflectionLesson && (
-                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionLesson}</p>
-                )}
-                {projectData.reflectionKeyInsight && (
-                  <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
-                    <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
-                  </div>
-                )}
-                {projectData.reflectionConclusion && (
-                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionConclusion}</p>
-                )}
-              </div>
-            )}
 
             {projectData.contextAndProblemIntro ? (
               <div id="context-problem" className="mt-12">
@@ -2012,6 +1968,51 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <div id="what-i-learned" className="mt-12">
                 <h2 className="text-2xl font-bold">What I Learned</h2>
                 <p className="mt-4 text-muted-foreground">{projectData.whatILearned}</p>
+              </div>
+            )}
+
+            {/* Reflection section for Michigan Football style */}
+            {projectData.reflectionIntro && projectData.hook && (
+              <div id="reflection" className="mt-12">
+                <h2 className="text-2xl font-bold">Reflection</h2>
+                <p className="mt-4 text-muted-foreground whitespace-pre-line">{projectData.reflectionIntro}</p>
+                {projectData.reflectionEffectiveLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionEffectiveLabel}</p>
+                )}
+                {projectData.reflectionEffectiveList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionEffectiveList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionStruggledLabel && (
+                  <p className="mt-6 text-muted-foreground">{projectData.reflectionStruggledLabel}</p>
+                )}
+                {projectData.reflectionStruggledList && (
+                  <ul className="mt-3 space-y-2">
+                    {projectData.reflectionStruggledList.map((item: string, index: number) => (
+                      <li key={index} className="flex items-start text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {projectData.reflectionLesson && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionLesson}</p>
+                )}
+                {projectData.reflectionKeyInsight && (
+                  <div className="mt-6 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                    <p className="text-foreground font-semibold text-lg">{projectData.reflectionKeyInsight}</p>
+                  </div>
+                )}
+                {projectData.reflectionConclusion && (
+                  <p className="mt-6 text-muted-foreground whitespace-pre-line">{projectData.reflectionConclusion}</p>
+                )}
               </div>
             )}
 
