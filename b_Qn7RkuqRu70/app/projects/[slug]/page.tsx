@@ -381,7 +381,8 @@ const projectsData: Record<string, any> = {
         problem: "The most noticeable usability issue was the Toolkit's complex navigation and deep hierarchy. During usability testing, users described the site as having too many layers. One participant said it felt like \"a hamburger with 10 layers deep.\" Users often paused, rerouted, or became disoriented when trying to find self-assessment tools or appointment preparation information.",
         mattered: "For a mental health resource, slow or confusing navigation can prevent users from reaching support when they need it most.",
         recommendation: "Simplify the information hierarchy, add breadcrumbs, make key resources more visible, and reorganize sections around user intent, such as Learn, Get Help, and Prepare.",
-        imageCaption: "Annotated navigation screenshot + simplified proposed navigation structure."
+        imageCaption: "Annotated navigation screenshot + simplified proposed navigation structure.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/navigation-zLyspBJCAteW4rHqSYyKadF30oNw8b.png"
       },
       {
         title: "Finding 2: Users trusted the content, but the tone and format felt overwhelming.",
@@ -1420,7 +1421,17 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         <p className="text-sm font-medium text-primary">Recommendation:</p>
                         <p className="mt-1 text-sm text-muted-foreground">{finding.recommendation}</p>
                       </div>
-                      {finding.imageCaption && (
+                      {finding.image ? (
+                        <div className="mt-4 overflow-hidden rounded-lg border">
+                          <Image
+                            src={finding.image || "/placeholder.svg"}
+                            alt={finding.imageCaption || finding.title}
+                            width={1878}
+                            height={1084}
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      ) : finding.imageCaption && (
                         <div className="mt-4 p-4 bg-muted/50 rounded-md border border-dashed">
                           <p className="text-xs text-muted-foreground italic">[IMAGE PLACEHOLDER: {finding.imageCaption}]</p>
                         </div>
