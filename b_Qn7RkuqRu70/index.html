@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lingfei Zhan - UI/UX Designer</title>
+  <meta name="description" content="Creative and detail-focused UI/UX designer with 5 years of experience crafting user-friendly and visually stunning digital experiences.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          borderRadius: {
+            lg: '0.5rem',
+            md: 'calc(0.5rem - 2px)',
+            sm: 'calc(0.5rem - 4px)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 240 10% 3.9%;
+      --card: 0 0% 100%;
+      --card-foreground: 240 10% 3.9%;
+      --primary: 270 50% 40%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 240 4.8% 95.9%;
+      --secondary-foreground: 240 5.9% 10%;
+      --muted: 240 4.8% 95.9%;
+      --muted-foreground: 240 3.8% 46.1%;
+      --accent: 270 50% 40%;
+      --border: 240 5.9% 90%;
+      --input: 240 5.9% 90%;
+      --ring: 270 50% 40%;
+    }
+    .dark {
+      --background: 240 10% 3.9%;
+      --foreground: 0 0% 98%;
+      --card: 240 10% 3.9%;
+      --card-foreground: 0 0% 98%;
+      --primary: 270 50% 60%;
+      --primary-foreground: 0 0% 98%;
+      --secondary: 240 3.7% 15.9%;
+      --secondary-foreground: 0 0% 98%;
+      --muted: 240 3.7% 15.9%;
+      --muted-foreground: 240 5% 64.9%;
+      --accent: 270 50% 60%;
+      --border: 240 3.7% 15.9%;
+      --input: 240 3.7% 15.9%;
+      --ring: 270 50% 60%;
+    }
+    * {
+      border-color: hsl(var(--border));
+    }
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+    }
+    .bg-background { background-color: hsl(var(--background)); }
+    .bg-card { background-color: hsl(var(--card)); }
+    .bg-primary { background-color: hsl(var(--primary)); }
+    .bg-secondary { background-color: hsl(var(--secondary)); }
+    .bg-muted { background-color: hsl(var(--muted)); }
+    .text-foreground { color: hsl(var(--foreground)); }
+    .text-primary { color: hsl(var(--primary)); }
+    .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+    .text-muted-foreground { color: hsl(var(--muted-foreground)); }
+    .border-border { border-color: hsl(var(--border)); }
+    .border-primary { border-color: hsl(var(--primary)); }
+    .hover\:text-primary:hover { color: hsl(var(--primary)); }
+    .hover\:border-primary:hover { border-color: hsl(var(--primary)); }
+    .hover\:bg-primary\/90:hover { background-color: hsl(var(--primary) / 0.9); }
+    .hover\:bg-secondary:hover { background-color: hsl(var(--secondary)); }
+    .border-primary\/20 { border-color: hsl(var(--primary) / 0.2); }
+    .bg-primary\/20 { background-color: hsl(var(--primary) / 0.2); }
+    .bg-secondary\/20 { background-color: hsl(var(--secondary) / 0.2); }
+    .from-background { --tw-gradient-from: hsl(var(--background)); }
+    .to-transparent { --tw-gradient-to: transparent; }
+    .bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to)); }
+    .bg-gradient-to-l { background-image: linear-gradient(to left, var(--tw-gradient-from), var(--tw-gradient-to)); }
+    .bg-background\/80 { background-color: hsl(var(--background) / 0.8); }
+    .gradient-text {
+      background: linear-gradient(to right, #a78bfa, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .gradient-border {
+      position: relative;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .gradient-border::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 0.5rem;
+      padding: 2px;
+      background: linear-gradient(to right, #a78bfa, #818cf8);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Header -->
+  <header id="header" class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl font-bold gradient-text">Lingfei Zhan</a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <button onclick="scrollToSection('home')" class="nav-link text-sm font-medium transition-colors hover:text-primary text-primary" data-section="home">Home</button>
+        <button onclick="scrollToSection('work')" class="nav-link text-sm font-medium transition-colors hover:text-primary text-muted-foreground" data-section="work">Projects</button>
+        <button onclick="scrollToSection('experience')" class="nav-link text-sm font-medium transition-colors hover:text-primary text-muted-foreground" data-section="experience">Experience</button>
+        <button onclick="scrollToSection('contact')" class="nav-link text-sm font-medium transition-colors hover:text-primary text-muted-foreground" data-section="contact">Contact</button>
+        <a href="resume.pdf" download class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-9 px-4 py-2 hover:bg-primary/90 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          Resume
+        </a>
+        <!-- Theme Toggle -->
+        <button id="themeToggle" onclick="toggleTheme()" class="p-2 hover:bg-secondary rounded-md transition-colors">
+          <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden p-2 hover:bg-secondary rounded-md transition-colors">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg id="closeIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="hidden md:hidden absolute w-full bg-background border-b border-border py-4 px-4 flex flex-col space-y-4">
+      <button onclick="scrollToSection('home')" class="text-sm font-medium py-2 hover:text-primary text-left">Home</button>
+      <button onclick="scrollToSection('work')" class="text-sm font-medium py-2 hover:text-primary text-left">Projects</button>
+      <button onclick="scrollToSection('experience')" class="text-sm font-medium py-2 hover:text-primary text-left">Experience</button>
+      <button onclick="scrollToSection('contact')" class="text-sm font-medium py-2 hover:text-primary text-left">Contact</button>
+      <a href="resume.pdf" download class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-9 px-4 py-2 hover:bg-primary/90 transition-colors w-full">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+        Resume
+      </a>
+      <div class="flex items-center justify-between pt-2 border-t border-border">
+        <span class="text-sm text-muted-foreground">Theme</span>
+        <button onclick="toggleTheme()" class="p-2 hover:bg-secondary rounded-md transition-colors">
+          <svg id="sunIconMobile" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg id="moonIconMobile" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- Hero Section -->
+    <section id="home" class="py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div class="flex-1 space-y-6">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+              Hi, I'm <span class="gradient-text">Lingfei Zhan</span>
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-medium text-muted-foreground">UI/UX Designer</h2>
+            <p class="text-lg text-muted-foreground max-w-xl">
+              I'm a UX designer and University of Michigan School of Information student graduating Summer 2026, with a focus on accessibility, research, and inclusive digital experiences.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button onclick="scrollToSection('work')" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-10 px-4 py-2 hover:bg-primary/90 transition-colors">View My Projects</button>
+              <button onclick="scrollToSection('contact')" class="inline-flex items-center justify-center rounded-md text-sm font-medium border border-border bg-background hover:bg-secondary h-10 px-4 py-2 transition-colors">Get In Touch</button>
+            </div>
+          </div>
+          <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14f59bf9d76da53bf1c7d06a428246d9-cE4prZ7eI4jAH9Al96TFQtIvqUv2qa.png" alt="Lingfei Zhan" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Rolling Skills Marquee -->
+        <div class="relative overflow-hidden py-6 mt-16">
+          <div class="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+          
+          <div class="flex animate-marquee">
+            <div class="flex gap-4 pr-4">
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Figma</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Adobe XD</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Sketch</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Photoshop</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Illustrator</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">InVision</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Proto.io</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Zeplin</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">UX Research</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Wireframing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Prototyping</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Interaction Design</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Usability Testing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Design Systems</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">User Testing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Information Architecture</span>
+            </div>
+            <div class="flex gap-4 pr-4">
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Figma</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Adobe XD</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Sketch</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Photoshop</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Illustrator</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">InVision</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Proto.io</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Zeplin</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">UX Research</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Wireframing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Prototyping</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Interaction Design</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Usability Testing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Design Systems</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">User Testing</span>
+              <span class="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors">Information Architecture</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">My Projects</h2>
+            <p class="text-lg text-muted-foreground">A selection of my recent UI/UX design projects across various industries.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <a href="projects/ra-labs.html" class="group">
+              <div class="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                <div class="relative aspect-[16/10] overflow-hidden bg-white">
+                  <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ra%20Labs%20logo%20design%20with%20robot%20and%20elephant-WIsEjgK16vtg5cMXipCFioJX2MMqDS.png" alt="RA Labs AI Data-Cleaning Platform" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">RA Labs AI Platform</h3>
+                  <p class="text-sm text-muted-foreground line-clamp-2">Designed an AI data-cleaning platform prototype from scratch to high fidelity for a startup.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="projects/umsi-case-study.html" class="group">
+              <div class="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img src="https://placehold.co/720x450/1a1a2e/a78bfa?text=UMSI+Case+Study" alt="UMSI Case Study Competition" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">UMSI Case Study Competition</h3>
+                  <p class="text-sm text-muted-foreground line-clamp-2">Designed a centralized mobile app to support entrepreneurship in Michigan, earning 3rd place.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="projects/backyard-brains.html" class="group">
+              <div class="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img src="https://placehold.co/720x450/1a1a2e/a78bfa?text=Backyard+Brains" alt="Backyard Brains HHI" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Designing for Trust: Human-Human Interface</h3>
+                  <p class="text-sm text-muted-foreground line-clamp-2">Designing a multi-user mobile experience that connects two users to a neuroscience device for safe, remote interaction.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 4 -->
+            <a href="projects/mental-health.html" class="group">
+              <div class="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img src="https://placehold.co/720x450/1a1a2e/a78bfa?text=Mental+Health+Toolkit" alt="Mental Health Toolkit" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Improving Access to Mental Health Resources Through UX Research</h3>
+                  <p class="text-sm text-muted-foreground line-clamp-2">UX Research Case Study for the Eisenberg Family Depression Center Toolkit. Conducted mixed-method research to improve the usability, accessibility, and user experience of an online mental health resource.</p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Project 5 -->
+            <a href="projects/education-platform.html" class="group">
+              <div class="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img src="https://placehold.co/720x450/1a1a2e/a78bfa?text=Education+Platform" alt="Education Platform" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="p-5">
+                  <h3 class="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Education Platform</h3>
+                  <p class="text-sm text-muted-foreground line-clamp-2">An online learning platform designed to enhance student engagement and knowledge retention.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="mt-12 flex justify-center">
+            <a href="https://www.behance.net/shuaibkarim" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md text-sm font-medium border border-border bg-background hover:bg-secondary h-10 px-4 py-2 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              View More on Behance
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-secondary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">Experience</h2>
+            <p class="text-lg text-muted-foreground">My professional journey in UI/UX design and digital product development.</p>
+          </div>
+
+          <div class="space-y-6">
+            <!-- Experience 1 -->
+            <div class="gradient-border p-6 bg-card">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold">UI/UX Designer</h3>
+                  <p class="text-primary font-medium">Dot Austere</p>
+                </div>
+                <span class="text-sm text-muted-foreground">04/2020 - 12/2024</span>
+              </div>
+              <ul class="space-y-2 text-muted-foreground">
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Designed user-centric interfaces for 10+ mobile and web applications, improving user engagement by 40%
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Conducted comprehensive UX research and usability testing to validate design decisions
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Built and maintained scalable design systems ensuring consistency across products
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Collaborated with cross-functional teams including developers, product managers, and stakeholders
+                </li>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="gradient-border p-6 bg-card">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold">Freelance UI/UX Designer</h3>
+                  <p class="text-primary font-medium">Upwork / Fiverr</p>
+                </div>
+                <span class="text-sm text-muted-foreground">12/2017 - Present</span>
+              </div>
+              <ul class="space-y-2 text-muted-foreground">
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Completed over 100+ projects with a 100% Job Success Score on Upwork
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Delivered customized UI/UX designs tailored to diverse client needs and industries
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Managed end-to-end design process from research and wireframing to final delivery
+                </li>
+                <li class="flex items-start">
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 mr-3 flex-shrink-0"></span>
+                  Built long-term relationships with clients through quality work and clear communication
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-12 flex justify-center">
+            <a href="resume.pdf" download class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-10 px-6 py-2 hover:bg-primary/90 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+              Download Full Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-secondary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-primary"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  <a href="mailto:lingfeiz@umich.edu" class="text-muted-foreground hover:text-primary transition-colors">lingfeiz@umich.edu</a>
+                </div>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-primary"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:+18585194582" class="text-muted-foreground hover:text-primary transition-colors">+1 858-519-4582</a>
+                </div>
+                <div class="flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3 text-primary"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span class="text-muted-foreground">Ann Arbor, MI</span>
+                </div>
+              </div>
+
+              <h3 class="text-xl font-semibold mt-8 mb-6">Connect With Me</h3>
+              <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/shuaib-karim-551841232/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md w-10 h-10 border border-border hover:bg-secondary transition-colors" aria-label="LinkedIn Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://www.behance.net/shuaibkarim" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-md w-10 h-10 border border-border hover:bg-secondary transition-colors" aria-label="Behance Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h6v3H3z"/><path d="M14 9h7"/><path d="M14 15h7"/><path d="M3 15h6v3H3z"/><path d="M3 6h6"/><path d="M14 12h7"/></svg>
+                </a>
+                <a href="mailto:shuaibkarim302@gmail.com" class="inline-flex items-center justify-center rounded-md w-10 h-10 border border-border hover:bg-secondary transition-colors" aria-label="Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="gradient-border p-6 bg-card">
+              <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+              <form id="contactForm" class="space-y-4">
+                <div>
+                  <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Your email" required class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                </div>
+                <div>
+                  <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                  <textarea id="message" name="message" placeholder="Your message" rows="4" required class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 min-h-[100px]"></textarea>
+                </div>
+                <button type="submit" class="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-10 px-4 py-2 hover:bg-primary/90 transition-colors w-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 border-t border-border">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center items-center">
+        <p class="text-sm text-muted-foreground">&copy; <span id="year"></span> Lingfei Zhan. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle functionality
+    function getTheme() {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      localStorage.setItem('theme', theme);
+      updateThemeIcons(theme);
+    }
+
+    function updateThemeIcons(theme) {
+      const sunIcon = document.getElementById('sunIcon');
+      const moonIcon = document.getElementById('moonIcon');
+      const sunIconMobile = document.getElementById('sunIconMobile');
+      const moonIconMobile = document.getElementById('moonIconMobile');
+      
+      if (theme === 'dark') {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+        sunIconMobile?.classList.remove('hidden');
+        moonIconMobile?.classList.add('hidden');
+      } else {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+        sunIconMobile?.classList.add('hidden');
+        moonIconMobile?.classList.remove('hidden');
+      }
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    }
+
+    // Initialize theme on page load
+    setTheme(getTheme());
+
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Smooth scroll to section
+    function scrollToSection(sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+      // Close mobile menu if open
+      mobileMenu.classList.add('hidden');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+
+    // Update active nav link on scroll
+    const sections = ['home', 'work', 'experience', 'contact'];
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = 'home';
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            currentSection = section;
+            break;
+          }
+        }
+      }
+
+      navLinks.forEach(link => {
+        if (link.dataset.section === currentSection) {
+          link.classList.remove('text-muted-foreground');
+          link.classList.add('text-primary');
+        } else {
+          link.classList.remove('text-primary');
+          link.classList.add('text-muted-foreground');
+        }
+      });
+    });
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Simulate form submission
+      alert('Thank you for your message, ' + name + '! I will get back to you soon.');
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
+</body>
+</html>
