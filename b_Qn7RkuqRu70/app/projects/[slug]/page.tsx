@@ -1318,6 +1318,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             {projectData.overviewImpactNote && (
               <div className="mt-6 p-6 bg-green-50 dark:bg-green-950/30 rounded-lg border border-green-200 dark:border-green-800">
                 <p className="text-green-800 dark:text-green-300">{projectData.overviewImpactNote}</p>
+                <a
+                  href="https://depressioncenter.org/outreach-education/depression-center-toolkit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block font-medium text-green-800 dark:text-green-300 underline underline-offset-4 hover:text-green-900 dark:hover:text-green-200 break-words"
+                >
+                  View the launched Toolkit website
+                </a>
               </div>
             )}
 
