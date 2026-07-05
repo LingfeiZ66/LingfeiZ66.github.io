@@ -389,7 +389,8 @@ const projectsData: Record<string, any> = {
         problem: "Users saw the Toolkit as serious and credible, but the tone often felt too clinical. Dense text blocks and bullet-heavy sections made pages harder to read, especially on emotionally sensitive pages like \"I'm not feeling well.\"",
         mattered: "A mental health website should not only be accurate. It should also feel approachable, calm, and supportive.",
         recommendation: "Use warmer language, shorter paragraphs, supportive headings, visual cues, and plain language. Break long content into smaller sections so users can scan the page more easily.",
-        imageCaption: "Before/after content layout. Left: dense text. Right: shorter sections with supportive headers and icons."
+        imageCaption: "Before/after content layout. Left: dense text. Right: shorter sections with supportive headers and icons.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Overwhelming%20tone-MIa1Y2iUfdGPtJpZOhyJ9JRWjHuun0.png"
       },
       {
         title: "Finding 3: Self-assessments needed clearer next steps.",
