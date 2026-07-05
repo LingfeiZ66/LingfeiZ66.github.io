@@ -405,7 +405,8 @@ const projectsData: Record<string, any> = {
         problem: "The heuristic evaluation found that the Toolkit supported keyboard navigation, but it lacked visual icons, clear call-to-action buttons, strong contrast, and meaningful alt text for some images. The mostly uniform visual style made it difficult for users to identify key content quickly.",
         mattered: "Accessibility is not only about technical compliance. It also affects whether users can understand where they are, what matters, and what they should do next.",
         recommendation: "Add consistent icons, stronger visual hierarchy, clearer CTA buttons, improved contrast, and meaningful alt text.",
-        imageCaption: "Accessibility improvement checklist or annotated UI showing CTA, icon, heading hierarchy, and contrast."
+        imageCaption: "Accessibility improvement checklist or annotated UI showing CTA, icon, heading hierarchy, and contrast.",
+        image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Visual%20Hierarchy-fnN1aIhkNpJV2fB3PjIX9P7DTqv5mY.png"
       },
       {
         title: "Finding 5: Users wanted personalization while maintaining privacy.",
