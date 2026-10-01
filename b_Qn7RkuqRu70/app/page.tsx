@@ -2,15 +2,17 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { Download, Send, ExternalLink, Mail, Phone, MapPin, Menu, X } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { ArrowRight, Download, Send, Mail, Phone, MapPin } from "lucide-react"
+import { SiteHeader, RESUME_URL } from "@/components/site-header"
+import { SectionHeader } from "@/components/section-header"
+import { StatusIndicator } from "@/components/status-indicator"
 
 export default function Home() {
   const { toast } = useToast()
@@ -18,28 +20,6 @@ export default function Home() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState("home")
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "work", "experience", "contact"]
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -82,114 +62,42 @@ export default function Home() {
     }
   }
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    setMobileMenuOpen(false)
-  }
-
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold gradient-text">
-            Lingfei Zhan
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === "home" ? "text-primary" : "text-muted-foreground"}`}
-            >
-              Home
-            </button>
-            <button
-              onClick={() => scrollToSection("work")}
-              className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === "work" ? "text-primary" : "text-muted-foreground"}`}
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => scrollToSection("experience")}
-              className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === "experience" ? "text-primary" : "text-muted-foreground"}`}
-            >
-              Experience
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className={`text-sm font-medium transition-colors hover:text-primary ${activeSection === "contact" ? "text-primary" : "text-muted-foreground"}`}
-            >
-              Contact
-            </button>
-            <Button asChild size="sm">
-              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Resume
-              </a>
-            </Button>
-            <ThemeToggle />
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute w-full bg-background border-b border-border py-4 px-4 flex flex-col space-y-4">
-            <button onClick={() => scrollToSection("home")} className="text-sm font-medium py-2 hover:text-primary">
-              Home
-            </button>
-            <button onClick={() => scrollToSection("work")} className="text-sm font-medium py-2 hover:text-primary">
-              Projects
-            </button>
-            <button onClick={() => scrollToSection("experience")} className="text-sm font-medium py-2 hover:text-primary">
-              Experience
-            </button>
-            <button onClick={() => scrollToSection("contact")} className="text-sm font-medium py-2 hover:text-primary">
-              Contact
-            </button>
-            <Button asChild size="sm" className="w-full">
-              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
-                <Download className="mr-2 h-4 w-4" />
-                Resume
-              </a>
-            </Button>
-            <div className="flex items-center justify-between pt-2 border-t border-border">
-              <span className="text-sm text-muted-foreground">Theme</span>
-              <ThemeToggle />
-            </div>
-          </div>
-        )}
-      </header>
+      <SiteHeader />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="home" className="py-20 md:py-32">
+        <section id="home" className="pb-16 pt-20 md:pb-24 md:pt-32">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-              <div className="flex-1 space-y-6">
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-                  Hi, I&apos;m <span className="gradient-text">Lingfei Zhan</span>
-                </h1>
-                <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground">UI/UX Designer</h2>
-                <p className="text-lg text-muted-foreground max-w-xl">
+            <div className="flex flex-col-reverse items-start gap-12 md:flex-row md:items-center md:gap-16">
+              <div className="flex flex-1 flex-col gap-8">
+                <StatusIndicator>Open to product design roles</StatusIndicator>
+                <div className="flex flex-col gap-5">
+                  <h1 className="display">
+                    Hi, I&apos;m <span className="gradient-text">Lingfei Zhan</span>
+                  </h1>
+                  <p className="eyebrow text-sm">Product &amp; UX Designer</p>
+                </div>
+                <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
                   I&apos;m a UX designer and University of Michigan School of Information student graduating Summer 2026, with a focus on accessibility, research, and inclusive digital experiences.
                 </p>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <Button onClick={() => scrollToSection("work")}>View My Projects</Button>
-                  <Button variant="outline" onClick={() => scrollToSection("contact")}>
-                    Get In Touch
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild size="lg" className="group">
+                    <a href="#work">
+                      View My Projects
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="transition-transform duration-base ease-out group-hover:translate-x-0.5"
+                      />
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <a href="#contact">Get In Touch</a>
                   </Button>
                 </div>
               </div>
-              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20">
+              <div className="relative size-48 shrink-0 overflow-hidden rounded-full border border-border md:size-80">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14f59bf9d76da53bf1c7d06a428246d9-cE4prZ7eI4jAH9Al96TFQtIvqUv2qa.png"
                   alt="Lingfei Zhan"
@@ -201,7 +109,7 @@ export default function Home() {
             </div>
 
             {/* Rolling Skills Marquee */}
-            <div className="relative overflow-hidden py-6 mt-16">
+            <div className="relative mt-20 overflow-hidden border-y border-border py-5">
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
               
@@ -227,7 +135,7 @@ export default function Home() {
                     ].map((skill) => (
                       <span
                         key={skill}
-                        className="px-4 py-2 rounded-full bg-card border border-border text-sm font-medium whitespace-nowrap hover:border-primary hover:text-primary transition-colors"
+                        className="whitespace-nowrap rounded-full border border-border px-4 py-1.5 font-mono text-xs text-muted-foreground transition-colors duration-fast hover:border-foreground/40 hover:text-foreground"
                       >
                         {skill}
                       </span>
@@ -240,15 +148,15 @@ export default function Home() {
         </section>
 
         {/* Work Section */}
-        <section id="work" className="py-20">
+        <section id="work" className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">My Projects</h2>
-                <p className="text-lg text-muted-foreground">
-                  A selection of my recent UI/UX design projects across various industries.
-                </p>
-              </div>
+              <SectionHeader
+                chapter="01"
+                label="Missions"
+                title="My Projects"
+                description="A selection of my recent UI/UX design projects across various industries."
+              />
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Project 1 */}
@@ -371,13 +279,14 @@ export default function Home() {
         </section>
 
         {/* Experience Section */}
-        <section id="experience" className="py-20 bg-secondary/20">
+        <section id="experience" className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              
+              <SectionHeader chapter="02" label="Progress log" title="Experience" />
+
               {/* Education */}
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8">Education</h2>
+                <h3 className="eyebrow mb-6">Education</h3>
                 <div className="space-y-6">
                   <div className="gradient-border p-6 bg-card">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
@@ -409,7 +318,7 @@ export default function Home() {
 
               {/* Award */}
               <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8">Award</h2>
+                <h3 className="eyebrow mb-6">Award</h3>
                 <div className="gradient-border p-6 bg-card">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
                     <div>
@@ -449,7 +358,7 @@ export default function Home() {
 
               {/* Experiences */}
               <div className="mb-12">
-                <h2 className="text-3xl font-bold mb-8">Experiences</h2>
+                <h3 className="eyebrow mb-6">Experiences</h3>
                 <div className="space-y-6">
                   {/* Ra Labs */}
                   <div className="gradient-border p-6 bg-card">
@@ -527,8 +436,8 @@ export default function Home() {
 
               <div className="flex justify-center">
                 <Button asChild size="lg">
-                  <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%202026-9BaMPLPsS9bbnLNbdIZ7o7ovpj9oGY.pdf" download>
-                    <Download className="mr-2 h-5 w-5" />
+                  <a href={RESUME_URL} download>
+                    <Download aria-hidden="true" />
                     Download Full Resume
                   </a>
                 </Button>
@@ -538,24 +447,24 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 bg-secondary/20">
+        <section id="contact" className="section">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
+            <div className="max-w-4xl mx-auto">
+              <SectionHeader chapter="03" label="Final level" title="Get In Touch" />
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+                  <h3 className="eyebrow mb-6">Contact Information</h3>
                   <div className="space-y-4">
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 mr-3 text-primary" />
-                    <a href="mailto:lingfeiz66@gmail.com" className="text-muted-foreground hover:text-primary">
+                    <a href="mailto:lingfeiz66@gmail.com" className="link-underline text-muted-foreground hover:text-foreground">
                       lingfeiz66@gmail.com
                       </a>
                     </div>
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 mr-3 text-primary" />
-                      <a href="tel:+18585194582" className="text-muted-foreground hover:text-primary">
+                      <a href="tel:+18585194582" className="link-underline text-muted-foreground hover:text-foreground">
                         +1 858-519-4582
                       </a>
                     </div>
@@ -648,13 +557,14 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="py-6 border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center items-center">
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} Lingfei Zhan. All rights reserved.
-            </p>
-          </div>
+      <footer className="border-t border-border py-8">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-3 px-4 md:flex-row">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Lingfei Zhan. All rights reserved.
+          </p>
+          <p className="eyebrow" title="↑ ↑ ↓ ↓ ← → ← → B A">
+            Thanks for playing
+          </p>
         </div>
       </footer>
     </div>

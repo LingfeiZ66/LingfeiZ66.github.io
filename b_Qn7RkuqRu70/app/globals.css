@@ -2,50 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Design tokens
+ * Palette: warm ink + paper neutrals, one violet accent, one "status" green.
+ * Motion: three durations and two easings. Everything else is derived.
+ */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 40 33% 97%;
+    --foreground: 30 10% 9%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 30 10% 9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 270 50% 40%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 270 50% 40%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 270 50% 40%;
-    --radius: 0.5rem;
+    --popover-foreground: 30 10% 9%;
+    --primary: 252 55% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 18% 92%;
+    --secondary-foreground: 30 10% 9%;
+    --muted: 40 18% 92%;
+    --muted-foreground: 30 6% 38%;
+    --accent: 40 18% 92%;
+    --accent-foreground: 30 10% 9%;
+    --destructive: 0 72% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --status: 150 55% 34%;
+    --border: 35 12% 86%;
+    --input: 35 12% 82%;
+    --ring: 252 55% 52%;
+    --radius: 0.375rem;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --duration-fast: 150ms;
+    --duration-base: 240ms;
+    --duration-slow: 480ms;
+
+    --header-height: 4rem;
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 270 50% 60%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 270 50% 60%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 270 50% 60%;
+    --background: 30 6% 6%;
+    --foreground: 40 20% 92%;
+    --card: 30 6% 8%;
+    --card-foreground: 40 20% 92%;
+    --popover: 30 6% 8%;
+    --popover-foreground: 40 20% 92%;
+    --primary: 252 85% 76%;
+    --primary-foreground: 30 6% 6%;
+    --secondary: 30 5% 12%;
+    --secondary-foreground: 40 20% 92%;
+    --muted: 30 5% 12%;
+    --muted-foreground: 35 8% 62%;
+    --accent: 30 5% 14%;
+    --accent-foreground: 40 20% 92%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --status: 145 45% 58%;
+    --border: 30 5% 17%;
+    --input: 30 5% 20%;
+    --ring: 252 85% 76%;
   }
 }
 
@@ -53,32 +68,140 @@
   * {
     @apply border-border;
   }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--header-height) + 1.5rem);
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.28);
+    color: hsl(var(--foreground));
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
   }
 }
 
-.gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-600;
+@layer components {
+  /* Typography */
+  .display {
+    @apply text-5xl font-semibold leading-[0.95] tracking-[-0.035em] md:text-7xl;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-muted-foreground;
+  }
+
+  /* Sections */
+  .section {
+    @apply py-24 md:py-32;
+  }
+
+  .section + .section {
+    @apply border-t border-border;
+  }
+
+  /* Hairline surface. Kept under the old class name so existing markup inherits the new system. */
+  .gradient-border,
+  .surface {
+    @apply relative rounded-lg border border-border;
+    transition: border-color var(--duration-base) var(--ease-out),
+      box-shadow var(--duration-base) var(--ease-out);
+  }
+
+  .group:hover > .gradient-border,
+  .group:focus-visible > .gradient-border,
+  .group:hover > .surface,
+  .group:focus-visible > .surface {
+    border-color: hsl(var(--foreground) / 0.32);
+    box-shadow: 0 1px 0 0 hsl(var(--foreground) / 0.04), 0 12px 32px -16px hsl(var(--foreground) / 0.18);
+  }
+
+  .gradient-text {
+    @apply text-primary;
+  }
+
+  /* Hover: an underline that draws in from the left */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size var(--duration-base) var(--ease-out),
+      color var(--duration-fast) var(--ease-out);
+  }
+
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Status indicator: a quiet "online" dot */
+  .status-dot {
+    @apply relative inline-block size-2 shrink-0 rounded-full bg-status;
+  }
+
+  .status-dot::after {
+    content: "";
+    @apply absolute inset-0 rounded-full bg-status;
+    animation: status-ping 2.4s var(--ease-out) infinite;
+  }
+
+  /* Progress bar driven by page scroll; no JavaScript */
+  .scroll-progress {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-px origin-left bg-primary;
+    transform: scaleX(0);
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .scroll-progress {
+      animation: scroll-progress linear both;
+      animation-timeline: scroll(root block);
+    }
+  }
 }
 
-.gradient-border {
-  position: relative;
-  border-radius: 0.5rem;
-  overflow: hidden;
+@keyframes status-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
 }
 
-.gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 0.5rem;
-  padding: 2px;
-  background: linear-gradient(to right, #a78bfa, #818cf8);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+@keyframes scroll-progress {
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes marquee {
@@ -91,10 +214,27 @@
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .animate-marquee:hover {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-progress {
+    display: none;
+  }
+}
