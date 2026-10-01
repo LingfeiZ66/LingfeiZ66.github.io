@@ -14,8 +14,9 @@ export const RESUME_URL =
 const NAV_ITEMS = [
   { id: "home", index: "00", label: "Home" },
   { id: "work", index: "01", label: "Projects" },
-  { id: "experience", index: "02", label: "Experience" },
-  { id: "contact", index: "03", label: "Contact" },
+  { id: "about", index: "02", label: "About" },
+  { id: "experience", index: "03", label: "Experience" },
+  { id: "contact", index: "04", label: "Contact" },
 ] as const
 
 function useActiveSection(enabled: boolean) {
