@@ -13,6 +13,7 @@ import { ArrowRight, Download, Send, Mail, Phone, MapPin } from "lucide-react"
 import { SiteHeader, RESUME_URL } from "@/components/site-header"
 import { SectionHeader } from "@/components/section-header"
 import { PlayerProfile } from "@/components/player-profile"
+import { BeyondTheScreen } from "@/components/beyond-the-screen"
 import { StatusIndicator } from "@/components/status-indicator"
 import { Hero } from "@/components/hero"
 import { SelectedWork } from "@/components/selected-work"
@@ -116,12 +117,13 @@ export default function Home() {
         <SelectedWork />
 
         <PlayerProfile />
+        <BeyondTheScreen />
 
         {/* Experience Section */}
         <section id="experience" className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <SectionHeader chapter="03" label="Progress log" title="Experience" />
+              <SectionHeader chapter="04" label="Progress log" title="Experience" />
 
               {/* Education */}
               <div className="mb-16">
@@ -289,7 +291,7 @@ export default function Home() {
         <section id="contact" className="section">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <SectionHeader chapter="04" label="Final level" title="Get In Touch" />
+              <SectionHeader chapter="05" label="Final level" title="Get In Touch" />
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div>

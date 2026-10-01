@@ -15,8 +15,9 @@ const NAV_ITEMS = [
   { id: "home", index: "00", label: "Home" },
   { id: "work", index: "01", label: "Projects" },
   { id: "about", index: "02", label: "About" },
-  { id: "experience", index: "03", label: "Experience" },
-  { id: "contact", index: "04", label: "Contact" },
+  { id: "beyond", index: "03", label: "Creative" },
+  { id: "experience", index: "04", label: "Experience" },
+  { id: "contact", index: "05", label: "Contact" },
 ] as const
 
 function useActiveSection(enabled: boolean) {
