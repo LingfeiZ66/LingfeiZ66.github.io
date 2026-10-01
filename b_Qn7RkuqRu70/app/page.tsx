@@ -14,6 +14,7 @@ import { SiteHeader, RESUME_URL } from "@/components/site-header"
 import { SectionHeader } from "@/components/section-header"
 import { StatusIndicator } from "@/components/status-indicator"
 import { Hero } from "@/components/hero"
+import { SelectedWork } from "@/components/selected-work"
 
 export default function Home() {
   const { toast } = useToast()
@@ -111,136 +112,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Work Section */}
-        <section id="work" className="section">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <SectionHeader
-                chapter="01"
-                label="Missions"
-                title="My Projects"
-                description="A selection of my recent UI/UX design projects across various industries."
-              />
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Project 1 */}
-                <Link href="/projects/ra-labs" className="group">
-                  <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ra%20Labs%20logo%20design%20with%20robot%20and%20elephant-WIsEjgK16vtg5cMXipCFioJX2MMqDS.png"
-                        alt="RA Labs AI Data-Cleaning Platform"
-                        width={720}
-                        height={450}
-                        className="object-contain bg-white transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
-                        Confidential
-                      </span>
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">RA Labs AI Platform</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed an AI data-cleaning platform from scratch to high fidelity.
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Project 2 */}
-                <Link href="/projects/umsi-case-study" className="group">
-                  <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src="/Case Study Competition cover.png"
-                        alt="UMSI Case Study Competition"
-                        width={720}
-                        height={450}
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Michigan Entrepreneurship Resource App</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed a centralized app to support entrepreneurship in Michigan.
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Project 3 */}
-                <Link href="/projects/backyard-brains" className="group">
-                  <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src="/Backyard Brains cover.png"
-                        alt="Backyard Brains HHI"
-                        width={720}
-                        height={450}
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
-                        Recommended
-                      </span>
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Human-Human Interface Mobile App</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed a safer multi-user experience for remote neuroscience interaction.
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Project 4 - Eisenberg Family Depression Center Toolkit */}
-                <Link href="/projects/e-commerce" className="group">
-                  <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Eisenberg%20Toolkit%20cover-uAksGepkChuLYLXPEJGu368UlDNdKa.png"
-                        alt="Eisenberg Family Depression Center Toolkit"
-                        width={720}
-                        height={450}
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Depression Center Toolkit</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Improved mental health resource access through UX research.
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-
-                {/* Project 5 - Michigan Football VIP Experience */}
-                <Link href="/projects/education-platform" className="group">
-                  <div className="gradient-border bg-card overflow-hidden transition-transform duration-300 group-hover:scale-[1.02] h-[320px] flex flex-col">
-                    <div className="relative aspect-[16/10] overflow-hidden">
-                      <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Michigan%20Football%20cover-MYty0hbsZevkL5Vr10j50bRsv4FZ9U.png"
-                        alt="Michigan Football VIP Experience"
-                        width={720}
-                        height={450}
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      />
-                      <span className="absolute top-3 right-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold uppercase tracking-wide text-neutral-900 shadow-md ring-1 ring-amber-500/60">
-                        Recommended
-                      </span>
-                    </div>
-                    <div className="p-5 flex-1 flex flex-col">
-                      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">Michigan Football VIP App</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2 flex-1">
-                        Designed a faster and clearer game-day VIP experience.
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-
-            </div>
-          </div>
-        </section>
+        <SelectedWork />
 
         {/* Experience Section */}
         <section id="experience" className="section">

@@ -157,8 +157,14 @@
   }
 
   .link-underline:hover,
-  .link-underline:focus-visible {
+  .link-underline:focus-visible,
+  .group:hover .link-underline,
+  .group:focus-visible .link-underline {
     background-size: 100% 1px;
+  }
+
+  .mission-row:focus-visible {
+    @apply rounded-sm ring-2 ring-ring ring-offset-4 ring-offset-background;
   }
 
   /* Status indicator: a quiet "online" dot */
