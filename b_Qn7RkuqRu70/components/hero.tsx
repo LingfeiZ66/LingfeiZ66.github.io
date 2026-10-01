@@ -46,13 +46,9 @@ export function Hero() {
     >
       <div className="container relative mx-auto flex flex-col gap-10 px-4">
         <div className="hero-reveal flex flex-wrap items-center gap-x-4 gap-y-3" style={reveal(0)}>
-          <div className="flex items-center gap-3">
-            <span className="relative size-9 overflow-hidden rounded-full border border-border">
-              <Image src={PORTRAIT_URL} alt="" fill sizes="36px" className="object-cover" priority />
-            </span>
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Player 01</span>
-          </div>
-          <span aria-hidden="true" className="hero-progress hidden h-px w-16 bg-border sm:block" />
+          <span className="relative size-9 overflow-hidden rounded-full border border-border">
+            <Image src={PORTRAIT_URL} alt="" fill sizes="36px" className="object-cover" priority />
+          </span>
           <StatusIndicator>Currently exploring new opportunities</StatusIndicator>
         </div>
 
@@ -69,21 +65,15 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="flex max-w-2xl flex-col gap-4">
-          <p
-            className="hero-reveal text-pretty text-2xl font-medium leading-snug text-foreground md:text-3xl"
-            style={reveal(3)}
-          >
-            I design clear, human experiences for{" "}
-            <span className="gradient-text">complex systems.</span>
-          </p>
-          <p className="hero-reveal text-pretty text-base leading-relaxed text-muted-foreground md:text-lg" style={reveal(4)}>
-            My work spans AI products, emerging technology, and human-centered experiences, from early
-            research to high-fidelity design.
-          </p>
-        </div>
+        <p
+          className="hero-reveal max-w-2xl text-pretty text-2xl font-medium leading-snug text-foreground md:text-3xl"
+          style={reveal(3)}
+        >
+          I design clear, human experiences for <span className="gradient-text">complex systems</span> — AI
+          products, hardware, and digital health.
+        </p>
 
-        <div className="hero-reveal flex flex-col gap-6 sm:flex-row sm:items-center" style={reveal(5)}>
+        <div className="hero-reveal flex flex-col gap-6 sm:flex-row sm:items-center" style={reveal(4)}>
           <div className="flex flex-wrap gap-3">
             <Button asChild size="lg" className="group">
               <a href="#work">

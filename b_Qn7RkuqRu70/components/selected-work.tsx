@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { SectionHeader } from "@/components/section-header"
 
 type Stat = { value: string; label: string }
 
@@ -34,8 +35,6 @@ const leadMission: Mission = {
   note: "Under NDA",
   stats: [
     { value: "68%", label: "faster task completion" },
-    { value: "53s → 17s", label: "average task time" },
-    { value: "30+", label: "high-fidelity screens" },
     { value: "24", label: "usability test participants" },
   ],
 }
@@ -114,20 +113,19 @@ function MissionNumber({ number, className }: { number: string; className?: stri
   )
 }
 
-function Tags({ tags }: { tags: string[] }) {
+function MissionMeta({ mission }: { mission: Mission }) {
   return (
-    <ul className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-      {tags.map((tag, i) => (
-        <li key={tag} className="flex items-center gap-3">
-          {i > 0 && (
-            <span aria-hidden="true" className="text-border">
-              /
-            </span>
-          )}
-          {tag}
-        </li>
-      ))}
-    </ul>
+    <p className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+      <MissionNumber number={mission.number} className="text-foreground" />
+      <span
+        aria-hidden="true"
+        className="h-px w-6 bg-border transition-all duration-300 group-hover:w-10 group-hover:bg-primary"
+      />
+      <span>{mission.client}</span>
+      {mission.note && (
+        <span className="font-mono text-[11px] uppercase tracking-[0.12em]">· {mission.note}</span>
+      )}
+    </p>
   )
 }
 
@@ -187,22 +185,12 @@ function LeadMission({ mission }: { mission: Mission }) {
     >
       <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
         <div className="flex flex-col gap-6 lg:col-span-5">
-          <p className="eyebrow flex items-center gap-3">
-            <MissionNumber number={mission.number} className="text-foreground" />
-            <span aria-hidden="true" className="h-px w-8 bg-border transition-all duration-300 group-hover:w-12 group-hover:bg-primary" />
-            <span>Main mission · Start here</span>
-          </p>
+          <MissionMeta mission={mission} />
 
           <div className="flex flex-col gap-3">
-            <p className="text-sm text-muted-foreground">
-              {mission.client}
-              {mission.note && <span className="ml-2 font-mono text-[11px] uppercase tracking-[0.12em]">· {mission.note}</span>}
-            </p>
             <h3 className="text-balance text-4xl font-semibold tracking-tight md:text-6xl">{mission.title}</h3>
             <p className="text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">{mission.hook}</p>
           </div>
-
-          <Tags tags={mission.tags} />
 
           {mission.stats && (
             <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-border pt-6">
@@ -240,12 +228,6 @@ function FeaturedMission({ mission, variant }: { mission: Mission; variant: "wid
       )}
       aria-label={`Mission ${mission.number}: ${mission.client} — ${mission.title}. View mission`}
     >
-      <p className="eyebrow flex items-center gap-3">
-        <MissionNumber number={mission.number} className="text-foreground" />
-        <span aria-hidden="true" className="h-px w-8 bg-border transition-all duration-300 group-hover:w-12 group-hover:bg-primary" />
-        <span>Main mission</span>
-      </p>
-
       <MissionVisual
         mission={mission}
         sizes="(min-width: 1024px) 40vw, 100vw"
@@ -253,15 +235,13 @@ function FeaturedMission({ mission, variant }: { mission: Mission; variant: "wid
       />
 
       <div className="flex flex-col gap-3">
-        <p className="text-sm text-muted-foreground">{mission.client}</p>
+        <MissionMeta mission={mission} />
         <h3 className="text-balance text-2xl font-semibold tracking-tight md:text-3xl">{mission.title}</h3>
         <p className="text-pretty leading-relaxed text-muted-foreground">{mission.hook}</p>
       </div>
 
-      <Tags tags={mission.tags} />
-
       {mission.evidence && (
-        <ul className="flex flex-col gap-2 border-t border-border pt-4 text-sm">
+        <ul className="flex flex-col gap-2 text-sm">
           {mission.evidence.map((item) => (
             <li key={item} className="flex gap-3">
               <span aria-hidden="true" className="mt-2 h-px w-3 shrink-0 bg-primary" />
@@ -296,7 +276,6 @@ function SideMission({ mission }: { mission: Mission }) {
           <p className="text-sm text-muted-foreground">{mission.client}</p>
           <h3 className="text-balance text-xl font-semibold tracking-tight md:text-2xl">{mission.title}</h3>
           <p className="text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">{mission.hook}</p>
-          <Tags tags={mission.tags} />
           {mission.evidence && (
             <p className="text-sm text-foreground/90">
               {mission.evidence.join(" · ")}
@@ -317,21 +296,7 @@ export function SelectedWork() {
     <section id="work" aria-labelledby="work-heading" className="section">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-            <div className="flex max-w-2xl flex-col gap-4">
-              <p className="eyebrow flex items-center gap-3">
-                <span className="text-foreground">Ch. 01</span>
-                <span aria-hidden="true" className="h-px w-8 bg-border" />
-                <span>Selected Work</span>
-              </p>
-              <h2 id="work-heading" className="text-4xl md:text-6xl">
-                Select your mission
-              </h2>
-            </div>
-            <p className="max-w-sm text-pretty leading-relaxed text-muted-foreground">
-              Five case studies across AI, hardware, digital health, and mobile. Start with Mission 01.
-            </p>
-          </div>
+          <SectionHeader number="01" id="work-heading" title="Selected work" />
 
           <LeadMission mission={leadMission} />
 
@@ -341,7 +306,7 @@ export function SelectedWork() {
           </div>
 
           <div className="pt-4">
-            <p className="eyebrow mb-2">Additional missions</p>
+            <p className="eyebrow mb-2">More projects</p>
             <ul className="border-b border-border">
               {sideMissions.map((mission) => (
                 <SideMission key={mission.number} mission={mission} />

@@ -49,28 +49,18 @@ const PROFILE_META = [
 
 export function PlayerProfile() {
   return (
-    <section id="about" className="section">
+    <section id="about" aria-labelledby="about-heading" className="section">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <SectionHeader chapter="02" label="Player profile" title="About" />
+          <SectionHeader number="02" id="about-heading" title="About" />
 
-          <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-            <article className="surface flex flex-col gap-8 rounded-2xl p-6 md:p-8 lg:col-span-5">
-              <div className="flex items-center justify-between">
-                <p className="eyebrow">Player Profile</p>
-                <p className="eyebrow">ID · LZ-01</p>
-              </div>
-
-              <div className="flex flex-col gap-2">
-                <h3 className="text-4xl md:text-5xl">Lingfei Zhan</h3>
-                <p className="font-mono text-sm uppercase tracking-[0.14em] text-primary">Product Designer</p>
-              </div>
-
-              <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="flex flex-col gap-8 lg:col-span-5">
+              <p className="text-pretty text-lg leading-relaxed text-foreground/90">
                 {"I'm a product designer drawn to complex technology — AI tools, hardware, and systems most people never see. My work is about making them understandable, usable, and human: clarifying what's happening, reducing friction, and earning trust through research and careful interaction design."}
               </p>
 
-              <dl className="mt-auto flex flex-col divide-y divide-border border-t border-border">
+              <dl className="flex flex-col divide-y divide-border border-y border-border">
                 {PROFILE_META.map((row) => (
                   <div key={row.label} className="flex items-baseline justify-between gap-4 py-3">
                     <dt className="eyebrow">{row.label}</dt>
@@ -78,48 +68,18 @@ export function PlayerProfile() {
                   </div>
                 ))}
               </dl>
-            </article>
-
-            <div className="flex flex-col gap-4 lg:col-span-7">
-              <p className="eyebrow flex items-center gap-3">
-                <span className="text-foreground">Inventory</span>
-                <span aria-hidden="true" className="h-px flex-1 bg-border" />
-                <span>3 slots</span>
-              </p>
-
-              {LOADOUT.map((group) => (
-                <section
-                  key={group.slot}
-                  aria-labelledby={`loadout-${group.slot}`}
-                  className="rounded-2xl border border-border p-5 md:p-6"
-                >
-                  <header className="mb-4 flex items-center gap-3">
-                    <span
-                      aria-hidden="true"
-                      className="flex h-7 w-7 items-center justify-center rounded-md border border-primary/40 font-mono text-xs text-primary"
-                    >
-                      {group.slot}
-                    </span>
-                    <h3 id={`loadout-${group.slot}`} className="text-base md:text-lg">
-                      {group.name}
-                    </h3>
-                    <span className="eyebrow ml-auto">
-                      {group.items.length} items
-                    </span>
-                  </header>
-                  <ul className="flex flex-wrap gap-2">
-                    {group.items.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-md border border-border bg-accent/40 px-3 py-1.5 text-sm text-foreground transition-colors hover:border-primary/50"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
             </div>
+
+            <dl className="flex flex-col divide-y divide-border border-y border-border lg:col-span-7">
+              {LOADOUT.map((group) => (
+                <div key={group.slot} className="grid gap-2 py-5 sm:grid-cols-4 sm:gap-6">
+                  <dt className="text-sm font-medium text-foreground">{group.name}</dt>
+                  <dd className="text-pretty text-sm leading-relaxed text-muted-foreground sm:col-span-3">
+                    {group.items.join(" · ")}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>

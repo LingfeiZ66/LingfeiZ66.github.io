@@ -25,28 +25,22 @@ const ACHIEVEMENTS = [
 
 export function Achievements() {
   return (
-    <section id="achievements" className="section">
+    <section id="achievements" aria-labelledby="achievements-heading" className="section">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-4xl">
-          <SectionHeader chapter="04" label="Progress" title="Achievements Unlocked" />
+        <div className="mx-auto max-w-6xl">
+          <SectionHeader number="04" id="achievements-heading" title="Achievements" />
 
-          <ol className="grid border-t border-border sm:grid-cols-2">
-            {ACHIEVEMENTS.map((item, i) => (
+          <ul className="grid border-t border-border sm:grid-cols-2">
+            {ACHIEVEMENTS.map((item) => (
               <li
                 key={item.title}
-                className="flex gap-5 border-b border-border py-6 sm:odd:border-r sm:odd:pr-8 sm:even:pl-8"
+                className="flex flex-col gap-1.5 border-b border-border py-6 sm:odd:border-r sm:odd:pr-8 sm:even:pl-8"
               >
-                <span aria-hidden="true" className="pt-1 font-mono text-xs text-muted-foreground">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="flex flex-col gap-1.5">
-                  <p className="eyebrow">{item.category}</p>
-                  <p className="text-lg font-medium leading-snug text-foreground">{item.title}</p>
-                  <p className="text-sm text-muted-foreground">{item.source}</p>
-                </div>
+                <p className="text-lg font-medium leading-snug text-foreground">{item.title}</p>
+                <p className="text-sm text-muted-foreground">{item.source}</p>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </div>
     </section>

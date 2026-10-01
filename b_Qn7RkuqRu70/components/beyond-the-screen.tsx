@@ -127,15 +127,10 @@ export function BeyondTheScreen() {
   }
 
   return (
-    <section id="beyond" className="section">
+    <section id="beyond" aria-labelledby="beyond-heading" className="section">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-6xl">
-          <SectionHeader
-            chapter="03"
-            label="Creative inventory"
-            title="Beyond the Screen"
-            description="Product design shows how I solve problems. These show how I see, and how I tell stories about people."
-          />
+          <SectionHeader number="03" id="beyond-heading" title="Beyond the screen" />
 
           <div className="border-t border-border">
             {DISCIPLINES.map((discipline) => {
@@ -169,11 +164,8 @@ export function BeyondTheScreen() {
                         {discipline.number}
                       </span>
 
-                      <span className="flex min-w-0 flex-1 flex-col gap-2">
-                        <span className="text-4xl font-semibold uppercase leading-none tracking-tight transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none md:text-7xl">
-                          {discipline.name}
-                        </span>
-                        <span className="eyebrow">{discipline.descriptor}</span>
+                      <span className="min-w-0 flex-1 text-4xl font-semibold uppercase leading-none tracking-tight transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none md:text-7xl">
+                        {discipline.name}
                       </span>
 
                       <span
