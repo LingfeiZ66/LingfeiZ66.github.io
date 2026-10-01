@@ -14,7 +14,7 @@ export function FinalCta() {
   return (
     <section id="contact" aria-labelledby="contact-heading" className="section">
       <div className="container mx-auto px-4">
-        <div className="mx-auto flex max-w-6xl flex-col gap-10 border-t border-border pt-16 md:pt-20">
+        <div className="mx-auto flex max-w-6xl flex-col gap-10">
           <h2 id="contact-heading" className="text-balance text-4xl uppercase md:text-7xl">
             {"What's our next mission?"}
           </h2>

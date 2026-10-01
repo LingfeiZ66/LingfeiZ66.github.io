@@ -178,16 +178,21 @@ export function BeyondTheScreen() {
                         <Image src={discipline.preview} alt="" fill sizes="160px" className="object-cover" />
                       </span>
 
-                      <span className="flex shrink-0 items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-foreground">
+                      <span
+                        className={cn(
+                          "flex min-h-11 shrink-0 items-center gap-2 font-mono text-xs uppercase tracking-widest transition-colors",
+                          isOpen ? "text-primary" : "text-muted-foreground group-hover:text-foreground",
+                        )}
+                      >
                         <span className="hidden sm:inline">{isOpen ? "Close" : "Explore"}</span>
-                        <span
-                          className={cn(
-                            "flex size-9 items-center justify-center rounded-full border border-border transition-all duration-300 group-hover:border-primary",
-                            isOpen && "border-primary bg-primary text-primary-foreground",
-                          )}
-                        >
-                          {isOpen ? <X className="size-4" /> : <Plus className="size-4" />}
-                        </span>
+                        {isOpen ? (
+                          <X aria-hidden="true" className="size-4" />
+                        ) : (
+                          <Plus
+                            aria-hidden="true"
+                            className="size-4 transition-transform duration-300 group-hover:rotate-90 motion-reduce:transform-none"
+                          />
+                        )}
                       </span>
                     </button>
                   </h3>

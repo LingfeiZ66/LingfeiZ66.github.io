@@ -1,9 +1,6 @@
-"use client"
-
 import type React from "react"
-import { useRef } from "react"
 import Image from "next/image"
-import { ArrowRight, ArrowUpRight, Download, Mail } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StatusIndicator } from "@/components/status-indicator"
 import { RESUME_URL } from "@/components/site-header"
@@ -19,102 +16,93 @@ function reveal(step: number): React.CSSProperties {
 }
 
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const frameRef = useRef<number | null>(null)
-
-  // Writes pointer position to CSS variables; rAF keeps it to one style write per frame.
-  const handlePointerMove = (event: React.PointerEvent<HTMLElement>) => {
-    if (event.pointerType !== "mouse" || frameRef.current !== null) return
-    const { clientX, clientY } = event
-    frameRef.current = requestAnimationFrame(() => {
-      frameRef.current = null
-      const section = sectionRef.current
-      if (!section) return
-      const rect = section.getBoundingClientRect()
-      section.style.setProperty("--spot-x", `${clientX - rect.left}px`)
-      section.style.setProperty("--spot-y", `${clientY - rect.top}px`)
-    })
-  }
-
   return (
-    <section
-      id="home"
-      ref={sectionRef}
-      onPointerMove={handlePointerMove}
-      aria-labelledby="hero-title"
-      className="hero-spotlight relative overflow-hidden pb-20 pt-16 md:pb-28 md:pt-24"
-    >
-      <div className="container relative mx-auto flex flex-col gap-10 px-4">
-        <div className="hero-reveal flex flex-wrap items-center gap-x-4 gap-y-3" style={reveal(0)}>
-          <span className="relative size-9 overflow-hidden rounded-full border border-border">
-            <Image src={PORTRAIT_URL} alt="" fill sizes="36px" className="object-cover" priority />
-          </span>
-          <StatusIndicator>Currently exploring new opportunities</StatusIndicator>
-        </div>
+    <section id="home" aria-labelledby="hero-title" className="pb-20 pt-16 md:pb-28 md:pt-24">
+      <div className="container mx-auto flex flex-col gap-14 px-4 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+        <div className="flex min-w-0 flex-col gap-10">
+          <div className="hero-reveal flex items-center gap-4" style={reveal(0)}>
+            <span className="relative size-9 shrink-0 overflow-hidden border border-border lg:hidden">
+              <Image src={PORTRAIT_URL} alt="" fill sizes="36px" className="object-cover" priority />
+            </span>
+            <StatusIndicator>Player 01 · Product Designer · Open to roles</StatusIndicator>
+          </div>
 
-        <div className="flex flex-col gap-6">
           <h1
             id="hero-title"
-            className="hero-reveal text-balance font-semibold uppercase leading-[0.88] tracking-[-0.04em] text-[clamp(3.25rem,11vw,8.5rem)]"
+            className="hero-reveal font-semibold uppercase leading-[0.88] tracking-[-0.04em] text-[clamp(3.25rem,10vw,8rem)]"
             style={reveal(1)}
           >
             Lingfei Zhan
           </h1>
-          <p className="hero-reveal eyebrow text-sm" style={reveal(2)}>
-            Product Designer
+
+          <p
+            className="hero-reveal max-w-2xl text-pretty text-2xl font-medium leading-snug text-foreground md:text-3xl"
+            style={reveal(2)}
+          >
+            I design clear, human experiences for{" "}
+            <span className="underline decoration-primary decoration-2 underline-offset-[6px]">complex systems</span>{" "}
+            — AI products, hardware, and digital health.
           </p>
-        </div>
 
-        <p
-          className="hero-reveal max-w-2xl text-pretty text-2xl font-medium leading-snug text-foreground md:text-3xl"
-          style={reveal(3)}
-        >
-          I design clear, human experiences for <span className="gradient-text">complex systems</span> — AI
-          products, hardware, and digital health.
-        </p>
-
-        <div className="hero-reveal flex flex-col gap-6 sm:flex-row sm:items-center" style={reveal(4)}>
-          <div className="flex flex-wrap gap-3">
-            <Button asChild size="lg" className="group">
-              <a href="#work">
-                View Work
-                <ArrowRight
-                  aria-hidden="true"
-                  className="transition-transform duration-base ease-out group-hover:translate-x-0.5"
-                />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href={RESUME_URL} download>
-                <Download aria-hidden="true" />
-                Resume
-              </a>
-            </Button>
+          <div className="hero-reveal flex flex-col gap-6 sm:flex-row sm:items-center" style={reveal(3)}>
+            <div className="flex flex-wrap gap-3">
+              <Button asChild size="lg" className="group">
+                <a href="#work">
+                  View Work
+                  <ArrowRight
+                    aria-hidden="true"
+                    className="transition-transform duration-base ease-out group-hover:translate-x-0.5"
+                  />
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href={RESUME_URL} download>
+                  <Download aria-hidden="true" />
+                  Resume
+                </a>
+              </Button>
+            </div>
+            <ul className="flex items-center gap-6 text-sm">
+              <li>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
+                >
+                  LinkedIn
+                  <ArrowUpRight aria-hidden="true" className="size-3.5" />
+                  <span className="sr-only">(opens in a new tab)</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="link-underline text-muted-foreground hover:text-foreground"
+                >
+                  Email
+                </a>
+              </li>
+            </ul>
           </div>
-          <ul className="flex items-center gap-5 text-sm">
-            <li>
-              <a
-                href={LINKEDIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
-              >
-                LinkedIn
-                <ArrowUpRight aria-hidden="true" className="size-3.5" />
-                <span className="sr-only">(opens in a new tab)</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href={`mailto:${EMAIL}`}
-                className="link-underline inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground"
-              >
-                <Mail aria-hidden="true" className="size-3.5" />
-                Email
-              </a>
-            </li>
-          </ul>
         </div>
+
+        <figure className="hero-reveal group hidden w-64 shrink-0 lg:block" style={reveal(4)}>
+          <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+            <Image
+              src={PORTRAIT_URL}
+              alt="Portrait of Lingfei Zhan"
+              fill
+              sizes="256px"
+              priority
+              className="object-cover grayscale transition-[filter] duration-700 ease-out group-hover:grayscale-0"
+            />
+          </div>
+          <figcaption className="mt-3 flex justify-between font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+            <span>P1 — Lingfei</span>
+            <span>San Diego</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   )

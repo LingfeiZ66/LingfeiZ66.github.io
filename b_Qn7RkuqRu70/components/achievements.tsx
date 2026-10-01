@@ -30,14 +30,19 @@ export function Achievements() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader number="04" id="achievements-heading" title="Achievements" />
 
-          <ul className="grid border-t border-border sm:grid-cols-2">
+          <ul className="border-t border-border">
             {ACHIEVEMENTS.map((item) => (
               <li
                 key={item.title}
-                className="flex flex-col gap-1.5 border-b border-border py-6 sm:odd:border-r sm:odd:pr-8 sm:even:pl-8"
+                className="flex flex-col gap-2 border-b border-border py-6 md:flex-row md:items-baseline md:gap-10 md:py-7"
               >
-                <p className="text-lg font-medium leading-snug text-foreground">{item.title}</p>
-                <p className="text-sm text-muted-foreground">{item.source}</p>
+                <span className="font-mono text-xs uppercase tracking-widest text-primary md:w-32 md:shrink-0">
+                  {item.category}
+                </span>
+                <p className="flex-1 text-pretty text-xl font-medium leading-snug text-foreground md:text-2xl">
+                  {item.title}
+                </p>
+                <p className="text-sm text-muted-foreground md:text-right">{item.source}</p>
               </li>
             ))}
           </ul>

@@ -5,7 +5,7 @@ export function StatusIndicator({ children, className }: { children: React.React
   return (
     <span
       className={cn(
-        "inline-flex w-fit items-center gap-2.5 rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground",
+        "inline-flex w-fit items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-muted-foreground",
         className,
       )}
     >
