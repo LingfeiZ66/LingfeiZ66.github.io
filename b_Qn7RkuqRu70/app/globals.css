@@ -184,6 +184,62 @@
       animation-timeline: scroll(root block);
     }
   }
+
+  /* Hero entrance: staggered fade-up, transform + opacity only */
+  .hero-reveal {
+    animation: hero-reveal var(--duration-slow) var(--ease-out) both;
+    animation-delay: calc(var(--reveal-step, 0) * 80ms + 60ms);
+  }
+
+  /* A short "loading" line that fills once, like a level bar */
+  .hero-progress {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-progress::after {
+    content: "";
+    @apply absolute inset-0 origin-left bg-primary;
+    animation: hero-progress 1.1s var(--ease-out) 300ms both;
+  }
+
+  /* Soft light that follows a mouse pointer; hidden for touch */
+  .hero-spotlight::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-0;
+    background: radial-gradient(
+      420px circle at var(--spot-x, 50%) var(--spot-y, 30%),
+      hsl(var(--primary) / 0.1),
+      transparent 70%
+    );
+    transition: opacity var(--duration-slow) var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .hero-spotlight:hover::before {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes status-ping {
@@ -234,7 +290,8 @@
     transition-duration: 0.01ms !important;
   }
 
-  .scroll-progress {
+  .scroll-progress,
+  .hero-spotlight::before {
     display: none;
   }
 }

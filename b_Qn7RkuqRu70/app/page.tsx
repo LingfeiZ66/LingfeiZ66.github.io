@@ -13,6 +13,7 @@ import { ArrowRight, Download, Send, Mail, Phone, MapPin } from "lucide-react"
 import { SiteHeader, RESUME_URL } from "@/components/site-header"
 import { SectionHeader } from "@/components/section-header"
 import { StatusIndicator } from "@/components/status-indicator"
+import { Hero } from "@/components/hero"
 
 export default function Home() {
   const { toast } = useToast()
@@ -68,46 +69,9 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section id="home" className="pb-16 pt-20 md:pb-24 md:pt-32">
+        <Hero />
+        <section aria-label="Skills" className="pb-16 md:pb-24">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col-reverse items-start gap-12 md:flex-row md:items-center md:gap-16">
-              <div className="flex flex-1 flex-col gap-8">
-                <StatusIndicator>Open to product design roles</StatusIndicator>
-                <div className="flex flex-col gap-5">
-                  <h1 className="display">
-                    Hi, I&apos;m <span className="gradient-text">Lingfei Zhan</span>
-                  </h1>
-                  <p className="eyebrow text-sm">Product &amp; UX Designer</p>
-                </div>
-                <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
-                  I&apos;m a UX designer and University of Michigan School of Information student graduating Summer 2026, with a focus on accessibility, research, and inclusive digital experiences.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild size="lg" className="group">
-                    <a href="#work">
-                      View My Projects
-                      <ArrowRight
-                        aria-hidden="true"
-                        className="transition-transform duration-base ease-out group-hover:translate-x-0.5"
-                      />
-                    </a>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <a href="#contact">Get In Touch</a>
-                  </Button>
-                </div>
-              </div>
-              <div className="relative size-48 shrink-0 overflow-hidden rounded-full border border-border md:size-80">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/14f59bf9d76da53bf1c7d06a428246d9-cE4prZ7eI4jAH9Al96TFQtIvqUv2qa.png"
-                  alt="Lingfei Zhan"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-
             {/* Rolling Skills Marquee */}
             <div className="relative mt-20 overflow-hidden border-y border-border py-5">
               <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
