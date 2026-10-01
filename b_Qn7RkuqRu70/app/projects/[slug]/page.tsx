@@ -1,8 +1,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ExternalLink } from "lucide-react"
-import { SiteHeader } from "@/components/site-header"
+import { ArrowLeft, ExternalLink, Download } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { ImagePlaceholder } from "@/components/image-placeholder"
 import { CaseStudyNav, type NavSection } from "@/components/case-study-nav"
 
@@ -759,7 +759,56 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold gradient-text">
+            Lingfei Zhan
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link href="/" className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">
+              Home
+            </Link>
+            <Link href="/#work" className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">
+              Projects
+            </Link>
+            <Link href="/#experience" className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">
+              Experience
+            </Link>
+            <Link href="/#contact" className="text-sm font-medium transition-colors hover:text-primary text-muted-foreground">
+              Contact
+            </Link>
+            <Button asChild size="sm">
+              <a href="https://blobs.vusercontent.net/blob/Resume-Lingfei%20Zhan%20%282026%29-qrLiukPXBUn3JgvYiwvZv0Y5zFXGOA.pdf" download>
+                <Download className="mr-2 h-4 w-4" />
+                Resume
+              </a>
+            </Button>
+            <ThemeToggle />
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <Button variant="ghost" size="icon" className="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-6 w-6"
+            >
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </Button>
+        </div>
+      </header>
       <main className="flex-1">
         <div className="container py-12 md:py-24">
           <Button variant="ghost" size="sm" className="mb-8" asChild>
